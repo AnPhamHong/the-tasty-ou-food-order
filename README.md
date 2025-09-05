@@ -27,7 +27,8 @@ The project includes both frontend and backend modules.
 3. Run the project
 
 ## Members
-2251052123	Trương Dương Thùy Trang 
-2151013041	Trương Tấn Khoa
-1951052180	Vũ Minh Tân
-1851010010	Phạm Thị Hồng Ân
+
+1. Trương Dương Thùy Trang - 2251052123
+2.	Trương Tấn Khoa - 2151013041
+3. Vũ Minh Tân - 1951052180
+4. Phạm Thị Hồng Ân - 1851010010
