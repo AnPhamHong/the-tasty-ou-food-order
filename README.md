@@ -13,10 +13,10 @@ The project includes both frontend and backend modules.
 - Order management dashboard (admin)
 
 ## Tech Stack
-- Frontend: React / Next.js
-- Backend: Node.js / Express
-- Database: MySQL / MongoDB
-- Deployment: Docker / Cloud (optional)
+- Frontend: 
+- Backend: 
+- Database: MySQL
+- Deployment: 
 
 ## Getting Started
 1. Clone the repository:
