@@ -1,0 +1,51 @@
+.mini-bag-container {
+    background-color: var(--white-color);
+    padding: calc(15px + 5 * (100vw - 320px) / 1600);
+    border-radius: 13px;
+    box-shadow: 0 15px 60px -20px #0000001a;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.category-item {
+    width: 110px;
+    height: 120px;
+    border-radius: 12px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.category-item:hover {
+    border: 1px solid #ff9900;
+    background: rgba(255, 153, 0, 0.05);
+}
+
+.category-item.active {
+    border: 1px solid #ff9900;
+    background: rgba(255, 153, 0, 0.1);
+}
+
+.category-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.category-text {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.category-item.active .category-text,
+.category-item:hover .category-text {
+    color: #ff9900;
+}
