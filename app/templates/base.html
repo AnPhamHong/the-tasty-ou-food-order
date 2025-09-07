@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}Flask App{% endblock %}</title>
+
+  <!-- Core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Custom CSS -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/mini-bag.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/deals.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/feature-restaurant.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/footer.css') }}" rel="stylesheet" />
+
+  {% block styles %}{% endblock %}
+</head>
+
+<body>
+  <div class="page">
+    <div class="page-wrapper">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      $("#deals-carousel").owlCarousel({
+        loop: true,
+        margin: 24,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          576: { items: 2 },
+          768: { items: 3 },
+          992: { items: 4 },
+          1200: { items: 5 }
+        }
+      });
+    });
+  </script>
+
+  {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

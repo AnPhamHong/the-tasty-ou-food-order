@@ -1,0 +1,25 @@
+<section class="section-b-space">
+  <div class="container position-relative">
+    <div class="">
+      <div class="loader-line"></div>
+      <h2 class="fw-bold mb-0 pt-3">Today’s Deal</h2>
+      <div class="sub-title mt-2">
+        <p>Take a benefit from our latest offers.</p>
+      </div>
+    </div>
+
+    <div class="position-relative container">
+      <div id="deals-carousel" class="owl-carousel owl-theme">
+        {% for i in range(1,6) %}
+        <div class="item">
+          <a href="#">
+            <img src="{{ url_for('static', filename='images/deals/deal-' ~ i ~ '.jpg') }}" alt="Deal {{ i }}"
+              class="img-fluid banner-img rounded-3">
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
