@@ -27,9 +27,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     })
         .then(res => res.json())
         .then(data => {
-console.log(data)
+            console.log(data)
             localStorage.setItem("username", data.user.username); // giả sử backend trả về username
             localStorage.setItem("email", data.user.email);
+            localStorage.setItem("userid", data.user.userid)
             if (data.success) {
                 email.value = "";
                 password.value = "";

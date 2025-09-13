@@ -125,7 +125,7 @@ span {
 
 /* ================= Base Styles ================= */
 body {
-    background-color: #fff;
+    background-color: #faf3dd;
 }
 
 p {
@@ -640,4 +640,27 @@ nav.navbar {
 
 #mobileMenu .nav-item:hover a {
     transform: scale(0.95);
+}
+
+.breadcrumb-item, .breadcrumb-item a {
+    color: #ffffffcc;
+}
+.breadcrumb-item.active {
+    color: #ffffff;
+}
+.page-head-section {
+    position: relative;
+}
+.page-head-section::before {
+    content: "";
+    background-image: url(../images/home-bg-ZTUNOW43.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    background-position: center top;
 }

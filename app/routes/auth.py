@@ -37,7 +37,8 @@ def login_post():
             "success": True,
             "message": "Logged in successfully!",
             "user": {
-                "username": account.get("username", ""),  # nếu bảng có cột username
+                "username": account.get("username", ""),
+                "userid": account.get("id"),
                 "email": account.get("email")
             }
         })

@@ -1,0 +1,29 @@
+<section class="page-head-section py-4">
+  <div class="container page-heading">
+    <h2 class="mb-3 text-white text-center breadcrumb-title">
+      {{ breadcrumb[-1].name }}
+    </h2>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        {% for item in breadcrumb %}
+          {% if item.url %}
+            <li class="breadcrumb-item">
+              <a href="{{ item.url }}" class="text-decoration-none">
+                {% if item.name == "Home" %}
+                  <i class="ri-home-line"></i>
+                {% endif %}
+                {{ item.name }}
+              </a>
+            </li>
+          {% else %}
+            <li class="breadcrumb-item active breadcrumb-item-child" aria-current="page">
+              {{ item.name }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </nav>
+  </div>
+</section>
