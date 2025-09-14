@@ -7,7 +7,7 @@ auth_bp = Blueprint("auth", __name__)
 # -------------------------------
 # LOGIN PAGE
 # -------------------------------
-@auth_bp.route("/", methods=["GET"])
+
 @auth_bp.route("/login", methods=["GET"])
 def login_page():
     return render_template("auth/login.html")
@@ -91,7 +91,7 @@ def register():
 # -------------------------------
 # INDEX PAGE (requires login)
 # -------------------------------
-@auth_bp.route("/index")
+@auth_bp.route("/")
 def index():
     if "loggedin" in session:
         return render_template("pages/index.html")

@@ -83,3 +83,24 @@ def get_popular_restaurants():
     cursor.close()
     conn.close()
     return jsonify(restaurants)
+
+# GET /restaurants/<id>
+@restaurants_bp.route("/restaurants/<int:restaurant_id>", methods=["GET"])
+def get_restaurant_by_id(restaurant_id):
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM restaurants WHERE id=%s", (restaurant_id,))
+    restaurant = cursor.fetchone()
+
+    if not restaurant:
+        return jsonify({"error": "Restaurant not found"}), 404
+
+    cursor.execute("SELECT * FROM products WHERE restaurant_id=%s", (restaurant_id,))
+    products = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    restaurant["products"] = products
+    return jsonify(restaurant)

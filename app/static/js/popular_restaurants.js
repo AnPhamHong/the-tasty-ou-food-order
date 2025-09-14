@@ -15,13 +15,14 @@ async function fetchPopularRestaurants() {
     col.className = 'col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3';
     let badgeHTML = !badges.length ? '&nbsp;' : renderBadgeHtml(badges)
 
+    const menuUrl = `/restaurant/${r.id}/menu`;
     col.innerHTML = `
-      <div class="vertical-product-box roundedbg-white shadow-sm" style="border-radius: .5rem !important; border: 1px solid #e8e8e8;">
+      <div class="vertical-product-box roundedbg-white shadow-sm" style="border-radius: .5rem !important; border: 1px solid #e8e8e8; background: #fff;">
       <!-- Badge -->
 
       <!-- Product Image -->
       <div class="vertical-product-box-img position-relative">
-        <a class="bg-size d-block" href="/zomo/order/menu-listing/ribeye-junction" 
+        <a class="bg-size d-block" href="${menuUrl}" 
           style="background-image: url(${r.image_url}); background-size: cover; background-position: center; height: 200px; border-radius: .5rem;">
           <img src="${r.image_url}" alt="${r.name}" class="product-img-top w-100 bg-img d-none">
         </a>
@@ -33,7 +34,7 @@ async function fetchPopularRestaurants() {
       <!-- Body -->
       <div class="vertical-product-body mt-3">
         <div class="d-flex align-items-center justify-content-between">
-          <a href="/zomo/order/menu-listing/ribeye-junction" class="text-decoration-none">
+          <a href="${menuUrl}" class="text-decoration-none">
             <h6 class="vertical-product-title mb-0">${r.name}</h6>
           </a>
           <div class="rating-star mb-0 d-flex align-items-center justify-content-center gap-1">

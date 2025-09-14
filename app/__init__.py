@@ -13,6 +13,7 @@ def create_app():
     from app.routes.account import account_bp
     from app.routes.blogs import blogs_bp
     from app.routes.orders import orders_bp 
+    from app.routes.menu import menu_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(restaurants_bp)
@@ -21,5 +22,6 @@ def create_app():
     app.register_blueprint(blogs_bp)
     app.register_blueprint(orders_bp)
     app.register_blueprint(account_bp, url_prefix="/account")
+    app.register_blueprint(menu_bp)
 
     return app
