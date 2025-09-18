@@ -816,3 +816,109 @@ nav.navbar {
 .btn.change-qty:disabled {
     opacity: 1;
 }
+
+#modalSearchProduct {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#modalSearchProduct .modal-dialog {
+    max-width: 50%;
+}
+
+#modalSearchProduct .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-header-bg {
+    background-image: url(../images/bg-search.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: -webkit-fill-available;
+}
+
+#modalSearchProduct .modal-search-form {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#modalSearchProduct .modal-search-form span {
+    text-align: center;
+
+}
+
+#modalSearchProduct .modal-header {
+    width: 100%;
+    padding: .5rem 3rem;
+    border-bottom: none;
+    position: relative;
+    height: 120px;
+    background-color: brown;
+}
+
+#modalSearchProduct .modal-body {
+    width: 100%;
+    padding: 0;
+}
+
+#modalSearchProduct .card-header {
+    border-color: rgba(4, 32, 69, 0.14);
+    background: #ED213A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #93291E, #ED213A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#modalSearchProduct .list-group-item {
+    border-color: rgba(4, 32, 69, 0.14);
+}
+
+#search-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#search-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+#searchInput {
+    padding: .2rem .5rem !important;
+    line-height: 1.5 !important;
+}
+
+#searchInput::placeholder {
+    font-size: .7rem;
+    line-height: 1.5;
+}
+
+.home-features-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    backdrop-filter: blur(2px);
+    padding: .5rem 1rem;
+    border-radius: 1rem !important;
+    background: linear-gradient(180deg, #e2e8ff00, #e2e8ff0f), #e2e8ff05;
+    border: 1px solid rgba(226, 232, 255, .1);
+}
+
+.marquee span {
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 500;
+}
