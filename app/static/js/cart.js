@@ -44,6 +44,7 @@ function addToCart(product) {
 
 function renderCart() {
     const cartItems = document.getElementById('cart-items');
+    document.getElementById('overlay-modal-cart').style.display = 'flex';
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartItems.innerHTML = '';
     // Group theo restaurant
@@ -62,8 +63,8 @@ function renderCart() {
         const isChecked = products.some(item => item.checked) ? 'checked' : '';
         // Header restaurant
         cartItems.innerHTML += `
-            <div class="fw-bold bg-light rounded d-flex align-items-center gap-2 justify-content-between" style="background-color: #ee4d2d !important; border-radius: 0 !important; padding: .5rem 1rem;">
-                <span style="color: #fff;">${restaurantName}</span>
+            <div class="fw-bold bg-light rounded d-flex align-items-center gap-2 justify-content-between" style="background: linear-gradient(to right, #fff7f0, #fff3e6) !important; border-radius: 0 !important; padding: .5rem .8rem">
+                <span style="color: #F37335;font-weight: 600;">${restaurantName}</span>
                 <div class="form-check mb-0">
                     <input class="form-check-input restaurant-check custom-checkbox" type="checkbox" data-restaurant-id="${restaurantId}" ${isChecked}>
                 </div>
@@ -102,16 +103,16 @@ function renderCart() {
                                 </button>
                             </div>
                         </form>
-                        <span style="color: #111827; font-weight: 600; font-size: .75rem;">$${(item.discount_price * item.qty).toFixed(2)}</span>
+                        <span style="color: #198754;font-weight: 600;font-size: .75rem;">$${(item.discount_price * item.qty).toFixed(2)}</span>
                     </div>
                     <div class="mt-2 d-flex gap-4">
-                        <span class="remove-item" style="font-size: .75rem; color: #e02424;" data-product-id="${item.id}" data-restaurant-id="${item.restaurant_id}"><i class="fa-solid fa-trash me-1"></i> Remove</span>
+                        <span class="remove-item" data-product-id="${item.id}" data-restaurant-id="${item.restaurant_id}"><i class="fa-solid fa-trash me-1"></i> Remove</span>
                     </div>
                 </div>
             </div>`;
             total += item.discount_price * item.qty;
         });
-        cartItems.innerHTML += `<div class="p-3">${tempStringList}</div>`
+        cartItems.innerHTML += `<div style="padding: .5rem .8rem;">${tempStringList}</div>`
     })
 
 
@@ -124,6 +125,9 @@ function renderCart() {
     cartItems.querySelectorAll('.change-qty').forEach(el => {
         el.addEventListener('click', () => changeQty(parseInt(el.dataset.productId), parseInt(el.dataset.delta), parseInt(el.dataset.restaurantId)));
     });
+
+    setTimeout(() =>
+        document.getElementById('overlay-modal-cart').style.display = 'none', 500)
 }
 
 // Xóa sản phẩm khỏi cart

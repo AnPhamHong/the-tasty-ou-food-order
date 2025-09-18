@@ -20,6 +20,7 @@ const getEmptyBlock = () => {
 
 async function loadSearchResults(keyword = '') {
   const listContainer = document.getElementById('search-list');
+  document.getElementById('overlay-modal-search-product').style.display = 'flex';
   try {
     const response = await fetch(`/api/search?keyword=${encodeURIComponent(keyword)}`);
 
@@ -100,6 +101,10 @@ async function loadSearchResults(keyword = '') {
   } catch (error) {
     console.error('Unexpected error', error);
     listContainer.innerHTML = getEmptyBlock();
+  } finally {
+
+    setTimeout(() =>
+      document.getElementById('overlay-modal-search-product').style.display = 'none', 500)
   }
 }
 

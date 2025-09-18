@@ -771,18 +771,13 @@ nav.navbar {
     transition: transform 0.3s ease;
 }
 
-.favorite-item:hover,
-.remove-item:hover {
-    transform: scale(1.1);
-}
-
 /* Thay background của checkbox */
 .custom-checkbox {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: .9rem;
+    height: .9rem;
     background-color: #fff;
     /* nền trắng */
-    border: 2px solid #ee4d2d;
+    border: 1px solid #ee4d2d;
     /* viền đen */
     border-radius: 0.25rem;
     /* bo góc */
@@ -798,11 +793,11 @@ nav.navbar {
 .custom-checkbox:checked::after {
     content: '';
     display: block;
-    width: 0.4rem;
-    height: 0.7rem;
+    width: 0.3rem;
+    height: 0.55rem;
     border: solid #fff;
     /* tick màu trắng */
-    border-width: 0 2px 2px 0;
+    border-width: 0 1px 1px 0;
     transform: rotate(45deg);
     position: relative;
     left: 0.35rem;
@@ -967,4 +962,13 @@ nav.navbar {
 
 .carousel-control-next {
     right: -5% !important;
+}
+
+#cart-items .remove-item {
+    color: #6c757d;
+    font-size: .75rem;
+}
+
+#cart-items .remove-item:hover {
+    color: #dc3545;
 }
