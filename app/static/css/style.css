@@ -922,3 +922,49 @@ nav.navbar {
     font-size: .8rem;
     font-weight: 500;
 }
+
+#carousel-indicators-thumb img {
+    width: 300px;
+    height: 250px;
+    border-radius: .5rem;
+}
+
+.carousel-indicators-thumb [data-bs-target] {
+    width: 10rem;
+    border: 1px solid #fff;
+}
+
+
+/* control circle */
+#reviewMultiCarousel .control-circle {
+    width: 44px;
+    height: 44px;
+    background: #ff8c42;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* card / avatar */
+.review-card .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-card .text-orange {
+    color: #ff8c42;
+}
+
+/* make all cards same height inside a slide */
+.carousel-item .card {
+    height: 100%;
+}
+
+.carousel-control-prev {
+    left: -5% !important;
+}
+
+.carousel-control-next {
+    right: -5% !important;
+}

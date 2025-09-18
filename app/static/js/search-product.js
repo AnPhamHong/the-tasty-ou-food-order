@@ -44,13 +44,15 @@ async function loadSearchResults(keyword = '') {
 
     data.results.forEach(item => {
       let foodsHtml = "";
+      const menuUrl = `/restaurant/${item.id}/menu`;
 
       if (item.lst_food && item.lst_food.length > 0) {
         foodsHtml = `
           <div class="mt-3">
-            <div class="fw-bold small" style="font-style: italic;">Menu highlights:</div>
+            <div class="fw-bold small" style="font-style: italic;">Menu highlights</div>
             <div class="d-flex flex-wrap gap-2 mt-1">
               ${item.lst_food.map(food => `
+                <a href="${menuUrl}" alt="${food.name}">
                 <div class="border rounded p-2 d-flex flex-column align-items-center" style="width: 150px;">
                   <img src="${food.image_url || './static/avatars/default-food.jpg'}" 
                       alt="${food.name}" 
@@ -59,6 +61,7 @@ async function loadSearchResults(keyword = '') {
                   <div class="small text-truncate" style="max-width: 100px;" data-bs-toggle="tooltip" data-bs-placement="right" title="${food.name}">${food.name}</div>
                   <div class="text-muted small">$${food.price}</div>
                 </div>
+                </a>
               `).join("")}
             </div>
           </div>
@@ -68,11 +71,11 @@ async function loadSearchResults(keyword = '') {
         <div class="list-group-item">
           <div class="row align-items-center">
             <div class="col-auto d-flex justify-content-center align-items-center gap-2">
-              <a href="#">
+              <a href="${menuUrl}" alt="${item.name}">
                 <span class="avatar avatar-1" style="width: 80px; height: 80px; background-image: url(${item.image_url || './static/avatars/default.jpg'})"></span>
               </a>
               <div class="d-flex flex-column justify-content-center align-items-start gap-2">
-                <span style="color: #182423;">${item.name}</span>
+                <a href="${menuUrl}" alt="${item.name}"><span style="color: #182423;">${item.name}</span></a>
                 <div class="d-flex justify-content-center align-items-start gap-2">
                   <span class="small">
                     <i class="fa-solid fa-star ps-1" style="color: #FFD43B;"></i>${item.rating}</span>
