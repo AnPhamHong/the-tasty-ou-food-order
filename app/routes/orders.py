@@ -1,5 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from app.db import get_db_connection
+from datetime import datetime
+import uuid
 
 orders_bp = Blueprint("orders", __name__)
 
@@ -41,3 +43,79 @@ def get_orders(user_id):
     conn.close()
 
     return jsonify({"user_id": user_id, "orders": orders})
+
+
+@orders_bp.route("/orders/create", methods=["POST"])
+def create_order():
+    data = request.json
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        # ---- Generate transaction_id tăng dần ----
+        cursor.execute("SELECT transaction_id FROM orders ORDER BY id DESC LIMIT 1")
+        last_txn = cursor.fetchone()
+        if last_txn and last_txn[0].startswith("TXN"):
+            last_num = int(last_txn[0][3:])
+            new_num = last_num + 1
+        else:
+            new_num = 1
+        transaction_id = f"TXN{new_num:04d}"   # TXN0001, TXN0002...
+
+        # ---- Lấy dữ liệu từ client ----
+        user_id = data["user_id"]
+        restaurant_id = data["restaurant_id"]
+        restaurant_name = data["restaurant_name"]
+        recipient_name = data["recipient_name"]
+        phone_number = data["phone_number"]
+        email = data["email"]
+        address = data["address"]
+        payment_method = data["payment_method"]
+        subtotal = data["subtotal"]
+        savings = data.get("savings", 0)
+        store_pickup = data.get("store_pickup", 0)
+        tax = data["tax"]
+        total = subtotal + savings + store_pickup + tax
+        status = "Pending"
+        order_time = datetime.now()
+
+        # ---- Insert vào orders ----
+        cursor.execute("""
+            INSERT INTO orders (
+                user_id, restaurant_id, restaurant_name, transaction_id,
+                order_time, status, recipient_name, phone_number, email,
+                address, payment_method, subtotal, savings, store_pickup, tax, total
+            ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """, (
+            user_id, restaurant_id, restaurant_name, transaction_id,
+            order_time, status, recipient_name, phone_number, email,
+            address, payment_method, subtotal, savings, store_pickup, tax, total
+        ))
+
+        order_id = cursor.lastrowid
+
+        # ---- Insert order_items ----
+        items = data["items"]
+        for item in items:
+            cursor.execute("""
+                INSERT INTO order_items (order_id, food_id, food_name, quantity, price, image_url)
+                VALUES (%s,%s,%s,%s,%s,%s)
+            """, (
+                order_id, item["food_id"], item["food_name"],
+                item["quantity"], item["price"], item.get("image_url")
+            ))
+
+        conn.commit()
+
+        return jsonify({
+            "message": "Order created successfully",
+            "order_id": order_id,
+            "transaction_id": transaction_id
+        }), 201
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        conn.close()

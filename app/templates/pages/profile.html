@@ -9,20 +9,6 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <!-- <ul class="nav nav-tabs card-header-tabs" style="border-radius: 1rem;">
-                    {% for tab in tabs %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if active_tab == tab.id.replace('tab-', '') %}active{% endif %}">
-                            <i class="ri-{{ 'user-3-line' if tab.id=='tab-profile' else 
-                             'shopping-bag-3-line' if tab.id=='tab-orders' else 
-                             'map-pin-line' if tab.id=='tab-address' else 
-                             'bank-card-line' if tab.id=='tab-card' else 
-                             'question-line' }} me-2"></i>
-                            {{ tab.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul> -->
                 <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs" style="border-radius: 1rem;">
                     <li class="nav-item">
                         <a href="#tab-user" class="nav-link active" data-bs-toggle="tab" data-title="User">
@@ -105,7 +91,7 @@
                     <div class="tab-pane {% if active_tab == 'address' %}active show{% endif %}" id="tab-address">
                         <h4 class="mb-4">Infomation:</h4>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
                                 <div class="card">
                                     <div
                                         class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
@@ -118,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
                                 <div class="card">
                                     <div
                                         class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
@@ -131,7 +117,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
                                 <div class="card">
                                     <div
                                         class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
@@ -152,7 +138,7 @@
                         <div class="container">
                             <div class="row g-4">
                                 <!-- Card 1 -->
-                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2">
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
                                     <div class="card shadow-sm debit-card" style="background-color: #4b77a0;">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -200,7 +186,7 @@
                                 </div>
 
                                 <!-- Card 2 -->
-                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2">
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
                                     <div class="card shadow-sm debit-card" style="background-color: #777876;">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -249,7 +235,7 @@
                                 </div>
 
                                 <!-- Card 3 -->
-                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2">
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
                                     <div class="card shadow-sm debit-card" style="background-color: #86b8cf;">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -457,8 +443,4 @@
         </div>
 </section>
 {% include "layouts/footer.html" %}
-<!-- CSS -->
-<script src="/static/js/auth-check.js"></script>
-<script src="/static/js/profile.js"></script>
-
 {% endblock %}

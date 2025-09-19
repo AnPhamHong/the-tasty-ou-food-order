@@ -23,12 +23,12 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
     --bs-body-font-family: var(--default-font-family);
+    --tblr-primary: #2563EB !important;
 }
 
 /* Root font-size */
 html {
-    font-size: 20px !important;
-    /* 1rem = 20px */
+    font-size: 18px !important;
     color: var(--dark-color);
     font-family: var(--default-font-family);
 }
@@ -137,6 +137,49 @@ p {
     color: #747474;
 }
 
+
+/* ================= header ================= */
+header.header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.parachute {
+    position: absolute;
+    width: 80px;
+    animation: float 4s infinite alternate ease-in-out;
+}
+
+.parachute:nth-child(2) {
+    top: 0;
+    left: 20%;
+}
+
+.parachute:nth-child(3) {
+    top: 10%;
+    left: 50%;
+}
+
+.parachute:nth-child(4) {
+    top: 5%;
+    left: 70%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
 /* ================= Layout Containers ================= */
 .logincontent,
 .registercontent {
@@ -220,7 +263,7 @@ input::placeholder {
 .btn-gradient {
     color: var(--white-color);
     border: none;
-    height: 50px;
+    height: 36px;
     border-radius: 999px;
     padding: 0 18px;
     background: linear-gradient(to right, #F37335, #FDC830);
@@ -971,4 +1014,60 @@ nav.navbar {
 
 #cart-items .remove-item:hover {
     color: #dc3545;
+}
+
+
+
+.announcement.announcement-header {
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 100;
+
+}
+
+#promoBannerWrapper.announcement__wrapper {
+    padding: 10px 20px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    min-height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.8s ease;
+
+    .promo-animation {
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+        opacity: 0;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+
+    .left-right {
+        transform: translateX(-100%);
+    }
+
+    .right-left {
+        transform: translateX(100%);
+    }
+
+    .up-down {
+        transform: translateY(-100%);
+    }
+
+    .down-up {
+        transform: translateY(100%);
+    }
+
+    .show-promotion {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+
 }

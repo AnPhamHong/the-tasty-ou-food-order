@@ -35,7 +35,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
                 email.value = "";
                 password.value = "";
                 msgDiv.classList.add("d-none");
-                window.location.href = "/index";
+                window.location.href = "/";
             } else {
                 msgDiv.textContent = data.message;
                 msgDiv.classList.remove("d-none");

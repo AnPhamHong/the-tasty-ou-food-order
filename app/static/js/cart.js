@@ -225,4 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.getElementById("btn-process-checkout").addEventListener("click", () => {
+        window.location.href = "/shopping-bag";
+    });
+
 });

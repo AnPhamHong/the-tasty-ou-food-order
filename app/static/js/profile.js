@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get("tab");
+  if (tabParam) {
+    // mapping tab param với id tab
+    const tabIdMap = {
+      "user": "#tab-user",
+      "orders": "#tab-orders",
+      "address": "#tab-address",
+      "card": "#tab-card",
+      "help": "#tab-help"
+    };
+
+    const targetTab = tabIdMap[tabParam.toLowerCase()];
+    if (targetTab) {
+      const triggerEl = document.querySelector(`a[href="${targetTab}"]`);
+      if (triggerEl) {
+        const tab = new bootstrap.Tab(triggerEl);
+        tab.show();
+      }
+    }
+  }
   const profileSection = document.querySelector(".profile-section");
 
   // --- Load profile info từ localStorage ---
@@ -49,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const res = await fetch(`/orders/${userId}`);
       if (!res.ok) {
-        throw new Error('Không tìm thấy đơn hàng');
+        throw new Error('We couldn’t find your order');
       }
       const data = await res.json();
       renderOrders(data.orders);
@@ -59,60 +81,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-// format tiền sang VND (Intl)
-function formatUSD(value) {
-  const n = Number(String(value).replace(/[^\d.-]/g, '')) || 0;
-  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
-}
-
-// capitalize first letter
-function capitalize(str) {
-  if (!str) return '';
-  str = String(str);
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// generate bootstrap badge for status
-function generateStatus(status) {
-  const s = String(status || '').toLowerCase();
-  const map = {
-    pending: 'bg-warning text-dark',
-    confirmed: 'bg-primary text-white',
-    preparing: 'bg-info text-dark',
-    delivering: 'bg-secondary text-white',
-    completed: 'bg-success text-white',
-    cancelled: 'bg-danger text-white',
-    canceled: 'bg-danger text-white',
-    failed: 'bg-dark text-white'
-  };
-  const cls = map[s] || 'bg-secondary text-white';
-  return `<span class="badge ${cls}">${capitalize(s)}</span>`;
-}
-
-// render orders
-function renderOrders(orders) {
-  const container = document.getElementById('orders-container');
-  container.innerHTML = '';
-
-  if (!orders || !orders.length) {
-    container.innerHTML = `<div class="alert alert-light">No orders found.</div>`;
-    return;
+  // format tiền sang VND (Intl)
+  function formatUSD(value) {
+    const n = Number(String(value).replace(/[^\d.-]/g, '')) || 0;
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
   }
 
-  orders.forEach((order, idx) => {
-    const orderDiv = document.createElement('div');
-    orderDiv.className = 'card mb-3 p-3';
+  // capitalize first letter
+  function capitalize(str) {
+    if (!str) return '';
+    str = String(str);
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
-    // ensure numbers
-    const totalQty = Number(order.totalQuantity) || 0;
-    // prefer order.totalPrice (computed), fallback to order.total
-    const totalPriceNum = Number(order.totalPrice ?? order.total) || 0;
+  // generate bootstrap badge for status
+  function generateStatus(status) {
+    const s = String(status || '').toLowerCase();
+    const map = {
+      pending: 'bg-warning text-dark',
+      confirmed: 'bg-primary text-white',
+      preparing: 'bg-info text-dark',
+      delivering: 'bg-secondary text-white',
+      completed: 'bg-success text-white',
+      cancelled: 'bg-danger text-white',
+      canceled: 'bg-danger text-white',
+      failed: 'bg-dark text-white'
+    };
+    const cls = map[s] || 'bg-secondary text-white';
+    return `<span class="badge ${cls}">${capitalize(s)}</span>`;
+  }
 
-    // build items HTML (safe parsing for price & quantity)
-    const itemsHtml = (order.items || []).map((item, i) => {
-      const qty = parseInt(item.quantity, 10) || 0;
-      const priceNum = item.price * item.quantity || 0;
-      return `
+  // render orders
+  function renderOrders(orders) {
+    const container = document.getElementById('orders-container');
+    container.innerHTML = '';
+
+    if (!orders || !orders.length) {
+      container.innerHTML = `<div class="alert alert-light">No orders found.</div>`;
+      return;
+    }
+
+    orders.forEach((order, idx) => {
+      const orderDiv = document.createElement('div');
+      orderDiv.className = 'card mb-3 p-3';
+
+      // ensure numbers
+      const totalQty = Number(order.totalQuantity) || 0;
+      // prefer order.totalPrice (computed), fallback to order.total
+      const totalPriceNum = Number(order.totalPrice ?? order.total) || 0;
+
+      // build items HTML (safe parsing for price & quantity)
+      const itemsHtml = (order.items || []).map((item, i) => {
+        const qty = parseInt(item.quantity, 10) || 0;
+        const priceNum = item.price * item.quantity || 0;
+        return `
         <div class="d-flex justify-content-between align-items-center py-1 border-bottom">
           <div class="d-flex justify-content-start gap-2 align-items-center">
             <img src="${item.image_url}" alt="${item.food_name}" style="width: 40px; height: 40px;"/>
@@ -121,9 +143,9 @@ function renderOrders(orders) {
           <div style="text-align:right; font-size: .8rem;">${formatUSD(priceNum)}</div>
         </div>
       `;
-    }).join('');
+      }).join('');
 
-    orderDiv.innerHTML = `
+      orderDiv.innerHTML = `
       <div class="d-flex justify-content-between align-items-center mb-2">
         <h6 class="mb-0">#${idx + 1}. Transaction ID: ${order.transaction_id}</h6>
         ${generateStatus(order.status)}
@@ -138,9 +160,9 @@ function renderOrders(orders) {
       </div>
     `;
 
-    container.appendChild(orderDiv);
-  });
-}
+      container.appendChild(orderDiv);
+    });
+  }
 
 
 

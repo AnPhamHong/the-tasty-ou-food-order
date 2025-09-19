@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block title %}The Tasty.{% endblock %}
 {% block content %}
-<!-- HEADER -->
 {% include "layouts/header.html" %}
-<!-- BANNER -->
 {% include "layouts/banner.html" %}
 {% include "sections/deals.html" %}
 {% include "sections/featured-restaurants.html" %}
@@ -11,49 +9,4 @@
 {% include "sections/popular-restaurants.html" %}
 {% include "sections/app-promo.html" %}
 {% include "layouts/footer.html" %}
-<!-- CSS -->
-<style>
-    header.header {
-        background: #fff;
-        border-bottom: 1px solid #eee;
-    }
-
-    header .logo {
-        font-weight: 700;
-        font-size: 1.5rem;
-    }
-
-    .parachute {
-        position: absolute;
-        width: 80px;
-        animation: float 4s infinite alternate ease-in-out;
-    }
-
-    .parachute:nth-child(2) {
-        top: 0;
-        left: 20%;
-    }
-
-    .parachute:nth-child(3) {
-        top: 10%;
-        left: 50%;
-    }
-
-    .parachute:nth-child(4) {
-        top: 5%;
-        left: 70%;
-    }
-
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-
-        100% {
-            transform: translateY(20px);
-        }
-    }
-</style>
-<script src="/static/js/auth-check.js"></script>
-
 {% endblock %}

@@ -18,3 +18,7 @@ def offers():
 @pages_bp.route("/faqs")
 def faqs():
     return render_template("faqs.html")
+
+@pages_bp.route("/shopping-bag")
+def shopping_bag():
+    return render_template("pages/shopping_bag.html")  # tên file HTML của bạn
