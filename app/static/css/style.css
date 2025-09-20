@@ -1071,3 +1071,46 @@ nav.navbar {
     }
 
 }
+/* Custom button */
+.btn-orange {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-orange:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-orange:active {
+  transform: scale(0.98);
+}
+
+
+.pagination .page-link {
+  border: none;
+  color: #F37335;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background: linear-gradient(to right, #F37335, #FDC830);
+  color: #fff;
+  border-radius: 6px;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(to right, #F37335, #FDC830);
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #ccc;
+  background: #f8f9fa;
+}

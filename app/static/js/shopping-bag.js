@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     console.log(cart)
 
-    if (cart.length === 0) {
+    if (cart.length === 0 && cartContainer) {
         cartContainer.innerHTML = `<p>Your cart is empty</p>`;
         return;
     }
@@ -21,10 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cartChecked = cart.filter(item => !!item.checked);
 
-    cartContainer.innerHTML = `
+    if (cartContainer) {
+        cartContainer.innerHTML = `
     <div class="">
         <div class="d-flex justify-content-center align-items-center mb-2 flex-column gap-2">
-            <h4 class="mb-0"><i class="fa-solid fa-snowflake fa-lg" style="color: #F37335; padding-right: .5rem;"></i>Restaurant: ${cartChecked[0].restaurant_name ?? "-"}</h4>
+            <h4 class="mb-0"><i class="fa-solid fa-snowflake fa-lg" style="color: #F37335; padding-right: .5rem;"></i>Restaurant: ${cartChecked.length && cartChecked[0].restaurant_name ? cartChecked[0].restaurant_name : "-"}</h4>
             <p class="mb-2 text-muted">Estimated delivery time: ${formatted}</p>
         </div>
         <div class="mb-2">
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </div>
     `;
+    }
 
     const elCartSummary = document.querySelector("#cart-summary-container");
     if (elCartSummary) {
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
         // Lấy giá trị subtotal từ text (chuyển về số)
-let subtotal = cartChecked.reduce((sum, item) => sum + item.price * item.qty, 0);
+        let subtotal = cartChecked.reduce((sum, item) => sum + item.price * item.qty, 0);
 
         // Lấy data-value từ attr
         let saving = parseFloat(elSaving.dataset.value) || 0;
@@ -89,116 +91,117 @@ let subtotal = cartChecked.reduce((sum, item) => sum + item.price * item.qty, 0)
 
 
 
-    document.getElementById("btnPlaceOrder").addEventListener("click", function (e) {
-        e.preventDefault();
-        const form = document.getElementById("checkoutForm");
+    const btnPlaceOrder = document.getElementById("btnPlaceOrder");
+    if (btnPlaceOrder) {
 
-        // Kiểm tra form hợp lệ
-        if (!form.checkValidity()) {
-            form.reportValidity(); // highlight missing fields
-            return;
-        }
+        btnPlaceOrder.addEventListener("click", function (e) {
+            e.preventDefault();
+            const form = document.getElementById("checkoutForm");
 
-        const payment_method = document.querySelector('select[name="payment_method"]').value;
+            // Kiểm tra form hợp lệ
+            if (!form.checkValidity()) {
+                form.reportValidity(); // highlight missing fields
+                return;
+            }
 
-        // map lại nếu muốn gửi đúng ENUM
-        let pm = payment_method;
-        if (pm === 'cod') pm = 'COD';
-        if (pm === 'credit_card') pm = 'CreditCard';
-        if (pm === 'paypal') pm = 'Paypal';
+            const payment_method = document.querySelector('select[name="payment_method"]').value;
 
-        // Lấy thông tin người nhận
-        const recipientInfo = {
-            user_id: localStorage.getItem("userid"), // demo user id
-            name: document.getElementById("recipientName").value,
-            phone: document.getElementById("phoneNumber").value,
-            email: document.getElementById("email").value,
-            address: document.getElementById("address").value,
-            payment_method: pm
-        };
+            // map lại nếu muốn gửi đúng ENUM
+            let pm = payment_method;
+            if (pm === 'cod') pm = 'COD';
+            if (pm === 'credit_card') pm = 'CreditCard';
+            if (pm === 'paypal') pm = 'Paypal';
 
-        // Lấy cart từ localStorage
-        const baseCart = JSON.parse(localStorage.getItem("cart")) || [];
-        const cart = baseCart.filter(item => !!item.checked);
+            // Lấy thông tin người nhận
+            const recipientInfo = {
+                user_id: localStorage.getItem("userid"), // demo user id
+                name: document.getElementById("recipientName").value,
+                phone: document.getElementById("phoneNumber").value,
+                email: document.getElementById("email").value,
+                address: document.getElementById("address").value,
+                payment_method: pm
+            };
 
-
-        const remainingCart = baseCart.filter(item => !item.checked);
-        if (cart.length === 0) {
-            alert("Your cart is empty!");
-            return;
-        }
-
-        // Tính subtotal, savings, pickup, tax, total
-        // const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        // const savings = 0; // demo tự bịa
-        // const storePickup = 0; // demo tự bịa
-        // const tax = Math.round(subtotal * 0.08); // ví dụ 8% tax
-        // const total = subtotal + savings + storePickup + tax;
-
-        const subtotal = parseFloat(document.querySelector(".summary-subtotal").dataset.value || 0);
-        const savings = parseFloat(document.querySelector(".summary-saving").dataset.value || 0);
-        const storePickup = parseFloat(document.querySelector(".summary-pickup").dataset.value || 0);
-        const tax = parseFloat(document.querySelector(".summary-tax").dataset.value || 0);
-        const total = parseFloat(document.querySelector(".summary-total").dataset.value || 0);
+            // Lấy cart từ localStorage
+            const baseCart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cart = baseCart.filter(item => !!item.checked);
 
 
-        const payload = {
-            user_id: recipientInfo.user_id,
-            restaurant_id: cart[0].restaurant_id,
-            restaurant_name: cart[0].restaurant_name,
-            recipient_name: recipientInfo.name,
-            phone_number: recipientInfo.phone,
-            email: recipientInfo.email,
-            address: recipientInfo.address,
-            payment_method: recipientInfo.payment_method,
-            subtotal,
-            savings,
-            store_pickup: storePickup,
-            tax,
-            total,
-            items: cart.map(item => ({
-                food_id: item.id,
-                food_name: item.name,
-                quantity: item.qty,
-                price: item.price,
-                image_url: item.img
-            }))
-        };
+            const remainingCart = baseCart.filter(item => !item.checked);
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
 
-        const toastEl = document.getElementById("orderToast");
-        const createOrder = async () => {
-            try {
-                const response = await fetch("/orders/create", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload)
-                });
-                const data = await response.json();
+            // Tính subtotal, savings, pickup, tax, total
+            // const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            // const savings = 0; // demo tự bịa
+            // const storePickup = 0; // demo tự bịa
+            // const tax = Math.round(subtotal * 0.08); // ví dụ 8% tax
+            // const total = subtotal + savings + storePickup + tax;
 
-                if (response.ok) {
-                    localStorage.setItem("cart", JSON.stringify(remainingCart));
-                    toastEl.querySelector(".toast-body").textContent =
-                        "Order created successfully! Transaction ID: " + data.transaction_id;
+            const subtotal = parseFloat(document.querySelector(".summary-subtotal").dataset.value || 0);
+            const savings = parseFloat(document.querySelector(".summary-saving").dataset.value || 0);
+            const storePickup = parseFloat(document.querySelector(".summary-pickup").dataset.value || 0);
+            const tax = parseFloat(document.querySelector(".summary-tax").dataset.value || 0);
+            const total = parseFloat(document.querySelector(".summary-total").dataset.value || 0);
 
+
+            const payload = {
+                user_id: recipientInfo.user_id,
+                restaurant_id: cart[0].restaurant_id,
+                restaurant_name: cart[0].restaurant_name,
+                recipient_name: recipientInfo.name,
+                phone_number: recipientInfo.phone,
+                email: recipientInfo.email,
+                address: recipientInfo.address,
+                payment_method: recipientInfo.payment_method,
+                subtotal,
+                savings,
+                store_pickup: storePickup,
+                tax,
+                total,
+                items: cart.map(item => ({
+                    food_id: item.id,
+                    food_name: item.name,
+                    quantity: item.qty,
+                    price: item.price,
+                    image_url: item.img
+                }))
+            };
+
+            const toastEl = document.getElementById("orderToast");
+            const createOrder = async () => {
+                try {
+                    const response = await fetch("/orders/create", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        localStorage.setItem("cart", JSON.stringify(remainingCart));
+                        toastEl.querySelector(".toast-body").textContent =
+                            "Order created successfully! Transaction ID: " + data.transaction_id;
+
+                        const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
+                        toast.show();
+                        setTimeout(() => {
+                            window.location.href = "/";
+                        }, 3000);
+                    } else {
+                        alert("Error creating order: " + data.message);
+                    }
+                } catch (error) {
+                    toastEl.querySelector(".toast-body").textContent = "Error creating order: " + data.message;
                     const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
                     toast.show();
-                    setTimeout(() => {
-                        window.location.href = "/";
-                    }, 3000);
-                } else {
-                    alert("Error creating order: " + data.message);
                 }
-            } catch (error) {
-                toastEl.querySelector(".toast-body").textContent = "Error creating order: " + data.message;
-                const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
-                toast.show();
-            }
-        };
-        createOrder();
+            };
+            createOrder();
 
-    });
-
+        });
+    }
 
 });
-
-console.log(document.getElementById("btnPlaceOrder"))

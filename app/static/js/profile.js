@@ -66,20 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const userId = localStorage.getItem("userid");
-
   async function fetchOrders() {
     try {
       const res = await fetch(`/orders/${userId}`);
-      if (!res.ok) {
-        throw new Error('We couldn’t find your order');
-      }
       const data = await res.json();
-      renderOrders(data.orders);
+
+      if (res.ok && data.orders) {
+        // Có đơn hàng → render
+        renderOrders(data.orders);
+      } else {
+        // Không có đơn hàng → show message backend gửi về
+        document.getElementById('orders-container').innerHTML = `<p>${data.message || "No orders found"}</p>`;
+      }
     } catch (error) {
-      console.error(error);
-      document.getElementById('orders-container').innerHTML = `<p>${error.message}</p>`;
+      const orderBox = document.getElementById('orders-container')
+      if (error && orderBox) {
+
+      orderBox.innerHTML = `<p>${error?.message || "-"}</p>`;
+      }
     }
   }
+
 
   // format tiền sang VND (Intl)
   function formatUSD(value) {
@@ -180,25 +187,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
-// function generateStatus(statusInit) {
-//   const status = statusInit.toUpperCase();
-//   switch (statusInit) {
-//     case "completed":
-//       return `<span class="badge bg-cyan text-cyan-fg">${status}</span>`;
-//     case "cancelled":
-//       return `<span class="badge bg-red text-red-fg">${status}</span>`;
-//     case "pending":
-//       return `<span class="badge bg-blue text-blue-fg">${status}</span>`;
-//     case "confirmed":
-//       return `<span class="badge bg-azure text-azure-fg">${status}</span>`;
-//     case "preparing":
-//       return `<span class="badge bg-orange text-orange-fg">${status}</span>`;
-//     case "delivering":
-//       return `<span class="badge bg-lime text-lime-fg">${status}</span>`;
-//     case "failed":
-//       return `<span class="badge bg-yellow text-yellow-fg">${status}</span>`;
-//     default:
-//       return `<span class="badge bg-purple text-purple-fg">${status}</span>`;
-//   }
-// }

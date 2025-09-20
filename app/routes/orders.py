@@ -25,7 +25,7 @@ def get_orders(user_id):
     if not orders:
         cur.close()
         conn.close()
-        return jsonify({"message": "No orders found for this user"}), 404
+        return jsonify({"message": "No orders found for this user"}), 200
 
     # Query items cho từng order
     for order in orders:

@@ -15,6 +15,7 @@ def create_app():
     from app.routes.orders import orders_bp 
     from app.routes.menu import menu_bp
     from app.routes.search import search_bp
+    from app.routes.seller import seller_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(restaurants_bp)
@@ -25,5 +26,6 @@ def create_app():
     app.register_blueprint(account_bp, url_prefix="/account")
     app.register_blueprint(menu_bp)
     app.register_blueprint(search_bp)
+    app.register_blueprint(seller_bp)
 
     return app

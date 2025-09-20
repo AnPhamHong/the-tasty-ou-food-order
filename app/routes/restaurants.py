@@ -3,10 +3,14 @@ from app.db import get_db_connection
 
 restaurants_bp = Blueprint("restaurants", __name__)
 
+
 # GET /restaurants?tab=rating
 @restaurants_bp.route("/restaurants", methods=["GET"])
 def get_restaurants():
     tab = request.args.get("tab", "rating")
+    page = int(request.args.get("page", 1))
+    limit = int(request.args.get("limit", 12))
+    offset = (page - 1) * limit
 
     order_clause = ""
     where_clause = ""
@@ -28,7 +32,21 @@ def get_restaurants():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
 
-    cursor.execute(f"SELECT * FROM restaurants r WHERE {where_clause} {order_clause} LIMIT 20")
+    # tổng số restaurants
+    cursor.execute(f"SELECT COUNT(*) as total FROM restaurants r WHERE {where_clause}")
+    total = cursor.fetchone()["total"]
+
+    # phân trang
+    cursor.execute(
+        f"""
+        SELECT *
+        FROM restaurants r
+        WHERE {where_clause}
+        {order_clause}
+        LIMIT %s OFFSET %s
+    """,
+        (limit, offset),
+    )
     restaurants = cursor.fetchall()
 
     # Lấy top 2–3 sản phẩm cho mỗi nhà hàng
@@ -44,11 +62,28 @@ def get_restaurants():
             (r["id"],),
         )
         r["products"] = cursor.fetchall()
-        r["badges"] = r["badges"]  # JSON string
+
+        # badges nếu là JSON string thì parse
+        if isinstance(r.get("badges"), str):
+            import json
+
+            try:
+                r["badges"] = json.loads(r["badges"])
+            except Exception:
+                r["badges"] = []
 
     cursor.close()
     conn.close()
-    return jsonify(restaurants)
+
+    return jsonify(
+        {
+            "page": page,
+            "limit": limit,
+            "total": total,
+            "total_pages": (total + limit - 1) // limit,
+            "restaurants": restaurants,
+        }
+    )
 
 
 # GET /api/restaurants/popular
@@ -83,6 +118,7 @@ def get_popular_restaurants():
     cursor.close()
     conn.close()
     return jsonify(restaurants)
+
 
 # GET /restaurants/<id>
 @restaurants_bp.route("/restaurants/<int:restaurant_id>", methods=["GET"])
