@@ -204,6 +204,7 @@ function bindRestaurantCheckboxes() {
 
 // Khi load trang
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('123')
     updateCartBadge();
     renderCart();
 

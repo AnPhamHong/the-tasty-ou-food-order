@@ -30,7 +30,7 @@ def get_orders(user_id):
     # Query items cho từng order
     for order in orders:
         cur.execute("""
-            SELECT food_name, quantity, price, image_url
+            SELECT food_name, quantity, price, image_url, note
             FROM order_items
             WHERE order_id = %s
         """, (order['order_id'],))
@@ -44,9 +44,32 @@ def get_orders(user_id):
 
     return jsonify({"user_id": user_id, "orders": orders})
 
+@orders_bp.route("/orders/<string:transaction_id>/cancel", methods=["POST"])
+def cancel_order(transaction_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT status FROM orders WHERE transaction_id=%s", (transaction_id,))
+        row = cursor.fetchone()
+        if not row:
+            return jsonify({"error": "Order not found"}), 404
+        if row[0] != "Pending":
+            return jsonify({"error": "Order cannot be cancelled"}), 400
+
+        cursor.execute("UPDATE orders SET status=%s WHERE transaction_id=%s", ("Cancelled", transaction_id))
+        conn.commit()
+        return jsonify({"message": "Order cancelled successfully"}), 200
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        conn.close()
+
 
 @orders_bp.route("/orders/create", methods=["POST"])
 def create_order():
+
     data = request.json
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -98,11 +121,11 @@ def create_order():
         items = data["items"]
         for item in items:
             cursor.execute("""
-                INSERT INTO order_items (order_id, food_id, food_name, quantity, price, image_url)
-                VALUES (%s,%s,%s,%s,%s,%s)
+                INSERT INTO order_items (order_id, food_id, food_name, quantity, price, image_url, note)
+                VALUES (%s,%s,%s,%s,%s,%s,%s)
             """, (
                 order_id, item["food_id"], item["food_name"],
-                item["quantity"], item["price"], item.get("image_url")
+                item["quantity"], item["price"], item.get("image_url"), item.get("note", "")
             ))
 
         conn.commit()
@@ -119,3 +142,4 @@ def create_order():
     finally:
         cursor.close()
         conn.close()
+

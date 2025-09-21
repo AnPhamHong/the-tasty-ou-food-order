@@ -5,6 +5,7 @@ async function fetchPopularRestaurants() {
     const data = await res.json();
 
     const container = document.getElementById("popular-restaurant-list");
+    if (!container) return;
     container.innerHTML = "";
 
     data.forEach(r => {

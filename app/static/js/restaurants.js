@@ -46,10 +46,11 @@ function showSkeleton(count = 4) {
 
 
 async function fetchRestaurants(tab, page = 1, reset = false, limit = perPage) {
+  if (!restaurantList) return;
   if (isLoading) return;
   isLoading = true;
 
-  if (reset) {
+  if (reset && restaurantList) {
     restaurantList.innerHTML = "";
   }
   showSkeleton(20);

@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok && data.orders) {
         // Có đơn hàng → render
         renderOrders(data.orders);
+        cencelOrder();
       } else {
         // Không có đơn hàng → show message backend gửi về
         document.getElementById('orders-container').innerHTML = `<p>${data.message || "No orders found"}</p>`;
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const orderBox = document.getElementById('orders-container')
       if (error && orderBox) {
 
-      orderBox.innerHTML = `<p>${error?.message || "-"}</p>`;
+        orderBox.innerHTML = `<p>${error?.message || "-"}</p>`;
       }
     }
   }
@@ -144,34 +145,39 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
         <div class="d-flex justify-content-between align-items-center py-1 border-bottom">
           <div class="d-flex justify-content-start gap-2 align-items-center">
-            <img src="${item.image_url}" alt="${item.food_name}" style="width: 40px; height: 40px;"/>
-            <div class="text-truncate" style="padding-right: .5rem;">${item.food_name} - <span style="padding-left: .5rem; font-size: .8rem; font-style: italic;"> ${item.price} x${qty}</span></div>
-          </div>
+            <img src="${item.image_url}" alt="${item.food_name}" style="width: 60px; height: 60px;"/>
+            <div class="d-flex flex-column gap-2">
+              <div class="text-truncate" style="padding-right: .5rem;">${item.food_name} - <span style="padding-left: .5rem; font-size: .8rem; font-style: italic;"> ${item.price} x${qty}</span></div>
+              <span class="small">Note: ${item.note ? item.note : "-"}</span>
+            </div>
+            </div>
           <div style="text-align:right; font-size: .8rem;">${formatUSD(priceNum)}</div>
         </div>
       `;
       }).join('');
-
       orderDiv.innerHTML = `
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <h6 class="mb-0">#${idx + 1}. Transaction ID: ${order.transaction_id}</h6>
-        ${generateStatus(order.status)}
-      </div>
-      <p class="mb-2 text-muted">Order date: ${new Date(order.order_time).toLocaleString('vi-VN')}</p>
-      <div class="mb-2">
-        ${itemsHtml || '<div class="text-muted">No items</div>'}
-      </div>
-      <div class="d-flex justify-content-between align-items-center fw-semibold">
-        <span style="font-size: .8rem;">Total: ${totalQty} items</span>
-        <span style="font-size: .8rem; text-align:right;">${formatUSD(totalPriceNum)}</span>
-      </div>
-    `;
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h6 class="mb-0">#${idx + 1}. Transaction ID: ${order.transaction_id}</h6>
+          ${generateStatus(order.status)}
+          ${order.status === "Pending"
+          ? `<span class="badge bg-red text-red-fg cancel-order cursor-pointer" data-order=${order.transaction_id}>Cancel Order</span>`
+          : ""
+        }
+        </div>
+        <p class="mb-2 text-muted">Order date: ${new Date(order.order_time).toLocaleString('vi-VN')}</p>
+        <div class="mb-2">
+          ${itemsHtml || '<div class="text-muted">No items</div>'}
+        </div>
+        <div class="d-flex justify-content-between align-items-center fw-semibold mb-2">
+          <span style="font-size: .8rem;">Total: ${totalQty} items</span>
+          <span style="font-size: .8rem; text-align:right;">${formatUSD(totalPriceNum)}</span>
+        </div>
+      `;
+
 
       container.appendChild(orderDiv);
     });
   }
-
-
 
   fetchOrders();
 
@@ -186,4 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Sau khi render xong danh sách order
+
+  function cencelOrder() {
+    document.querySelectorAll(".cancel-order").forEach(el => {
+      el.addEventListener("click", async function () {
+        const orderId = this.dataset.order;
+        if (!confirm("Are you sure you want to cancel this order?")) return;
+
+        try {
+          const res = await fetch(`/orders/${orderId}/cancel`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" }
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            alert("Order cancelled successfully!");
+            fetchOrders();
+          } else {
+            alert("Error: " + data.error);
+          }
+        } catch (err) {
+          console.error("Cancel order error:", err);
+          alert("Failed to cancel order.");
+        }
+      });
+    });
+  }
 });

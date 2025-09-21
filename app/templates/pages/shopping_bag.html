@@ -15,6 +15,11 @@
                         <div class="row g-4" id="cart-items-container">
                             <!-- JS sẽ inject các item ở đây -->
                         </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary" style="width: fit-content;" id="btnContinueShopping">
+                                Continue Shopping
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,27 +32,37 @@
                             <form id="checkoutForm">
                                 <h3 class="card-title text-center text-uppercase">Shipping & Payment Information</h3>
                                 <div class="mb-3">
-                                    <label class="form-label">Recipient Name</label>
+                                    <label class="form-label" for="recipientName">Recipient Name</label>
                                     <input id="recipientName" type="text" class="form-control" name="recipient_name"
                                         placeholder="Enter full name" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Recipient Address</label>
+                                    <label class="form-label" for="address">Recipient Address</label>
                                     <input id="address" type="text" class="form-control" name="recipient_address"
                                         placeholder="Enter address" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Phone Number</label>
-                                    <input id="phoneNumber" type="tel" class="form-control" name="phone" placeholder="Enter phone number"
-                                        required>
+                                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                                    <input id="phoneNumber" type="tel" class="form-control" name="phone"
+                                        placeholder="Enter phone number" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email"
-                                        placeholder="Enter email" required>
+                                    <label class="form-label" for="email">Email</label>
+                                    <div class="input-group">
+                                        <input name="email" placeholder="Enter email" type="email" class="form-control"
+                                            id="email"
+                                            style="border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important; "
+                                            required>
+                                        <button type="button" class="btn btn-outline-secondary" id="sendEmailOtpBtn"
+                                            data-bs-toggle="modal" data-bs-target="#otpModal" disabled>Send OTP</button>
+                                    </div>
+                                    <div id="emailVerified" class="text-success d-none mt-2">
+                                        Email verified ✅
+                                    </div>
+
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Payment Method</label>
+                                    <label class="form-label" for="paymentMethod">Payment Method</label>
                                     <select class="form-select" name="payment_method" required>
                                         <option value="">Select a method</option>
                                         <option value="cod">Cash on Delivery</option>
@@ -86,7 +101,8 @@
                                     <a href="#">create an account now</a>.
                                 </p>
                                 <div class="input-group">
-                                    <input style="border-top-left-radius: .5rem !important;border-bottom-left-radius: .5rem !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;"
+                                    <input
+                                        style="border-top-left-radius: .5rem !important;border-bottom-left-radius: .5rem !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;"
                                         type="text" class="form-control" placeholder="Voucher or gift card">
                                     <button class="btn btn-outline-secondary">Apply</button>
                                 </div>
@@ -97,6 +113,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal OTP -->
+    <div class="modal fade" id="otpModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter OTP</h5>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP"
+                        style="border-radius: .5rem;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmOtpBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Container -->
     <div class="toast-container position-fixed left-0 top-0 p-4" style="z-index: 1100;">
         <div id="orderToast" class="toast align-items-center text-bg-success border-0" role="alert"
@@ -115,4 +151,5 @@
 
 
 {% include "layouts/footer.html" %}
+<script src="/static/js/shopping-bag.js"></script>
 {% endblock %}
