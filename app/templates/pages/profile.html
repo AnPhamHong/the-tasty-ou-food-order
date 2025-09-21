@@ -1,0 +1,447 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- HEADER -->
+{% include "layouts/header.html" %}
+{% include "components/breadcrumb.html" %}
+
+<section class="profile-section py-5 section-profile">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs" style="border-radius: 1rem;">
+                    <li class="nav-item">
+                        <a href="#tab-user" class="nav-link active" data-bs-toggle="tab" data-title="User">
+                            <i class="ri-user-3-line me-2"></i>
+                            User
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab-orders" class="nav-link" data-bs-toggle="tab" data-title="My Orders">
+                            <i class="ri-shopping-bag-3-line me-2"></i>
+                            My Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab-address" class="nav-link" data-bs-toggle="tab" data-title="Saved Address">
+                            <i class="ri-map-pin-line me-2"></i>
+                            Saved Address
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab-card" class="nav-link" data-bs-toggle="tab" data-title="Saved Card">
+                            <i class="ri-bank-card-line me-2"></i>
+                            Saved Card
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tab-help" class="nav-link" data-bs-toggle="tab" data-title="Help">
+                            <i class="ri-question-line me-2"></i>
+                            Help
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane {% if active_tab == 'user' %}active show{% endif %}" id="tab-user">
+                        <div class="row">
+                            <div class="col-8">
+                                <h4 class="mb-4">Infomation:</h4>
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="ri-user-3-fill me-2 text-profile-icon"></i>
+                                        <strong>Name :</strong>
+                                        <span class="ms-2 profile-username">-</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="ri-mail-fill me-2 text-profile-icon"></i>
+                                        <strong>Email :</strong>
+                                        <span class="ms-2 profile-mail">-</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="ri-phone-fill me-2 text-profile-icon"></i>
+                                        <strong>Phone Number :</strong>
+                                        <span class="ms-2 profile-phone">-</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="ri-lock-2-fill me-2 text-profile-icon"></i>
+                                        <strong>Password :</strong>
+                                        <span class="ms-2 profile-password">********</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 px-4">
+                                <img src="https://images.unsplash.com/photo-1558898479-33c0057a5d12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="profile-avatar" alt="Profile picture">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane {% if active_tab == 'orders' %}active show{% endif %}" id="tab-orders">
+                        <h4 class="mb-4">Infomation:</h4>
+                        <div id="orders-container"></div>
+                    </div>
+                    <div class="tab-pane {% if active_tab == 'address' %}active show{% endif %}" id="tab-address">
+                        <h4 class="mb-4">Infomation:</h4>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
+                                <div class="card">
+                                    <div
+                                        class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
+                                        <h5 class="mb-0"><i class="fa-solid fa-house-chimney"></i> Home</h5>
+                                        <span class="badge bg-orange-lt">Edit</span>
+                                    </div>
+                                    <div class="group-addrress-content">
+                                        <span>93, Songbird Cir, Blackville, South Carolina, USA-29817</span>
+                                        <span>+33 (907) 555-0101</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
+                                <div class="card">
+                                    <div
+                                        class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
+                                        <h5 class="mb-0"><i class="fa-solid fa-users"></i> Smith Jones</h5>
+                                        <span class="badge bg-orange-lt">Edit</span>
+                                    </div>
+                                    <div class="group-addrress-content">
+                                        <span>13th Street 47 W 13th St, New York, USA-10011</span>
+                                        <span>+33 (907) 555-1235</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-3" style="max-width: 350px;">
+                                <div class="card">
+                                    <div
+                                        class="d-flex gap-1 justify-content-between align-items-center mb-2 group-address">
+                                        <h5 class="mb-0"><i class="fa-solid fa-briefcase"></i> Office</h5>
+                                        <span class="badge bg-orange-lt">Edit</span>
+                                    </div>
+                                    <div class="group-addrress-content">
+                                        <span>93, Songbird Cir, Blackville, South Carolina, USA-29817</span>
+                                        <span>+33 (907) 555-0101</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane {% if active_tab == 'card' %}active show{% endif %}" id="tab-card">
+                        <h4 class="mb-4">Infomation:</h4>
+                        <div class="container">
+                            <div class="row g-4">
+                                <!-- Card 1 -->
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
+                                    <div class="card shadow-sm debit-card" style="background-color: #4b77a0;">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h5 class="card-title mb-0">CREDIT CARD</h5>
+                                                <i class="fa-solid fa-wifi"></i>
+                                            </div>
+
+                                            <div>
+                                                <img src="../static/images/Chip.svg" alt="network" class="img-fluid"
+                                                    style="width:2rem; height:1.5rem;">
+                                            </div>
+                                            <div class="debit-card-detail d-flex flex-column gap-3 mt-2">
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <span class="card-title-field">AC No.</span>
+                                                    <span class="card-info-field">5322 2564 1011 1234</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-2">
+                                                        <span class="card-title-field">Exp.</span>
+                                                        <span class="card-info-field">2/28</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between  align-items-center gap-2">
+                                                        <span class="card-title-field">CVV</span>
+                                                        <span class="card-info-field">***</span>
+                                                    </div>
+                                                </div>
+                                                <h5>Mike Jonathan</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-hover">
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button class="btn btn-sm btn-primary"><i
+                                                        class="ri-edit-2-fill pe-2"></i>
+                                                    Edit</button>
+                                                <button class="btn btn-sm btn-danger"><i
+                                                        class="ri-delete-bin-fill pe-2"></i>
+                                                    Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
+                                    <div class="card shadow-sm debit-card" style="background-color: #777876;">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h5 class="card-title mb-0">CREDIT CARD</h5>
+                                                <i class="fa-solid fa-wifi"></i>
+                                            </div>
+
+                                            <div>
+                                                <img src="../static/images/Chip.svg" alt="network" class="img-fluid"
+                                                    style="width:2rem; height:1.5rem;">
+                                            </div>
+                                            <div class="debit-card-detail d-flex flex-column gap-3 mt-2">
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <span class="card-title-field">AC No.</span>
+                                                    <span class="card-info-field">5322 2564 1011 1234</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-2">
+                                                        <span class="card-title-field">Exp.</span>
+                                                        <span class="card-info-field">2/28</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between  align-items-center gap-2">
+                                                        <span class="card-title-field">CVV</span>
+                                                        <span class="card-info-field">***</span>
+                                                    </div>
+                                                </div>
+                                                <h5>Mike Jonathan</h5>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="card-hover">
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button class="btn btn-sm btn-primary"><i
+                                                        class="ri-edit-2-fill pe-2"></i>
+                                                    Edit</button>
+                                                <button class="btn btn-sm btn-danger"><i
+                                                        class="ri-delete-bin-fill pe-2"></i>
+                                                    Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="col-xl-4 col-lg-6 col-sm-6 col-12 ps-2 pe-2" style="max-width: 350px;">
+                                    <div class="card shadow-sm debit-card" style="background-color: #86b8cf;">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <h5 class="card-title mb-0">CREDIT CARD</h5>
+                                                <i class="fa-solid fa-wifi"></i>
+                                            </div>
+
+                                            <div>
+                                                <img src="../static/images/Chip.svg" alt="network" class="img-fluid"
+                                                    style="width:2rem; height:1.5rem;">
+                                            </div>
+                                            <div class="debit-card-detail d-flex flex-column gap-3 mt-2">
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <span class="card-title-field">AC No.</span>
+                                                    <span class="card-info-field">5322 2564 1011 1234</span>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-2">
+                                                        <span class="card-title-field">Exp.</span>
+                                                        <span class="card-info-field">2/28</span>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between  align-items-center gap-2">
+                                                        <span class="card-title-field">CVV</span>
+                                                        <span class="card-info-field">***</span>
+                                                    </div>
+                                                </div>
+                                                <h5>Mike Jonathan</h5>
+                                            </div>
+                                        </div>
+                                        <div class="card-hover">
+                                            <div class="d-flex justify-content-end gap-2">
+                                                <button class="btn btn-sm btn-primary"><i
+                                                        class="ri-edit-2-fill pe-2"></i>
+                                                    Edit</button>
+                                                <button class="btn btn-sm btn-danger"><i
+                                                        class="ri-delete-bin-fill pe-2"></i>
+                                                    Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane {% if active_tab == 'help' %}active show{% endif %}" id="tab-help">
+                        <div class="container">
+                            <div class="faq-title mb-4 text-center">
+                                <h4>Frequently Asked Questions</h4>
+                            </div>
+                            <div class="row g-4">
+                                <!-- Left image -->
+                                <div class="col-xl-4">
+                                    <div class="side-img">
+                                        <img src="../static/images/faq.svg" alt="faq" class="img-fluid img">
+                                    </div>
+                                </div>
+
+                                <!-- Accordion -->
+                                <div class="col-xl-8">
+                                    <div class="accordion accordion-flush help-accordion" id="faqAccordion">
+
+                                        <!-- Item 1 -->
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                    aria-expanded="false" aria-controls="collapseOne">
+                                                    I want to track my order
+
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse"
+                                                aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body border-top">
+                                                    To track your order, you will need to have the tracking number or
+                                                    order ID provided by the seller or shipping carrier. Once you have
+                                                    this information, you can usually track your order online by
+                                                    visiting the carrier's website and entering the tracking number or
+                                                    order ID in the designated tracking field.
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 2 -->
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    I want to manage my order
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body border-top">
+                                                    Check your order confirmation email or account: This should contain
+                                                    information about your order, including the expected delivery date,
+                                                    tracking number (if applicable), and contact information for the
+                                                    seller. Contact the seller: If you have any questions about your
+                                                    order or need to make changes, the best way to do so is to contact
+                                                    the seller directly. You can typically find their contact
+                                                    information on their website or in your order confirmation email.
+                                                    Check the order status: Many online retailers provide a way for you
+                                                    to check the status of your order online. This can give you
+                                                    information about when your order was shipped, when it's expected to
+                                                    arrive, and any tracking information. Make changes to your order:
+                                                    Depending on the seller's policies, you may be able to make changes
+                                                    to your order, such as adding or removing items, changing the
+                                                    shipping address, or canceling the order altogether. Contact the
+                                                    seller to see if this is possible.
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 3 -->
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    I did not receive Instant Cashback
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body border-top">
+                                                    I'm sorry to hear that you did not receive an instant cashback. To
+                                                    help you with this issue, I need more information.
+                                                    1. What type of purchase did you make?
+                                                    2. From which website or store did you make the purchase?
+                                                    3. Did you receive any confirmation or receipt for your purchase?
+                                                    4. Did you check the terms and conditions of the cashback offer
+                                                    before making the purchase?
+                                                    5. What type of purchase did you make?Have you contacted the website
+                                                    or store's customer support regarding the issue?
+                                                </div>
+                                            </div>
+
+                                            <!-- Item 4 -->
+                                            <div class="accordion-item border-0">
+                                                <h2 class="accordion-header" id="headingFour">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                        aria-expanded="false" aria-controls="collapseFour">
+                                                        I am unable to pay using wallet
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFour" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body border-top">
+                                                        I'm sorry to hear that you did not receive an instant cashback.
+                                                        To help you with this issue, I need more information.
+                                                        1. What type of purchase did you make?
+                                                        2. From which website or store did you make the purchase?
+                                                        3. Did you receive any confirmation or receipt for your
+                                                        purchase?
+                                                        4. Did you check the terms and conditions of the cashback offer
+                                                        before making the purchase?
+                                                        5. What type of purchase did you make?Have you contacted the
+                                                        website or store's customer support regarding the issue?
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Item 5 -->
+                                            <div class="accordion-item border-0">
+                                                <h2 class="accordion-header" id="headingFive">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                        aria-expanded="false" aria-controls="collapseFive">
+                                                        I want help with returns &amp; refunds
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFive" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                                    <div class="accordion-body border-top">
+                                                        I'm sorry to hear that you did not receive an instant cashback.
+                                                        To help you with this issue, I need more information.
+                                                        1. What type of purchase did you make?
+                                                        2. From which website or store did you make the purchase?
+                                                        3. Did you receive any confirmation or receipt for your
+                                                        purchase?
+                                                        4. Did you check the terms and conditions of the cashback offer
+                                                        before making the purchase?
+                                                        5. What type of purchase did you make?Have you contacted the
+                                                        website or store's customer support regarding the issue?
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% include "layouts/footer.html" %}
+<script src="/static/js/profile.js"></script>
+{% endblock %}

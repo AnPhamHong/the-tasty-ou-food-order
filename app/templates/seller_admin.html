@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seller Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: #f0f2f5;
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 60px;
+            transition: width 0.3s;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            margin: 5px 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .sidebar a i {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 250px;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar .navbar-brand {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Content */
+        .content-area {
+            margin-left: 250px;
+            padding: 80px 30px 30px 30px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-header h2 {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
+        /* Cards */
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            text-align: center;
+            background: #fff;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card i {
+            font-size: 36px;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h5 {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .card .btn {
+            margin-top: 12px;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            border: none;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .card .btn:hover {
+            opacity: 0.9;
+        }
+
+        .module {
+            display: none;
+        }
+
+        /* Hide all modules by default */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .navbar {
+                left: 200px;
+            }
+
+            .content-area {
+                margin-left: 200px;
+                padding: 100px 20px 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="text-center mb-4"><i class="fa-solid fa-utensils me-2"></i>Seller Admin</h4>
+        <a href="#" class="active" id="menu-link"><i class="fa-solid fa-bowl-food"></i> Manage Menu</a>
+        <a href="#" id="orders-link"><i class="fa-solid fa-receipt"></i> Manage Orders</a>
+        <a href="#" id="orders-promotions"><i class="fa-solid fa-gear"></i> Magage Promotion</a>
+        <a href="#" id="reports-link"><i class="fa-solid fa-chart-line"></i> Reports & Analytics</a>
+        <a href="#" id="settings-link"><i class="fa-solid fa-gear"></i> Account Settings</a>
+        <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 10px;">
+        <a href="#" id="logoutBtn" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">OU Food Seller Admin</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content-area">
+        <div class="dashboard-header">
+            <h2 id="dashboard-title">Welcome, Seller Admin!</h2>
+        </div>
+        <div id="dashboard-main">
+            <!-- Modules -->
+            <div id="module-menu" class="module">
+                <button class="btn btn-primary mb-3" id="addMenuBtn" data-bs-toggle="modal" data-bs-target="#menuModal">
+                    Add New Dish
+                </button>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Dish Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="menuTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="module-orders" class="module">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Transaction ID</th>
+                                <th>Customer</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Change Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- JS sẽ render tại đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="module-promotions" class="module container">
+                <div class="card p-3 mb-4">
+                    <h5>Existing Promotions</h5>
+                    <ul id="promotionList" class="list-group">
+                        <!-- JS inject các promotion -->
+                    </ul>
+                </div>
+                <div class="card p-3 mb-4">
+                    <h5>Create Promotion</h5>
+                    <input type="text" id="promoName" placeholder="Promotion name" class="form-control mb-2">
+                    <input type="date" id="promoStart" class="form-control mb-2">
+                    <input type="date" id="promoEnd" class="form-control mb-2">
+                    <input type="number" id="promoDiscount" placeholder="Discount %" class="form-control mb-2">
+
+                    <h5>Add Items to Promotion</h5>
+                    <div id="promoItems" class="list-group mb-2">
+                        <!-- JS sẽ inject các món ăn ở đây -->
+                    </div>
+                    <!-- <button class="btn btn-success w-100" id="addItemsBtn">Add Items</button> -->
+
+                    <button class="btn btn-primary w-100" id="createPromoBtn">Create Promotion</button>
+                </div>
+            </div>
+
+
+
+            <div id="module-reports" class="module page-wrapper">
+                <div class="page-body">
+                    <div class="container-fluid">
+                        <div class="row g-3">
+                            <!-- Current Order -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm p-3">
+                                    <h5>Current Order</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="d-flex justify-content-between mb-2">
+                                            <span>Mix Platter (x2)</span>
+                                            <span class="fw-bold text-success">$35.45</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-2">
+                                            <span>Oyster Sauce Squid (x1)</span>
+                                            <span class="fw-bold text-success">$26.38</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <span>Oreo Milkshake (x1)</span>
+                                            <span class="fw-bold text-success">$14.29</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Transaction -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm p-3">
+                                    <h5>Transaction</h5>
+                                    <canvas id="transactionChart" height="120"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Summary -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm p-3 text-center">
+                                    <h5>Summary</h5>
+                                    <h2 class="fw-bold">11,015</h2>
+                                    <p class="text-success">Increased 20%</p>
+                                    <canvas id="summaryChart" height="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-1">
+
+                            <!-- Total Revenue -->
+                            <div class="col-md-5">
+                                <div class="card shadow-sm p-3">
+                                    <h5>Total Revenue</h5>
+                                    <h3>$1,150.00</h3>
+                                    <canvas id="revenueChart" height="120"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Receipt -->
+                            <div class="col-md-4">
+                                <div class="card shadow-sm p-3">
+                                    <h5>Receipt</h5>
+                                    <ul class="list-unstyled">
+                                        <li>Subtotal: $76.12</li>
+                                        <li>Tax 10%: $7.6</li>
+                                        <li>Discount 5%: -$3.8</li>
+                                    </ul>
+                                    <h4>Total: $79.92</h4>
+                                    <div class="mt-3">
+                                        <button class="btn btn-outline-primary btn-sm me-1">Cash</button>
+                                        <button class="btn btn-outline-primary btn-sm me-1">Debit</button>
+                                        <button class="btn btn-outline-primary btn-sm">E-Wallet</button>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-1">
+                            <!-- Stock Management -->
+                            <div class="col-md-8">
+                                <div class="card shadow-sm p-3">
+                                    <h5>Stock Management</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped align-middle">
+                                            <thead>
+                                                <tr>
+                                                    <th>Menu</th>
+                                                    <th>Date</th>
+                                                    <th>Category</th>
+                                                    <th>Price</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Spaghetti Bolognese</td>
+                                                    <td>16/01/2023</td>
+                                                    <td>Food</td>
+                                                    <td>$24.00</td>
+                                                    <td><span class="badge bg-warning">Pending</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Honeydew Juice</td>
+                                                    <td>15/01/2023</td>
+                                                    <td>Beverage</td>
+                                                    <td>$18.55</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Beef Burger Steak</td>
+                                                    <td>14/01/2023</td>
+                                                    <td>Snack</td>
+                                                    <td>$32.38</td>
+                                                    <td><span class="badge bg-danger">Canceled</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Chicken Katsu Teriyaki</td>
+                                                    <td>14/01/2023</td>
+                                                    <td>Food</td>
+                                                    <td>$25.63</td>
+                                                    <td><span class="badge bg-success">Completed</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="module-settings" class="module">
+                <form id="accountForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" required class="form-control" id="name-account" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" required class="form-control" id="email-account" value="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Phone</label>
+                        <input disabled="number" required class="form-control" id="phone-account" value="028326732">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-account" value="" minlength="6"
+                            placeholder="Enter new password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Info</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Modal Add/Edit -->
+    <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="menuForm">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="menuModalLabel">Add New Dish</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="menuId">
+                        <div class="mb-3">
+                            <label class="form-label">Dish Name</label>
+                            <input type="text" class="form-control" id="menuName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="menuImage">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input type="number" step="0.01" class="form-control" id="menuPrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Category</label>
+                            <!-- <input type="text" class="form-control" id="menuCategory"> -->
+                            <input list="categoryList" class="form-control" id="menuCategoryModal">
+                            <datalist id="categoryListModal"></datalist>
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" id="menuDescription"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Dish</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal xem chi tiết đơn hàng -->
+    <div class="modal fade" id="orderDetailModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Order Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="orderDetailBody">
+                    <!-- JS sẽ render chi tiết order -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Transaction chart
+        new Chart(document.getElementById("transactionChart"), {
+            type: "bar",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+                datasets: [{
+                    label: "Sales",
+                    data: [90, 80, 95, 70, 100, 85, 95, 80],
+                    backgroundColor: "#2a5298"
+                }]
+            }
+        });
+
+        // Summary chart
+        new Chart(document.getElementById("summaryChart"), {
+            type: "line",
+            data: {
+                labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                datasets: [{
+                    label: "Customers",
+                    data: [20, 30, 40, 60, 50, 70, 80],
+                    borderColor: "#2a5298",
+                    fill: false
+                }]
+            }
+        });
+
+        // Revenue chart
+        new Chart(document.getElementById("revenueChart"), {
+            type: "bar",
+            data: {
+                labels: ["Food", "Beverage", "Snack"],
+                datasets: [{
+                    label: "Revenue",
+                    data: [500, 300, 350],
+                    backgroundColor: ["#1e3c72", "#2a5298", "#4b7bec"]
+                }]
+            }
+        });
+
+        // Activity chart
+        new Chart(document.getElementById("activityChart"), {
+            type: "doughnut",
+            data: {
+                labels: ["Sale", "Purchase", "Other"],
+                datasets: [{
+                    data: [52.41, 18.86, 28.73],
+                    backgroundColor: ["#1e3c72", "#2a5298", "#4b7bec"]
+                }]
+            }
+        });
+    </script>
+    <script>
+        // === Module switch ===
+        const modules = {
+            "menu-link": document.getElementById("module-menu"),
+            "orders-link": document.getElementById("module-orders"),
+            "reports-link": document.getElementById("module-reports"),
+            "settings-link": document.getElementById("module-settings"),
+            "orders-promotions": document.getElementById("module-promotions"),
+        };
+        const sidebarLinks = document.querySelectorAll(".sidebar a");
+        const dashboardTitle = document.getElementById("dashboard-title");
+
+        function showModule(id) {
+            Object.values(modules).forEach(m => m.style.display = "none");
+            if (modules[id]) modules[id].style.display = "block";
+        }
+
+        // Attach click on sidebar
+        sidebarLinks.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                sidebarLinks.forEach(l => l.classList.remove("active"));
+                link.classList.add("active");
+                dashboardTitle.textContent = link.textContent.trim();
+                showModule(link.id);
+            });
+        });
+
+        // Show default module
+        showModule("menu-link");
+        const menuTableBody = document.getElementById('menuTableBody');
+        const menuModalEl = document.getElementById('menuModal');
+        const menuModal = new bootstrap.Modal(menuModalEl);
+        const menuForm = document.getElementById('menuForm');
+        const addMenuBtn = document.getElementById('addMenuBtn');
+        let currentEditId = null;
+        let categories = [];
+
+        // Load categories from server
+        async function loadCategories() {
+            const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+            const res = await fetch(`/api/categories?restaurant_id=${restaurantId}`);
+            categories = await res.json();
+            const datalist = document.getElementById('categoryListModal');
+            datalist.innerHTML = '';
+            categories.forEach(cat => datalist.innerHTML += `<option value="${cat}">`);
+        }
+
+        // Load menu items
+        async function loadMenuItems() {
+            const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+            const res = await fetch(`/api/menu?restaurant_id=${restaurantId}`);
+            const items = await res.json();
+            menuTableBody.innerHTML = '';
+            items.forEach((item, index) => {
+                menuTableBody.innerHTML += `
+            <tr data-id="${item.id}">
+                <td>${index + 1}</td>
+                <td><img src="${item.image_url}" style="width:60px;height:60px;object-fit:cover"/></td>
+                <td>${item.name}</td>
+                <td>$${item.price}</td>
+                <td>${item.category || ''}</td>
+                <td>${item.description || ''}</td>
+                <td>
+                    <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+                    <button class="btn btn-sm btn-danger delete-btn">Delete</button>
+                </td>
+            </tr>
+        `;
+            });
+            attachMenuButtons();
+        }
+
+        // Attach Edit/Delete buttons
+        function attachMenuButtons() {
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', e => {
+                    const tr = e.target.closest('tr');
+                    currentEditId = tr.dataset.id;
+                    document.getElementById('menuModalLabel').textContent = 'Edit Dish';
+                    document.getElementById('menuName').value = tr.children[2].textContent;
+                    document.getElementById('menuImage').value = tr.children[1].querySelector('img')
+                        .src;
+                    document.getElementById('menuPrice').value = tr.children[3].textContent.replace('$',
+                        '');
+                    document.getElementById('menuCategoryModal').value = tr.children[4].textContent;
+                    document.getElementById('menuDescription').value = tr.children[5].textContent;
+                    loadCategories();
+                    menuModal.show();
+                });
+            });
+
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', async e => {
+                    const tr = e.target.closest('tr');
+                    if (confirm('Delete this dish?')) {
+                        const restaurantId = localStorage.getItem("restaurantId");
+                        await fetch(`/api/menu/${tr.dataset.id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                restaurant_id: restaurantId
+                            })
+                        });
+                        loadMenuItems();
+                    }
+                });
+            });
+
+        }
+
+        // Show modal for Add
+        addMenuBtn.addEventListener('click', () => {
+            menuForm.reset();
+            loadCategories();
+            document.getElementById('menuModalLabel').textContent = 'Add New Dish';
+            currentEditId = null;
+            menuModal.show();
+        });
+
+        // Handle Add/Edit form submit
+        menuForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            const payload = {
+                restaurant_id: localStorage.getItem("restaurantId"),
+                name: document.getElementById('menuName').value,
+                image_url: document.getElementById('menuImage').value,
+                price: parseFloat(document.getElementById('menuPrice').value),
+                category: document.getElementById('menuCategoryModal').value,
+                description: document.getElementById('menuDescription').value
+            };
+
+            try {
+                let url = '/api/menu';
+                let method = 'POST';
+                if (currentEditId) {
+                    url += `/${currentEditId}`;
+                    method = 'PUT';
+                }
+
+                const res = await fetch(url, {
+                    method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                if (data.status === 'success') {
+                    alert('Success');
+                    menuForm.reset();
+                    currentEditId = null;
+                    menuModal.hide();
+                    loadMenuItems();
+                    loadCategories(); // reload categories to include new one
+                } else {
+                    alert(data.message || 'Error saving dish');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Server error');
+            }
+        });
+
+        // Reset modal on close
+        menuModalEl.addEventListener('hidden.bs.modal', () => {
+            menuForm.reset();
+            document.getElementById('menuModalLabel').textContent = 'Add New Dish';
+            currentEditId = null;
+        });
+
+        // Initial load
+        loadCategories();
+        loadMenuItems();
+    </script>
+    <!-- script for acount info module -->
+    <script>
+        const userId = localStorage.getItem("userid");
+        const accountForm = document.getElementById('accountForm');
+
+        if (accountForm) {
+
+            async function loadUserInfo() {
+                if (!userId) return alert("userId missing");
+                try {
+                    const res = await fetch(`/api/user?user_id=${userId}`);
+                    const data = await res.json();
+                    if (data.status === 'success') {
+                        const user = data.user;
+                        accountForm.querySelector('#name-account').value = user.username || '';
+                        accountForm.querySelector('#email-account').value = user.email || '';
+                    } else {
+                        alert(data.message);
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            accountForm.addEventListener('submit', async e => {
+                e.preventDefault();
+                if (!userId) return alert("userId missing");
+
+                const payload = {
+                    user_id: userId,
+                    username: document.getElementById('name-account').value,
+                    email: document.getElementById('email-account').value,
+                    avatar_url: document.getElementById('avatar-account').value
+                };
+                const password = document.getElementById('password-account').value;
+                if (password) payload.password = password;
+
+                try {
+                    const res = await fetch('/api/user', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    const data = await res.json();
+                    if (data.status === 'success') {
+                        alert('Updated successfully');
+                        loadUserInfo();
+
+                        localStorage.clear();
+                        window.location.href = "/login";
+                        // accountForm.reset();  // giữ dữ liệu trên form
+                    } else {
+                        alert(data.message || 'Error updating info');
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert('Server error');
+                }
+            });
+
+            loadUserInfo();
+        }
+    </script>
+    <script>
+        async function loadOrders(restaurantId) {
+            try {
+                const res = await fetch(`/orders/restaurant/${restaurantId}`);
+                const orders = await res.json();
+
+                const tbody = document.getElementById("ordersTableBody");
+                tbody.innerHTML = "";
+
+                orders.forEach((order, index) => {
+                    let statusBadge = "";
+                    switch (order.status) {
+                        case "Pending":
+                            statusBadge = `<span class="badge bg-primary">Pending</span>`;
+                            break;
+                        case "Preparing":
+                            statusBadge = `<span class="badge bg-warning text-dark">Preparing</span>`;
+                            break;
+                        case "Rejected":
+                            statusBadge = `<span class="badge bg-danger">Rejected</span>`;
+                            break;
+                        case "Delivering":
+                            statusBadge = `<span class="badge bg-info text-dark">Delivering</span>`;
+                            break;
+                        case "Completed":
+                            statusBadge = `<span class="badge bg-success">Completed</span>`;
+                            break;
+                        default:
+                            statusBadge = `<span class="badge bg-secondary">${order.status}</span>`;
+                    }
+
+                    // Quy định disabled option theo luồng
+                    const statusSelect = `
+                        <select style="width: 100%;" class="form-select form-select-sm" name="change-status"
+                                onchange="updateOrderStatus(${order.id}, this.value)">
+                        <option value="Pending" ${order.status === 'Pending' ? 'selected' : ''} 
+                                ${order.status !== 'Pending' ? 'disabled' : ''}>
+                            Pending
+                        </option>
+                        <option value="Preparing" ${order.status === 'Preparing' ? 'selected' : ''} 
+                                ${!(order.status === 'Pending' || order.status === 'Preparing') ? 'disabled' : ''}>
+                            Preparing
+                        </option>
+                        <option value="Rejected" ${order.status === 'Rejected' ? 'selected' : ''} 
+                                ${!(order.status === 'Pending' || order.status === 'Rejected') ? 'disabled' : ''}>
+                            Rejected
+                        </option>
+                        <option value="Delivering" ${order.status === 'Delivering' ? 'selected' : ''} 
+                                ${!(order.status === 'Preparing' || order.status === 'Delivering') ? 'disabled' : ''}>
+                            Delivering
+                        </option>
+                        <option value="Completed" ${order.status === 'Completed' ? 'selected' : ''} 
+                                ${order.status !== 'Delivering' && order.status !== 'Completed' ? 'disabled' : ''}>
+                            Completed
+                        </option>
+                        </select>
+                    `;
+
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>#${order.transaction_id}</td>
+                            <td>${order.recipient_name}</td>
+                            <td>${order.phone_number}</td>
+                            <td>${statusBadge}</td>
+                            <td>$${parseFloat(order.total).toFixed(2)}</td>
+                            <td>
+                                ${order.status === "Cancelled" ? "" : statusSelect}
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-info" onclick="viewOrderDetail('${order.transaction_id}')">View Details</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (err) {
+                console.error("Error loading orders:", err);
+            }
+        }
+
+
+        // Xem chi tiết đơn hàng
+        async function viewOrderDetail(orderId) {
+            try {
+                const res = await fetch(`/orders/transaction/${orderId}`); // API chi tiết order
+                const order = await res.json();
+
+                const body = document.getElementById("orderDetailBody");
+
+                let itemsHtml = order.items.map(item => `
+                    <tr>
+                        <td>
+                        <div style="display: flex; align-items: center;">
+                            <img src="${item.image_url}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 0.5rem; margin-right: 0.75rem;">
+                            <span>${item.food_name}</span>
+                        </div>
+                        </td>
+                        <td class="text-center">${item.quantity}</td>
+                        <td class="text-center">$${parseFloat(item.price).toFixed(2)}</td>
+                        <td>${item.note || '-'}</td>
+                    </tr>
+                `).join("");
+
+                body.innerHTML = `
+                    <div class="mb-3">
+                        <h6 style="margin-bottom: 16px;">Transaction ID: #${order.transaction_id}</h6>
+                        <p>Customer: ${order.recipient_name}</p>
+                        <p>Phone: ${order.phone_number}</p>
+                        <p>Email: ${order.email}</p>
+                        <p>Address: ${order.address}</p>
+                        <p>Status: <span class="badge bg-${getStatusBadgeClass(order.status)}">${order.status}</span></p>
+                        <p>Total: $${parseFloat(order.total).toFixed(2)}</p>
+                    </div>
+
+                    <table class="table table-sm table-bordered mt-3 align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th style="padding: .8rem .5rem;">Food</th>
+                            <th style="padding: .8rem .5rem;" class="text-center">Qty</th>
+                            <th style="padding: .8rem .5rem;" class="text-center">Price</th>
+                            <th style="padding: .8rem .5rem;">Note</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        ${itemsHtml}
+                        </tbody>
+                    </table>
+                    ${order.status === "Pending" ? `
+                    <div class="mt-3">
+                        <label for="rejectReason" class="form-label">Reject Order</label>
+                        <textarea id="rejectReason" class="form-control" placeholder="Enter reason for rejection"></textarea>
+                        <button type="button" class="btn btn-danger mt-2" id="rejectOrderBtn">Reject Order</button>
+                    </div>` : ""}
+                `;
+
+                function getStatusBadgeClass(status) {
+                    switch (status) {
+                        case "Pending":
+                            return "primary";
+                        case "Preparing":
+                            return "warning text-dark";
+                        case "Rejected":
+                            return "danger";
+                        case "Delivering":
+                            return "info text-dark";
+                        case "Completed":
+                            return "success";
+                        default:
+                            return "secondary";
+                    }
+                }
+
+                if (order.status === "Pending") {
+                    const rejectBtn = document.getElementById("rejectOrderBtn");
+                    const rejectReasonInput = document.getElementById("rejectReason");
+
+                    rejectBtn.addEventListener("click", async () => {
+                        const reason = rejectReasonInput.value.trim();
+                        if (!reason) {
+                            alert("Please enter a reason for rejection");
+                            return;
+                        }
+
+                        try {
+                            const res = await fetch(`/orders/${order.id}/status`, {
+                                method: "PUT",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    status: "Rejected",
+                                    reason
+                                })
+                            });
+                            const data = await res.json();
+
+                            if (res.ok) {
+                                alert("Order rejected successfully");
+                                // Ẩn modal sau khi reject
+                                bootstrap.Modal.getInstance(document.getElementById("orderDetailModal"))
+                                    .hide();
+                                // Optionally reload orders list
+                                loadOrders(order.restaurant_id);
+                            } else {
+                                alert("Error: " + data.error);
+                            }
+                        } catch (err) {
+                            console.error(err);
+                            alert("Server error while rejecting order");
+                        }
+                    });
+                }
+
+                // Show modal
+                const modalEl = document.getElementById("orderDetailModal");
+                const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl, {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+                modal.show();
+            } catch (err) {
+                console.error("Error fetching order details:", err);
+                alert("Failed to load order details.");
+            }
+        }
+
+        async function updateOrderStatus(orderId, status) {
+            try {
+                const res = await fetch(`/orders/${orderId}/status`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        status
+                    })
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    alert(`Order #${orderId} updated to ${status}`);
+                    const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+                    loadOrders(restaurantId); // reload list
+                } else {
+                    alert("Error: " + data.error);
+                }
+            } catch (err) {
+                console.error("Error updating order:", err);
+            }
+        }
+
+        // load khi mở trang
+        document.addEventListener("DOMContentLoaded", () => {
+            const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+            loadOrders(restaurantId); // restaurant_id = 1
+        });
+    </script>
+    <script>
+const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+
+// DOM elements
+const promoName = document.getElementById("promoName");
+const promoStart = document.getElementById("promoStart");
+const promoEnd = document.getElementById("promoEnd");
+const promoDiscount = document.getElementById("promoDiscount");
+const promoItemsContainer = document.getElementById("promoItems");
+const promotionList = document.getElementById("promotionList");
+const createBtn = document.getElementById("createPromoBtn");
+
+// Cache
+let menuItemsCache = [];
+let promotionsCache = [];
+
+// ------------------- Fetch functions -------------------
+async function fetchMenuItems() {
+    try {
+        const res = await fetch(`/api/menu?restaurant_id=${restaurantId}`);
+        if (!res.ok) throw new Error("Failed to fetch menu items");
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+}
+
+async function fetchPromotions() {
+    try {
+        const res = await fetch(`/promotions/restaurant/${restaurantId}`);
+        if (!res.ok) throw new Error("Failed to fetch promotions");
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+}
+
+// ------------------- Render functions -------------------
+function renderMenuItemsForPromotions(items) {
+    promoItemsContainer.innerHTML = items.map(item => `
+        <label class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <input type="checkbox" class="form-check-input me-2 promo-item-checkbox" value="${item.id}">
+                ${item.name}
+            </div>
+            <span>$${parseFloat(item.price).toFixed(2)}</span>
+        </label>
+    `).join("");
+}
+
+function renderPromotions(promos) {
+    promotionList.innerHTML = promos.map(p => `
+        <li class="list-group-item mb-2" data-id="${p.id}">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <strong>${p.name} (${p.discount_pct}%)</strong>
+                    <br>
+                    <small>${p.start_date} → ${p.end_date}</small>
+                </div>
+                <span class="badge bg-primary rounded-pill">${p.items.length} items</span>
+            </div>
+            <ul class="mt-2 list-group list-group-flush">
+                ${p.items.map(item => `<li class="list-group-item py-1 px-2">
+                    <div class="d-flex justify-content-between gap-2 align-items-center">
+                        <div><img src="${item.image_url} alt="img" style="width: 60px; height: 60px; object-fit: cover; border-radius: .5rem; margin-right: 1rem;" />${item.name}</div>
+                        <span>$${parseFloat(item.price).toFixed(2)}</span>
+                    </div>
+                    </li>`).join("")}
+            </ul>
+        </li>
+    `).join("");
+}
+
+// ------------------- Helper -------------------
+function getSelectedItemIds() {
+    return Array.from(document.querySelectorAll('input.promo-item-checkbox:checked'))
+        .map(cb => cb.value);
+}
+
+// ------------------- Init module -------------------
+async function initPromotionsModule() {
+    // Load menu items only once
+    menuItemsCache = await fetchMenuItems();
+    renderMenuItemsForPromotions(menuItemsCache);
+
+    // Load promotions only once
+    promotionsCache = await fetchPromotions();
+    renderPromotions(promotionsCache);
+}
+
+// ------------------- Create promotion -------------------
+createBtn.addEventListener("click", async () => {
+    const name = promoName.value.trim();
+    const start = promoStart.value;
+    const end = promoEnd.value;
+    const discount = parseFloat(promoDiscount.value);
+    const selectedItems = getSelectedItemIds();
+
+    if (!name || !start || !end || isNaN(discount) || selectedItems.length === 0) {
+        return alert("Please fill all fields and select at least one item.");
+    }
+
+    try {
+        const res = await fetch("/promotions", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                restaurant_id: restaurantId,
+                name,
+                start_date: start,
+                end_date: end,
+                discount_pct: discount,
+                product_ids: selectedItems
+            })
+        });
+
+        if (!res.ok) {
+            const err = await res.json();
+            return alert(err.error || "Error creating promotion");
+        }
+
+        const newPromo = await res.json();
+        // Add to cache and render
+        promotionsCache.push(newPromo);
+        renderPromotions(promotionsCache);
+
+        // Reset form
+        promoName.value = "";
+        promoStart.value = "";
+        promoEnd.value = "";
+        promoDiscount.value = "";
+        document.querySelectorAll('input.promo-item-checkbox').forEach(cb => cb.checked = false);
+
+        alert("Promotion created successfully!");
+    } catch (err) {
+        console.error(err);
+        alert("Server error while creating promotion");
+    }
+});
+
+// ------------------- Init -------------------
+document.addEventListener("DOMContentLoaded", () => {
+    initPromotionsModule();
+});
+</script>
+
+    <script src="/static/js/logout.js"></script>
+</body>
+
+</html>

@@ -10,6 +10,7 @@
   <!-- Core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <!-- Custom CSS -->
@@ -18,7 +19,8 @@
   <link href="{{ url_for('static', filename='css/deals.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/feature-restaurant.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='css/footer.css') }}" rel="stylesheet" />
-
+  <link href="{{ url_for('static', filename='css/profile.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='css/shopping-bag.css') }}" rel="stylesheet" />
   {% block styles %}{% endblock %}
 </head>
 
@@ -31,6 +33,13 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/auth-check.js"></script>
+  <script src="/static/js/search-product.js"></script>
+  <script src="/static/js/promotion.js"></script>
+  <script src="/static/js/logout.js"></script>
+  <script src="/static/js/restaurants.js"></script>
+  <script src="/static/js/popular_restaurants.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
