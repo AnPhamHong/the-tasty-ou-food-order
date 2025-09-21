@@ -1,0 +1,3416 @@
+[
+  {
+    "restaurant": {
+      "name": "Pho Saigon",
+      "image_url": "https://unsplash.com/photos/a-bowl-of-noodle-soup-with-chopsticks-on-the-side-NFQi_2HUNRI",
+      "location": "100 Main St, Los Angeles, CA",
+      "phone": "+1 300-555-1000"
+    },
+    "admin": {
+      "username": "admin1",
+      "email": "admin1@phosaigon.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Chin",
+        "price": 7.91,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1664478276162-46c39b3557c3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 17.69,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1599354607459-81c8b0d90bf5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnJhaXNlZCUyMHNocmltcCUyMHJpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 5.27,
+        "category": "Drinks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Nam",
+        "price": 4.16,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 14.81,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1638933482397-bc6189939ef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJhaXNlZCUyMHNocmltcCUyMHJpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Iced Matcha",
+        "price": 7.09,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1717603545758-88cc454db69b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SWNlZCUyME1hdGNoYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Tom",
+        "price": 3.69,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Tam Suon",
+        "price": 7.29,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1500000000-rice plates"
+      },
+      {
+        "name": "Iced Matcha",
+        "price": 6.28,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1749280447307-31a68eb38673?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SWNlZCUyME1hdGNoYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Dac Biet",
+        "price": 16.58,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 7.1,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1594397107804-22dfcdef5a06?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyYWlzZWQlMjBzaHJpbXAlMjByaWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 16.07,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1722518252679-3a77ae458836?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U295JTIwTWlsa3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Banh Mi Express",
+      "image_url": "https://images.unsplash.com/photo-1715925717150-2a6d181d8846?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D",
+      "location": "101 Main St, Houston, TX",
+      "phone": "+1 311-555-1001"
+    },
+    "admin": {
+      "username": "admin2",
+      "email": "admin2@banhmiexpress.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Ga Kho",
+        "price": 17.59,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Coffee",
+        "price": 8.68,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1588413335672-87b35888b55d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29jb251dCUyMENvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Thai",
+        "price": 15.64,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Trung",
+        "price": 10.2,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Ca Phe Sua Da",
+        "price": 15.23,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1588413335672-87b35888b55d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29jb251dCUyMENvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 15.41,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Thit Nuong",
+        "price": 7.41,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Egg Coffee",
+        "price": 11.78,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1588413335672-87b35888b55d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29jb251dCUyMENvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 3.77,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663126827264-409d695e0be7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Ga Kho",
+        "price": 5.49,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Coffee",
+        "price": 13.95,
+        "category": "Coffee",
+        "image_url": "https://plus.unsplash.com/premium_photo-1671559020928-dde18021036f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q29jb251dCUyMENvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Thai",
+        "price": 18.1,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663126827264-409d695e0be7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Cha Lua",
+        "price": 4.81,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Bac Xiu",
+        "price": 15.15,
+        "category": "Coffee",
+        "image_url": "https://plus.unsplash.com/premium_photo-1671559020928-dde18021036f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q29jb251dCUyMENvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 13.6,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663126827264-409d695e0be7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Vietnamese Juice Bar",
+      "image_url": "https://images.unsplash.com/photo-1685370373954-904f25cb87b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8VmlldG5hbWVzZSUyMEp1aWNlJTIwQmFyfGVufDB8fDB8fHww",
+      "location": "102 Main St, San Jose, CA",
+      "phone": "+1 322-555-1002"
+    },
+    "admin": {
+      "username": "admin3",
+      "email": "admin3@vietnamesejuicebar.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Carrot Juice",
+        "price": 6.64,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mango Smoothie",
+        "price": 4.98,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 6.81,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1500000002-snacks"
+      },
+      {
+        "name": "Apple Juice",
+        "price": 5.55,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Kiwi Smoothie",
+        "price": 12.76,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 8.87,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1500000002-snacks"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 12.79,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banana Smoothie",
+        "price": 9.45,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 13.86,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1688217170693-e821c6e18d72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U25hY2tzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 7.62,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Peach Smoothie",
+        "price": 6.19,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Thai",
+        "price": 8.29,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1688217170693-e821c6e18d72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U25hY2tzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 17.98,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mixed Berry Smoothie",
+        "price": 14.36,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1653542773369-51cce8d08250?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 12.18,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1688217170693-e821c6e18d72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U25hY2tzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Passionfruit Juice",
+        "price": 17.72,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Peach Smoothie",
+        "price": 15.27,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1653542773369-51cce8d08250?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Thai",
+        "price": 9.78,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1688217170693-e821c6e18d72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U25hY2tzfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Bun Bo Hue Corner",
+      "image_url": "https://images.unsplash.com/photo-1738573848408-d9e4e7ab6c9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QnVuJTIwQm8lMjBIdWUlMjBDb3JuZXJ8ZW58MHx8MHx8fDA%3D",
+      "location": "103 Main St, Seattle, WA",
+      "phone": "+1 333-555-1003"
+    },
+    "admin": {
+      "username": "admin4",
+      "email": "admin4@bunbohuecorner.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Xoi Ga",
+        "price": 11.25,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 9.9,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U3VnYXJjYW5lJTIwSnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Khoai Mi",
+        "price": 4.52,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Op La",
+        "price": 18.07,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Passionfruit Juice",
+        "price": 9.57,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 7.69,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 12.94,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 8.36,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 18.15,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Xoi Ga",
+        "price": 13.22,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 18.47,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 7.61,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 5.71,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 8.92,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Croissant",
+        "price": 12.51,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 7.26,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Mixed Fruit Juice",
+        "price": 15.53,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 4.27,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1622087250532-ef720737446b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGIlQzMlQTFuaHxlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Com Tam House",
+      "image_url": "https://images.unsplash.com/photo-1579856896394-07dfa10d7c5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww",
+      "location": "104 Main St, Dallas, TX",
+      "phone": "+1 344-555-1004"
+    },
+    "admin": {
+      "username": "admin5",
+      "email": "admin5@comtamhouse.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Tiramisu",
+        "price": 7.0,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2FrZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 4.47,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1623334044303-241021148842?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 11.16,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1592858167090-2473780d894d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fERyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Matcha Roll Cake",
+        "price": 8.06,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2FrZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 8.1,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1623334044303-241021148842?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Oolong Tea",
+        "price": 16.59,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Tiramisu",
+        "price": 14.73,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1509474520651-53cf6a80536f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q2FrZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 16.4,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Herbal Tea",
+        "price": 17.23,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vanilla Sponge Cake",
+        "price": 12.02,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q2FrZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 14.15,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1534432182912-63863115e106?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Green Tea",
+        "price": 16.55,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Durian Cheesecake",
+        "price": 7.89,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1583338917451-face2751d8d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fENha2VzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 18.11,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1609590981063-d495e2914ce4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Oolong Tea",
+        "price": 11.27,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fERyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Pho 24 Houston",
+      "image_url": "https://plus.unsplash.com/premium_photo-1664472623831-cdf26b915ec3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww",
+      "location": "105 Main St, Houston, TX",
+      "phone": "+1 355-555-1005"
+    },
+    "admin": {
+      "username": "admin6",
+      "email": "admin6@pho24houston.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Ga",
+        "price": 10.04,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1677837914128-2367031a11e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Suon Nuong",
+        "price": 12.66,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1528699633788-424224dc89b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 8.98,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1697206663454-6537a6bebd48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWlsayUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Ga Xe",
+        "price": 8.28,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1677837914128-2367031a11e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Tam Suon",
+        "price": 4.57,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1528699633788-424224dc89b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 7.3,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1697206663454-6537a6bebd48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWlsayUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Nam",
+        "price": 17.55,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1677837914128-2367031a11e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 12.28,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1607247098391-111d84c1aa72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJyYWlzZWQlMjBzaHJpbXAlMjByaWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 6.19,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621221814631-e8bfdabd5ca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWlsayUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Nam",
+        "price": 3.67,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1677837914128-2367031a11e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Bi",
+        "price": 12.39,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1528699633788-424224dc89b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 9.29,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621221814631-e8bfdabd5ca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWlsayUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pho Chin",
+        "price": 9.5,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1677837914128-2367031a11e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Com Dau Hu Chien",
+        "price": 11.96,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1528699633788-424224dc89b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 7.47,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1620360289473-bfafadc16c57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWlsayUyMHRlYXxlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Lotus Juice Bar",
+      "image_url": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1pbGslMjB0ZWF8ZW58MHx8MHx8fDA%3D",
+      "location": "106 Main St, San Francisco, CA",
+      "phone": "+1 366-555-1006"
+    },
+    "admin": {
+      "username": "admin7",
+      "email": "admin7@lotusjuicebar.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Ga Nuong",
+        "price": 3.8,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Black Coffee",
+        "price": 13.25,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 4.91,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Ga Nuong",
+        "price": 9.37,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Ca Phe Sua Da",
+        "price": 15.86,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Tapioca Cake",
+        "price": 16.15,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Pate",
+        "price": 13.22,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cold Brew",
+        "price": 4.29,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 7.24,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Thit Nuong",
+        "price": 9.18,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cold Brew",
+        "price": 14.73,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 8.33,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Pate",
+        "price": 4.69,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cappuccino",
+        "price": 13.43,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Tapioca Cake",
+        "price": 7.56,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Xiu Mai",
+        "price": 10.37,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1628809643520-7c20491d5324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Mocha",
+        "price": 17.65,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 4.72,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNuYWNrfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Banh Mi Cali",
+      "image_url": "https://images.unsplash.com/photo-1559622214-f8a9850965bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNuYWNrfGVufDB8fDB8fHww",
+      "location": "107 Main St, San Diego, CA",
+      "phone": "+1 377-555-1007"
+    },
+    "admin": {
+      "username": "admin8",
+      "email": "admin8@banhmicali.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Carrot Juice",
+        "price": 6.48,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Avocado Smoothie",
+        "price": 12.75,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1662130187270-a4d52c700eb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 17.01,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 15.8,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banana Smoothie",
+        "price": 5.66,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1662130187270-a4d52c700eb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 4.48,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 16.9,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 5.68,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1662130187270-a4d52c700eb6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Tapioca Cake",
+        "price": 13.18,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 12.1,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Avocado Smoothie",
+        "price": 13.71,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Tapioca Cake",
+        "price": 17.72,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 9.8,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Mixed Berry Smoothie",
+        "price": 10.43,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 8.01,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 4.29,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Smoothie",
+        "price": 16.42,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8U21vb3RoaWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banana Chips",
+        "price": 16.78,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 18.14,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1706520636413-0ec64678729a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c25hY2tqdWljZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 6.22,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1514995428455-447d4443fa7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNtb290aGllfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Morning Delight",
+      "image_url": "https://images.unsplash.com/photo-1609590981063-d495e2914ce4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D",
+      "location": "108 Main St, Portland, OR",
+      "phone": "+1 388-555-1008"
+    },
+    "admin": {
+      "username": "admin9",
+      "email": "admin9@morningdelight.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Op La",
+        "price": 17.54,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1542691457-cbe4df041eb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Carrot Juice",
+        "price": 4.94,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 17.08,
+        "category": "Pastries",
+        "image_url": "https://plus.unsplash.com/premium_photo-1669687759638-ea3cc1855824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Hu Tieu",
+        "price": 11.62,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 12.14,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 18.37,
+        "category": "Pastries",
+        "image_url": "https://plus.unsplash.com/premium_photo-1669687759638-ea3cc1855824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 15.99,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YnJlYWtmYXN0fGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 15.38,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Duc",
+        "price": 9.57,
+        "category": "Pastries",
+        "image_url": "https://plus.unsplash.com/premium_photo-1669687759638-ea3cc1855824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Cuon",
+        "price": 17.02,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1542691457-cbe4df041eb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 13.13,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 4.69,
+        "category": "Pastries",
+        "image_url": "https://plus.unsplash.com/premium_photo-1669687759638-ea3cc1855824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8UGFzdHJpZXN8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Sweet Saigon Bakery",
+      "image_url": "https://images.unsplash.com/photo-1464306208223-e0b4495a5553?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D",
+      "location": "109 Main St, Irvine, CA",
+      "phone": "+1 399-555-1009"
+    },
+    "admin": {
+      "username": "admin10",
+      "email": "admin10@sweetsaigonbakery.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Coconut Cake",
+        "price": 17.78,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 17.45,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Chrysanthemum Tea",
+        "price": 15.81,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Matcha Roll Cake",
+        "price": 7.04,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 18.42,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 5.9,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Tiramisu",
+        "price": 14.79,
+        "category": "Cakes",
+        "image_url": "https://plus.unsplash.com/premium_photo-1673591578857-f4104f0c5b79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 5.5,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Herbal Tea",
+        "price": 16.55,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Carrot Cake",
+        "price": 5.4,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1497888329096-51c27beff665?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 8.88,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 13.07,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Tiramisu",
+        "price": 5.95,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1513442542250-854d436a73f2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJyZWFrZmFzdHxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Croissant",
+        "price": 10.58,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 7.27,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1486428263684-28ec9e4f2584?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRyaW5rc3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Golden Pho",
+      "image_url": "https://images.unsplash.com/photo-1551218810-example",
+      "location": "110 Main St, Denver, CO",
+      "phone": "+1 300-555-1010"
+    },
+    "admin": {
+      "username": "admin11",
+      "email": "admin11@goldenpho.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Nam",
+        "price": 13.64,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Ca Kho",
+        "price": 12.62,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 11.75,
+        "category": "Drinks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Tai",
+        "price": 12.56,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Tam Suon",
+        "price": 13.13,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 8.0,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Tai Nam",
+        "price": 12.22,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Ca Kho",
+        "price": 5.59,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1505576633757-0ac1084af824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 3.59,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Tom",
+        "price": 14.34,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Dau Hu Chien",
+        "price": 12.77,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1505576633757-0ac1084af824?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Chrysanthemum Tea",
+        "price": 6.07,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Nam",
+        "price": 9.94,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Suon Nuong",
+        "price": 16.33,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1601356616077-695728ae17cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 8.69,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1481671703460-040cb8a2d909?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmtzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Ga Xe",
+        "price": 15.25,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1627309302198-09a50ae1b209?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Com Dau Hu Chien",
+        "price": 15.23,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1601356616077-695728ae17cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGx1bmNofGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 11.29,
+        "category": "Drinks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Saigon Sandwiches",
+      "image_url": "https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2FuZHdpY2hlc3xlbnwwfHwwfHx8MA%3D%3D",
+      "location": "111 Main St, Chicago, IL",
+      "phone": "+1 311-555-1011"
+    },
+    "admin": {
+      "username": "admin12",
+      "email": "admin12@saigonsandwiches.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Pate",
+        "price": 7.92,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Bac Xiu",
+        "price": 7.06,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banana Chips",
+        "price": 3.59,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFNuYWNrc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Cha Lua",
+        "price": 9.46,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Espresso",
+        "price": 12.26,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 4.03,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFNuYWNrc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Ga Nuong",
+        "price": 18.25,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cappuccino",
+        "price": 4.84,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 14.27,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1687870047594-91e889abba11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8U25hY2tzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Trung",
+        "price": 16.12,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Coffee",
+        "price": 8.77,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 10.22,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1687870047594-91e889abba11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8U25hY2tzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Thit Nuong",
+        "price": 17.03,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Mocha",
+        "price": 5.03,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 16.3,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1632687380457-05a1271e873b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNuYWNrc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Ga Kho",
+        "price": 5.11,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1612539466296-4ecf1db303e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJlYWRzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cappuccino",
+        "price": 11.64,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 6.92,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1632687380457-05a1271e873b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFNuYWNrc3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Hanoi Juice & Tea",
+      "image_url": "https://images.unsplash.com/photo-1518224916670-c6f7ab93a0e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D",
+      "location": "112 Main St, Atlanta, GA",
+      "phone": "+1 322-555-1012"
+    },
+    "admin": {
+      "username": "admin13",
+      "email": "admin13@hanoijuice&tea.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Sugarcane Juice",
+        "price": 13.14,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1658215271105-30d14de1f727?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Kiwi Smoothie",
+        "price": 16.75,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1592931489983-6607f2dc4f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 5.87,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1757857152069-f1e43f10a856?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 17.31,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1658215271105-30d14de1f727?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Kiwi Smoothie",
+        "price": 15.76,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1592931489983-6607f2dc4f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banana Chips",
+        "price": 11.18,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1757857152069-f1e43f10a856?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Apple Juice",
+        "price": 3.68,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1658215271105-30d14de1f727?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banana Smoothie",
+        "price": 12.76,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1592931489983-6607f2dc4f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 9.17,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1757857152069-f1e43f10a856?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Passionfruit Juice",
+        "price": 16.92,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1658215271105-30d14de1f727?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 14.99,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1592931489983-6607f2dc4f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 6.52,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1757857152069-f1e43f10a856?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 4.76,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1658215271105-30d14de1f727?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8SnVpY2UlMjAlMjYlMjBUZWF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mango Smoothie",
+        "price": 12.12,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1592931489983-6607f2dc4f32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 11.34,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1757857152069-f1e43f10a856?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEp1aWNlJTIwJTI2JTIwVGVhfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Hue Street Food",
+      "image_url": "https://images.unsplash.com/photo-1573555957315-723d970bcdde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D",
+      "location": "113 Main St, Boston, MA",
+      "phone": "+1 333-555-1013"
+    },
+    "admin": {
+      "username": "admin14",
+      "email": "admin14@huestreetfood.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Hu Tieu",
+        "price": 5.28,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1589570658214-002314b1520f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 14.14,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 5.7,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1508737804141-4c3b688e2546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 13.9,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1589570658214-002314b1520f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 16.49,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Bong Lan",
+        "price": 17.9,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1508737804141-4c3b688e2546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Xoi Xeo",
+        "price": 11.36,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1589570658214-002314b1520f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Apple Juice",
+        "price": 13.3,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 3.95,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1508737804141-4c3b688e2546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Xoi Xeo",
+        "price": 4.11,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1589570658214-002314b1520f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 5.37,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 6.82,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1508737804141-4c3b688e2546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chao Long",
+        "price": 6.4,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1589570658214-002314b1520f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JUM0JTkxJUUxJUJCJTkzJTIwJUM0JTgzbiUyMHZpJUUxJUJCJTg3dCUyMG5hbXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Watermelon Juice",
+        "price": 15.16,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1618724980108-a4d3856fd8f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 11.62,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1508737804141-4c3b688e2546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Rice & Roll",
+      "image_url": "https://images.unsplash.com/photo-1551218814-example",
+      "location": "114 Main St, Austin, TX",
+      "phone": "+1 344-555-1014"
+    },
+    "admin": {
+      "username": "admin15",
+      "email": "admin15@rice&roll.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Fruit Tart",
+        "price": 17.95,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1505976378723-9726b54e9bb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 6.66,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Green Tea",
+        "price": 17.6,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1609951651556-5334e2706168?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Opera Cake",
+        "price": 11.09,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1505976378723-9726b54e9bb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 13.86,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 15.28,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1609951651556-5334e2706168?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chocolate Cake",
+        "price": 9.13,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 7.26,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 15.67,
+        "category": "Drinks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Matcha Roll Cake",
+        "price": 13.31,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 16.01,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Herbal Tea",
+        "price": 14.65,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1609951651556-5334e2706168?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Coconut Cake",
+        "price": 11.12,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 7.13,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1512223792601-592a9809eed4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 12.52,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1609951651556-5334e2706168?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Pho Garden",
+      "image_url": "https://images.unsplash.com/photo-1551218815-example",
+      "location": "115 Main St, San Jose, CA",
+      "phone": "+1 355-555-1015"
+    },
+    "admin": {
+      "username": "admin16",
+      "email": "admin16@phogarden.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Bo",
+        "price": 13.8,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Thit Nuong",
+        "price": 6.68,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Chrysanthemum Tea",
+        "price": 3.7,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Ga Xe",
+        "price": 7.53,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Ca Kho",
+        "price": 13.11,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 6.49,
+        "category": "Drinks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1670469009826-db07ab733925?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Tai",
+        "price": 18.45,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Ga",
+        "price": 6.68,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Oolong Tea",
+        "price": 10.27,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Bo",
+        "price": 8.78,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Dau Hu Chien",
+        "price": 11.71,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 7.83,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Ga Xe",
+        "price": 14.57,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Tam Suon",
+        "price": 15.38,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 5.11,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1560526860-1f0e56046c85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRyaW5rfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Chay",
+        "price": 7.39,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1583316175701-0bc5f25a0a44?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Thit Nuong",
+        "price": 13.57,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1527997921830-de1cf1f9b430?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Herbal Tea",
+        "price": 16.74,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1560526860-1f0e56046c85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRyaW5rfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Fresh Squeeze Bar",
+      "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D",
+      "location": "116 Main St, San Diego, CA",
+      "phone": "+1 366-555-1016"
+    },
+    "admin": {
+      "username": "admin17",
+      "email": "admin17@freshsqueezebar.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Xiu Mai",
+        "price": 10.85,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Espresso",
+        "price": 8.05,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 4.44,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Thit",
+        "price": 15.4,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mocha",
+        "price": 12.24,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 7.74,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Chay",
+        "price": 11.46,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Egg Coffee",
+        "price": 4.45,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 17.36,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Thit",
+        "price": 14.49,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cappuccino",
+        "price": 7.21,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 4.16,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Bi",
+        "price": 14.27,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cappuccino",
+        "price": 13.92,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 5.84,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Thit Nuong",
+        "price": 10.23,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Egg Coffee",
+        "price": 3.77,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 5.18,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2t8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Mi Thit Nuong",
+        "price": 4.65,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1600454309261-3dc9b7597637?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Espresso",
+        "price": 10.27,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Banh Mi Lovers",
+      "image_url": "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D",
+      "location": "117 Main St, Sacramento, CA",
+      "phone": "+1 377-555-1017"
+    },
+    "admin": {
+      "username": "admin18",
+      "email": "admin18@banhmilovers.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Watermelon Juice",
+        "price": 10.58,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mango Smoothie",
+        "price": 9.59,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1506802913710-40e2e66339c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 14.38,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1531025503751-fedbb2ad9de5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 11.9,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 6.99,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1506802913710-40e2e66339c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 10.46,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1531025503751-fedbb2ad9de5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Mixed Fruit Juice",
+        "price": 3.78,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Blueberry Smoothie",
+        "price": 6.22,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1506802913710-40e2e66339c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 17.84,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1531025503751-fedbb2ad9de5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 13.15,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Strawberry Smoothie",
+        "price": 5.98,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1506802913710-40e2e66339c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banana Chips",
+        "price": 13.38,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1531025503751-fedbb2ad9de5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 8.22,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Blueberry Smoothie",
+        "price": 14.0,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1506802913710-40e2e66339c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Ba Mau",
+        "price": 12.75,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1531025503751-fedbb2ad9de5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGp1aWNlfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Breakfast Corner",
+      "image_url": "https://images.unsplash.com/photo-1551218818-example",
+      "location": "118 Main St, San Francisco, CA",
+      "phone": "+1 388-555-1018"
+    },
+    "admin": {
+      "username": "admin19",
+      "email": "admin19@breakfastcorner.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Xoi Xeo",
+        "price": 16.38,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 11.84,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Duc",
+        "price": 11.5,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Hu Tieu",
+        "price": 18.14,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Passionfruit Juice",
+        "price": 7.75,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 4.43,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Cuon",
+        "price": 8.87,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Carrot Juice",
+        "price": 13.27,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Khoai Mi",
+        "price": 13.73,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Xoi Man",
+        "price": 6.99,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 5.55,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Croissant",
+        "price": 11.03,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Cuon",
+        "price": 7.64,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 6.43,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 5.57,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Xoi Ga",
+        "price": 14.99,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1597345637412-9fd611e758f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlldG5hbSUyMGZvb2R8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pineapple Juice",
+        "price": 4.77,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Khoai Mi",
+        "price": 15.29,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGp1aWNlfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Paris By Night Bakery",
+      "image_url": "https://images.unsplash.com/photo-1562849241-f151ea9651f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHZpZXRuYW0lMjBmb29kfGVufDB8fDB8fHww",
+      "location": "119 Main St, Anaheim, CA",
+      "phone": "+1 399-555-1019"
+    },
+    "admin": {
+      "username": "admin20",
+      "email": "admin20@parisbynightbakery.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Red Velvet Cake",
+        "price": 15.08,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pandan Chiffon Cake",
+        "price": 12.35,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 3.76,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chocolate Cake",
+        "price": 14.28,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 6.41,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 4.49,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chocolate Cake",
+        "price": 16.0,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 4.73,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 9.26,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Vanilla Sponge Cake",
+        "price": 9.84,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 6.56,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 6.4,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Carrot Cake",
+        "price": 12.59,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 5.2,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Chrysanthemum Tea",
+        "price": 12.4,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Chocolate Cake",
+        "price": 6.93,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1602351447937-745cb720612f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Duc",
+        "price": 18.43,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1601924287811-e34de5d17476?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Oolong Tea",
+        "price": 7.11,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8anVpY2V8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Pho Lovers",
+      "image_url": "https://images.unsplash.com/photo-1551218820-example",
+      "location": "120 Main St, Las Vegas, NV",
+      "phone": "+1 300-555-1020"
+    },
+    "admin": {
+      "username": "admin21",
+      "email": "admin21@pholovers.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Bo",
+        "price": 15.5,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Bi",
+        "price": 10.84,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1600490036275-35f5f1656861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 5.19,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Nam",
+        "price": 8.54,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Bo Kho",
+        "price": 3.75,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1600490036275-35f5f1656861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 15.63,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Tom",
+        "price": 13.74,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Suon Bi Cha",
+        "price": 4.48,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1600490036275-35f5f1656861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 11.52,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Chay",
+        "price": 11.9,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Thit Nuong",
+        "price": 10.91,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1600490036275-35f5f1656861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 11.18,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1471922597728-92f81bfe2445?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Tom",
+        "price": 7.52,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Thit Nuong",
+        "price": 11.24,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1600490036275-35f5f1656861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 3.55,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pho Bo",
+        "price": 6.82,
+        "category": "Pho",
+        "image_url": "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 12.06,
+        "category": "Rice Plates",
+        "image_url": "https://plus.unsplash.com/premium_photo-1661607229579-dd06d36302fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGJyYWlzZWQlMjBzaHJpbXAlMjByaWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Green Tea",
+        "price": 18.13,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZHJpbmt8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Green Mango Juice",
+      "image_url": "https://images.unsplash.com/photo-1551218821-example",
+      "location": "121 Main St, Phoenix, AZ",
+      "phone": "+1 311-555-1021"
+    },
+    "admin": {
+      "username": "admin22",
+      "email": "admin22@greenmangojuice.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Bi",
+        "price": 16.7,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5vb2RsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Black Coffee",
+        "price": 13.41,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1494314671902-399b18174975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Thai",
+        "price": 8.05,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Ga Nuong",
+        "price": 9.26,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5vb2RsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cold Brew",
+        "price": 11.69,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1494314671902-399b18174975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Che Thai",
+        "price": 6.78,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Cha Lua",
+        "price": 12.96,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5vb2RsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Ca Phe Sua Da",
+        "price": 10.2,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1494314671902-399b18174975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 12.0,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Trung",
+        "price": 10.85,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5vb2RsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Bac Xiu",
+        "price": 4.35,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1494314671902-399b18174975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 13.43,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Cha Lua",
+        "price": 11.78,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1565976469782-7c92daebc42e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG5vb2RsZXN8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Black Coffee",
+        "price": 4.2,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1494314671902-399b18174975?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 4.7,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Little Hanoi Deli",
+      "image_url": "https://images.unsplash.com/photo-1551218822-example",
+      "location": "122 Main St, Philadelphia, PA",
+      "phone": "+1 322-555-1022"
+    },
+    "admin": {
+      "username": "admin23",
+      "email": "admin23@littlehanoideli.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Guava Juice",
+        "price": 8.19,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Kiwi Smoothie",
+        "price": 8.86,
+        "category": "Smoothies",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663089587926-ff5a03d17b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Thai",
+        "price": 15.51,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679435415113-2bf5c1993dc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 13.79,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 16.92,
+        "category": "Smoothies",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663089587926-ff5a03d17b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 8.46,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679435415113-2bf5c1993dc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 13.34,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Smoothie",
+        "price": 11.14,
+        "category": "Smoothies",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663089587926-ff5a03d17b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Che Chuoi",
+        "price": 8.16,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679435415113-2bf5c1993dc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Apple Juice",
+        "price": 6.87,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Blueberry Smoothie",
+        "price": 17.51,
+        "category": "Smoothies",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663089587926-ff5a03d17b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 7.97,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679435415113-2bf5c1993dc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNuYWNrfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 5.18,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Peach Smoothie",
+        "price": 13.03,
+        "category": "Smoothies",
+        "image_url": "https://plus.unsplash.com/premium_photo-1663089587926-ff5a03d17b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c21vb3RoaWVzfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Rice Crackers",
+        "price": 4.43,
+        "category": "Snacks",
+        "image_url": "https://plus.unsplash.com/premium_photo-1679435415113-2bf5c1993dc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNuYWNrfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Saigon Bistro",
+      "image_url": "https://images.unsplash.com/photo-1574974051678-44c85748ebcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlzdHJvfGVufDB8fDB8fHww",
+      "location": "123 Main St, Portland, OR",
+      "phone": "+1 333-555-1023"
+    },
+    "admin": {
+      "username": "admin24",
+      "email": "admin24@saigonbistro.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Vietnamese Omelette",
+        "price": 5.16,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 3.65,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1518962932192-546200b30a68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 14.47,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1532259705718-845945f15c31?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Banh Mi Op La",
+        "price": 15.31,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 13.93,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1518962932192-546200b30a68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 4.66,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1532259705718-845945f15c31?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Hu Tieu",
+        "price": 5.25,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Orange Juice",
+        "price": 4.84,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1518962932192-546200b30a68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Su Kem",
+        "price": 15.41,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1532259705718-845945f15c31?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Bun Thang",
+        "price": 11.8,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 14.24,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1518962932192-546200b30a68?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 11.39,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1532259705718-845945f15c31?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Com Ga Corner",
+      "image_url": "https://images.unsplash.com/photo-1551218824-example",
+      "location": "124 Main St, Dallas, TX",
+      "phone": "+1 344-555-1024"
+    },
+    "admin": {
+      "username": "admin25",
+      "email": "admin25@comgacorner.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Vanilla Sponge Cake",
+        "price": 8.29,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 3.81,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1708980108318-4b843e243080?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Chrysanthemum Tea",
+        "price": 4.35,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1583898350903-99fa829dad3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Red Velvet Cake",
+        "price": 15.58,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Khoai Mi",
+        "price": 17.71,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1708980108318-4b843e243080?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Milk Tea",
+        "price": 9.76,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1583898350903-99fa829dad3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Opera Cake",
+        "price": 8.72,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Bong Lan",
+        "price": 9.67,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1708980108318-4b843e243080?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 17.52,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1583898350903-99fa829dad3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Cake",
+        "price": 15.45,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1701887138421-0245712e17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmlzdHJvfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 13.23,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1708980108318-4b843e243080?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Green Tea",
+        "price": 11.91,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1583898350903-99fa829dad3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJpc3Ryb3xlbnwwfHwwfHx8MA%3D%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Pho & Rolls",
+      "image_url": "https://images.unsplash.com/photo-1631709497146-a239ef373cf1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D",
+      "location": "125 Main St, Seattle, WA",
+      "phone": "+1 355-555-1025"
+    },
+    "admin": {
+      "username": "admin26",
+      "email": "admin26@pho&rolls.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Pho",
+      "Rice Plates",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Pho Chay",
+        "price": 10.87,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Tam Suon",
+        "price": 9.7,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1636474498689-27e2d3ecf8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Iced Matcha",
+        "price": 12.82,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1620360289100-030b032e5a27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhdHRlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Tai Nam",
+        "price": 11.19,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Tom Rim",
+        "price": 5.94,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1677643612277-1509dce0b697?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJyYWlzZWQlMjBzaHJpbXAlMjByaWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 6.44,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1620360289100-030b032e5a27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhdHRlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Tai Nam",
+        "price": 9.93,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Bi",
+        "price": 5.38,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1636474498689-27e2d3ecf8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Thai Tea",
+        "price": 6.87,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1620360289100-030b032e5a27?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxhdHRlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Pho Chay",
+        "price": 10.84,
+        "category": "Pho",
+        "image_url": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGglRTElQkIlOUZ8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Com Dau Hu Chien",
+        "price": 11.48,
+        "category": "Rice Plates",
+        "image_url": "https://images.unsplash.com/photo-1636474498689-27e2d3ecf8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoJUUxJUJCJTlGfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 5.54,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1471922597728-92f81bfe2445?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Juicy Saigon",
+      "image_url": "https://images.unsplash.com/photo-1687902409602-8b7cf039a44a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D",
+      "location": "126 Main St, Miami, FL",
+      "phone": "+1 366-555-1026"
+    },
+    "admin": {
+      "username": "admin27",
+      "email": "admin27@juicysaigon.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Banh Mi",
+      "Coffee",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Banh Mi Trung",
+        "price": 5.32,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Bac Xiu",
+        "price": 14.11,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Tapioca Cake",
+        "price": 14.22,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Trung",
+        "price": 14.76,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Coffee",
+        "price": 15.84,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 3.69,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Xiu Mai",
+        "price": 13.51,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Black Coffee",
+        "price": 11.82,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 15.3,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Ga Nuong",
+        "price": 14.83,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Mocha",
+        "price": 9.03,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Shrimp Chips",
+        "price": 12.36,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Ga Kho",
+        "price": 16.98,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Coconut Coffee",
+        "price": 13.69,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 15.39,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Mi Cha Lua",
+        "price": 11.07,
+        "category": "Banh Mi",
+        "image_url": "https://images.unsplash.com/photo-1715924298872-9a86b729eb96?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YiVDMyVBMW5oJTIwbSVDMyVBQ3xlbnwwfHwwfHx8MA%3D%3D"
+      },
+      {
+        "name": "Latte",
+        "price": 16.56,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29mZmVlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sesame Ball",
+        "price": 10.74,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1634324040880-63dbf9a4e5ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Sunny Morning Cafe",
+      "image_url": "https://images.unsplash.com/photo-1610705348035-861340f97c92?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D",
+      "location": "127 Main St, Orlando, FL",
+      "phone": "+1 377-555-1027"
+    },
+    "admin": {
+      "username": "admin28",
+      "email": "admin28@sunnymorningcafe.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Juice",
+      "Smoothies",
+      "Snacks"
+    ],
+    "menu": [
+      {
+        "name": "Carrot Juice",
+        "price": 15.19,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1620878439719-0348b19e4d5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Mixed Berry Smoothie",
+        "price": 13.82,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 6.85,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1631600198500-e2d9c3cbf889?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Carrot Juice",
+        "price": 17.21,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1620878439719-0348b19e4d5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Peach Smoothie",
+        "price": 13.79,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Sticky Rice",
+        "price": 16.02,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1631600198500-e2d9c3cbf889?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 3.68,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1620878439719-0348b19e4d5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Avocado Smoothie",
+        "price": 13.83,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banana Chips",
+        "price": 8.93,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1631600198500-e2d9c3cbf889?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Guava Juice",
+        "price": 17.03,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1620878439719-0348b19e4d5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Pineapple Smoothie",
+        "price": 14.14,
+        "category": "Smoothies",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Ran",
+        "price": 14.7,
+        "category": "Snacks",
+        "image_url": "https://images.unsplash.com/photo-1631600198500-e2d9c3cbf889?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FrZSUyMGNyZWFtfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Lotus Pastry House",
+      "image_url": "https://images.unsplash.com/photo-1551218828-example",
+      "location": "128 Main St, Houston, TX",
+      "phone": "+1 388-555-1028"
+    },
+    "admin": {
+      "username": "admin29",
+      "email": "admin29@lotuspastryhouse.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Breakfast",
+      "Juice",
+      "Pastries"
+    ],
+    "menu": [
+      {
+        "name": "Vietnamese Omelette",
+        "price": 12.1,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1745356979337-03a263a39beb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Passionfruit Juice",
+        "price": 11.44,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Flan",
+        "price": 7.76,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679654596647-faf434b35796?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Hu Tieu",
+        "price": 18.14,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1683989417044-2a7aa9413aea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Mixed Fruit Juice",
+        "price": 9.01,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Khoai Mi",
+        "price": 13.87,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1679654596647-faf434b35796?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Chao Long",
+        "price": 5.81,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1683989417044-2a7aa9413aea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Sugarcane Juice",
+        "price": 15.05,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 9.27,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1745356979337-03a263a39beb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Xoi Man",
+        "price": 4.64,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1683989417044-2a7aa9413aea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Coconut Water",
+        "price": 12.85,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 8.69,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1745356979337-03a263a39beb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Bun Thang",
+        "price": 7.09,
+        "category": "Breakfast",
+        "image_url": "https://images.unsplash.com/photo-1683989417044-2a7aa9413aea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Carrot Juice",
+        "price": 14.57,
+        "category": "Juice",
+        "image_url": "https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FrZSUyMGNyZWFtJTIwYW5kJTIwanVpY2V8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Croissant",
+        "price": 9.77,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1627308595171-d1b5d67129c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNha2UlMjBjcmVhbSUyMGFuZCUyMGp1aWNlfGVufDB8fDB8fHww"
+      }
+    ]
+  },
+  {
+    "restaurant": {
+      "name": "Vietnam Delight",
+      "image_url": "https://images.unsplash.com/photo-1551218829-example",
+      "location": "129 Main St, San Jose, CA",
+      "phone": "+1 399-555-1029"
+    },
+    "admin": {
+      "username": "admin30",
+      "email": "admin30@vietnamdelight.com",
+      "password": "Admin123!"
+    },
+    "categories": [
+      "Cakes",
+      "Pastries",
+      "Drinks"
+    ],
+    "menu": [
+      {
+        "name": "Chocolate Cake",
+        "price": 10.06,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1614746508587-f9071d51db90?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Pia",
+        "price": 3.81,
+        "category": "Pastries",
+        "image_url": "hhttps://images.unsplash.com/photo-1603236268617-d023914d9416?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Iced Matcha",
+        "price": 9.62,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1542116021-0ff087fb0a41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFuYWNvdGF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Coconut Cake",
+        "price": 17.74,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1501199643997-e3ed9bfbd317?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Banh Cam",
+        "price": 17.62,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1628875731234-98ce973ff456?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Soy Milk",
+        "price": 5.96,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1603532523708-fc0df21fa2e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFuYWNvdGF8ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Carrot Cake",
+        "price": 3.56,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1613505411792-208b15f862b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Cheese Tart",
+        "price": 7.92,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1700482006355-ad309eff83ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Lemongrass Tea",
+        "price": 10.21,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1518710101263-54e0350377bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Matcha Roll Cake",
+        "price": 16.3,
+        "category": "Cakes",
+        "image_url": "https://images.unsplash.com/photo-1591722627251-208d4d0f6573?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Croissant",
+        "price": 5.64,
+        "category": "Pastries",
+        "image_url": "https://images.unsplash.com/photo-1627871878701-0abc6c910391?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBhbmFjb3RhfGVufDB8fDB8fHww"
+      },
+      {
+        "name": "Vietnamese Iced Coffee",
+        "price": 11.05,
+        "category": "Drinks",
+        "image_url": "https://images.unsplash.com/photo-1569315095807-995e6e3ba320?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VmlldG5hbWVzZSUyMEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D"
+      }
+    ]
+  }
+]

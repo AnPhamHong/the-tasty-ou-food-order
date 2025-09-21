@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #2980b9;
+            background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
+            background: linear-gradient(to right, #2c3e50, #2980b9);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card-register {
+            border-radius: 1rem;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+            width: 75%;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 2rem;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .btn-gradient {
+            background: #1e3c72;
+            background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+            background: linear-gradient(to right, #2a5298, #1e3c72);
+            color: white;
+            border: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: .9rem;
+        }
+
+        .btn-gradient:hover {
+            color: #fff !important;
+        }
+
+        #addCategoryBtn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card card-register">
+        <div class="card-body">
+            <h2 class="fw-bold text-center mb-4" style="color: #2D3748;">Register Your Restaurant</h2>
+            <p class="text-center mb-4" style="color: #718096;">Fill in your restaurant info, categories and add at
+                least one menu item!</p>
+            <div class="d-flex mb-3 gap-2">
+                <button type="button" class="btn btn-sm btn-outline-primary" id="autofillBtn">Autofill</button>
+                <select id="autofillSelect" class="form-select form-select-sm" style="width:auto;">
+                    <option value="">-- Select Sample Restaurant --</option>
+                </select>
+            </div>
+
+
+            <form id="restaurantRegisterForm">
+                <div class="row">
+                    <!-- Left: Restaurant + Admin -->
+                    <div class="col-lg-6">
+                        <h5 class="mb-2">Restaurant Info</h5>
+                        <div class="mb-2">
+                            <label class="form-label">Restaurant Name</label>
+                            <input type="text" class="form-control" name="restaurant_name" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Image URL</label>
+                            <input type="url" class="form-control" name="restaurant_image"
+                                placeholder="https://example.com/logo.png">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Phone</label>
+                            <input type="text" class="form-control" name="phone" required>
+                        </div>
+
+                        <hr>
+                        <h5 class="mb-2">Admin Account</h5>
+                        <div class="mb-2">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-gradient btn-lg" style="width: 50%; margin: 0 auto;">
+                                Create Restaurant
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Categories + Menu -->
+                    <div class="col-lg-6">
+
+                        <h5 class="mb-2">Categories</h5>
+                        <div id="categoryList"></div>
+                        <button type="button" class="btn btn-sm mb-3" id="addCategoryBtn"
+                            style="line-height: 2; background: linear-gradient(to right, #2a5298, #1e3c72); color: white; border: none;">
+                            + Add Category
+                        </button>
+
+                        <h5 class="mb-2">Menu Items</h5>
+                        <div class="accordion mb-2" id="menuAccordion"></div>
+                        <button type="button" id="addMenuItemBtn" class="btn btn-sm btn-outline-success mb-2"
+                            style="line-height: 2; background: linear-gradient(to right, #2a5298, #1e3c72); color: white; border: none;">+
+                            Add Menu
+                            Item</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const menuAccordion = document.getElementById("menuAccordion");
+        const addMenuBtn = document.getElementById("addMenuItemBtn");
+        const addCategoryBtn = document.getElementById("addCategoryBtn");
+
+        window.categories = []; // duy nhất
+        let menuCount = 0;
+
+        // ===== Handle add category =====
+        addCategoryBtn.addEventListener("click", () => {
+            const id = Date.now() + Math.random();
+            window.categories.push({ id, name: "" });
+            renderCategories();
+        });
+
+        function renderCategories() {
+            const container = document.getElementById("categoryList");
+            container.innerHTML = window.categories.map(c => `
+            <div class="mb-2">
+                <input type="text" class="form-control" placeholder="Category name"
+                       value="${c.name}" onchange="updateCategory(${c.id}, this.value)">
+            </div>
+        `).join("");
+            renderMenuItemsCategoryOptions();
+        }
+
+        function updateCategory(id, value) {
+            const cat = window.categories.find(c => c.id === id);
+            if (cat) cat.name = value;
+            renderMenuItemsCategoryOptions();
+        }
+
+        function renderMenuItemsCategoryOptions() {
+            const selects = menuAccordion.querySelectorAll("select[name='itemCategory']");
+            selects.forEach(sel => {
+                const currentVal = sel.value;
+                sel.innerHTML = `<option value="">-- Select Category --</option>` +
+                    window.categories.map(c => `<option value="${c.name}" ${c.name === currentVal ? "selected" : ""}>${c.name}</option>`).join("");
+            });
+        }
+
+        // ===== Handle add menu item =====
+        addMenuBtn.addEventListener("click", () => {
+            addMenuItem();
+        });
+
+        function addMenuItem(itemData = {}) {
+            menuCount++;
+            const itemId = `menuItem${menuCount}`;
+            const accordionItem = document.createElement("div");
+            accordionItem.classList.add("accordion-item");
+            accordionItem.innerHTML = `
+            <h2 class="accordion-header" id="heading${itemId}">
+                <button class="accordion-button ${menuCount > 1 ? 'collapsed' : ''}" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse${itemId}" aria-expanded="${menuCount === 1}" aria-controls="collapse${itemId}">
+                    Menu Item ${menuCount}
+                </button>
+            </h2>
+            <div id="collapse${itemId}" class="accordion-collapse collapse ${menuCount === 1 ? 'show' : ''}" aria-labelledby="heading${itemId}" data-bs-parent="#menuAccordion">
+                <div class="accordion-body">
+                    <div class="mb-2">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" name="itemName" required value="${itemData.name || ""}">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Price</label>
+                        <input type="number" class="form-control" name="itemPrice" required value="${itemData.price || ""}">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" name="itemCategory">
+                            <option value="">-- Select Category --</option>
+                            ${window.categories.map(c => `<option value="${c.name}" ${c.name === itemData.category ? "selected" : ""}>${c.name}</option>`).join("")}
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Image URL</label>
+                        <input type="text" class="form-control" name="itemImageUrl" placeholder="Optional image URL" value="${itemData.image_url || ""}">
+                    </div>
+                </div>
+            </div>
+        `;
+            menuAccordion.appendChild(accordionItem);
+        }
+
+        // ===== Handle form submit =====
+        document.getElementById("restaurantRegisterForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const form = e.target;
+
+            // Restaurant info
+            const restaurantData = {
+                name: form.restaurant_name.value,
+                image_url: form.restaurant_image.value || "",
+                location: form.address.value,
+                phone: form.phone.value,
+                rating: 5,
+                distance_km: 1.5,
+                delivery_time_min: 50,
+                tags: ["fast_delivery", "cost"],
+                badges: ["newest"]
+            };
+
+            // Admin info
+            const adminData = {
+                username: form.username.value,
+                email: form.email.value,
+                password: form.password.value
+            };
+
+            // Categories
+            if (window.categories.length === 0) {
+                alert("Add at least one category!");
+                return;
+            }
+            const categoryValues = window.categories.map(c => c.name).filter(Boolean);
+
+            // Menu items
+            const menuItems = Array.from(menuAccordion.querySelectorAll(".accordion-item")).map(item => ({
+                name: item.querySelector('[name="itemName"]').value,
+                price: parseFloat(item.querySelector('[name="itemPrice"]').value),
+                category: item.querySelector('[name="itemCategory"]').value,
+                image_url: item.querySelector('[name="itemImageUrl"]').value || "",
+                create_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            }));
+
+            if (menuItems.length === 0) {
+                alert("Add at least one menu item!");
+                return;
+            }
+
+            const payload = {
+                restaurant: restaurantData,
+                admin: adminData,
+                categories: categoryValues,
+                menu: menuItems
+            };
+            const toastEl = document.getElementById("registerRestaurantToast");
+            try {
+                const res = await fetch("/api/seller/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+                if (res.ok) {
+                    // reset form
+                    form.reset();
+                    menuAccordion.innerHTML = "";
+                    document.getElementById("categoryList").innerHTML = "";
+                    window.categories = [];
+                    menuCount = 0;
+
+                    alert(`Restaurant registered! Admin login: ${result.adminEmail}`);
+                    setTimeout(() => {
+                        localStorage.clear();
+                        window.location.href = "/login";
+                    }, 2000);
+                } else {
+                    alert("Error registering restaurant");
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Network Error - Try again later: " + data.message);
+            }
+        });
+
+        // ===== Load sample restaurants from JSON =====
+        fetch("/static/data/restaurants_30.json")
+            .then(res => res.json())
+            .then(data => {
+                window.sampleRestaurants = data;
+                const autofillSelect = document.getElementById("autofillSelect");
+                data.forEach((r, idx) => {
+                    const option = document.createElement("option");
+                    option.value = idx;
+                    option.textContent = r.restaurant.name;
+                    autofillSelect.appendChild(option);
+                });
+            })
+            .catch(err => console.error("Error loading sample restaurants:", err));
+
+        // ===== Autofill button =====
+        document.getElementById("autofillBtn").addEventListener("click", () => {
+            const select = document.getElementById("autofillSelect");
+            const idx = parseInt(select.value);
+            if (isNaN(idx) || !window.sampleRestaurants[idx]) return;
+
+            const data = window.sampleRestaurants[idx];
+
+            // Restaurant info
+            document.querySelector('[name="restaurant_name"]').value = data.restaurant.name;
+            document.querySelector('[name="restaurant_image"]').value = data.restaurant.image_url || "";
+            document.querySelector('[name="address"]').value = data.restaurant.location;
+            document.querySelector('[name="phone"]').value = data.restaurant.phone;
+
+            // Admin info
+            document.querySelector('[name="username"]').value = data.admin.username;
+            document.querySelector('[name="email"]').value = data.admin.email;
+            document.querySelector('[name="password"]').value = data.admin.password;
+
+            // Categories
+            window.categories = data.categories.map(c => ({ id: Date.now() + Math.random(), name: c }));
+            renderCategories();
+
+            // Menu items
+            menuAccordion.innerHTML = "";
+            data.menu.forEach(item => addMenuItem(item));
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

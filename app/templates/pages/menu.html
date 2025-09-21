@@ -1,0 +1,385 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- HEADER -->
+{% include "layouts/header.html" %}
+
+<section id="menu-restaurant">
+    <div class="menu-title">
+        <div class="container py-4 d-flex justify-content-between align-items-center gap-2" style="margin-top: 105px;">
+            <!-- Restaurant Header -->
+            <div class="d-flex align-items-start gap-4">
+                <div id="carousel-indicators-thumb" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    style="width: 350px;">
+                    <div class="carousel-indicators carousel-indicators-thumb"> <button type="button"
+                            data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="0"
+                            class="ratio ratio-4x3 active"
+                            style="background-image: url(https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></button>
+                        <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="1"
+                            class="ratio ratio-4x3"
+                            style="background-image: url(https://plus.unsplash.com/premium_photo-1723491285855-f1035c4c703c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></button>
+                        <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="2"
+                            class="ratio ratio-4x3"
+                            style=" background-image: url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); "></button>
+                        <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="3"
+                            class="ratio ratio-4x3"
+                            style="background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></button>
+                        <button type="button" data-bs-target="#carousel-indicators-thumb" data-bs-slide-to="4"
+                            class="ratio ratio-4x3"
+                            style="background-image: url(https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"> <img class="d-block w-100" alt=""
+                                src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </div>
+                        <div class="carousel-item"> <img class="d-block w-100" alt=""
+                                src="https://plus.unsplash.com/premium_photo-1723491285855-f1035c4c703c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </div>
+                        <div class="carousel-item"> <img class="d-block w-100" alt=""
+                                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </div>
+                        <div class="carousel-item"> <img class="d-block w-100" alt=""
+                                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </div>
+                        <div class="carousel-item"> <img class="d-block w-100" alt=""
+                                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-1">
+
+                    <span class="badge bg-danger p-1" style="color: #fff; width: fit-content;"><i
+                            class="fa-solid fa-thumbs-up pe-1"></i>Favorite Restaurant</span>
+                    <h3 class="fw-bold">{{restaurant.name}}</h3>
+                    <p class="text-muted mb-1">{{restaurant.location}}</p>
+
+                    <!-- Rating -->
+                    <div class="d-flex align-items-end mb-2 gap-2">
+                        <div id="rating" data-rating="{{restaurant.rating}}"></div>
+                        <span class="fw-semibold small">500+ reviews on ShopeeFood</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <span class="badge bg-teal text-teal-fg">Service Fee: 0%</span>
+                        <span class="badge bg-cyan text-cyan-fg">Service Provided By Tasty Food</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container py-4">
+            <h4 class="fw-bold mb-3">Customer reviews</h4>
+            <div id="reviewMultiCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="review-carousel-inner"></div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewMultiCarousel"
+                    data-bs-slide="prev">
+                    <span class="control-circle d-inline-flex align-items-center justify-content-center rounded-circle"
+                        aria-hidden="true">
+                        <!-- left chevron -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewMultiCarousel"
+                    data-bs-slide="next">
+                    <span class="control-circle d-inline-flex align-items-center justify-content-center rounded-circle"
+                        aria-hidden="true">
+                        <!-- right chevron -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 14.354a.5.5 0 0 1 0-.708L10.293 8 4.646 2.354a.5.5 0 1 1 .708-.708l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708 0z" />
+                        </svg>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="container py-4" class="menu-content">
+            <h4 class="fw-bold mb-3">Menu highlights</h4>
+            {% if menu['items'] and menu['items']|length > 0 %}
+
+            <div id="menu-items" class="mt-2">
+                {% for product in menu['items'] %}
+                <div class="d-flex gap-2 justify-content-between align-items-center m-0 shadow-lg"
+                    style="border-radius: .5rem; background-color: #fff; padding: .8rem 1rem;">
+                    <div class="d-flex gap-2 justify-content-between align-items-center" style="width: 100%;">
+                        <img src="{{ product.image_url or 'https://images.unsplash.com/photo-1752028935881-0674807b046c?q=80&w=817&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }}"
+                            class="card-img-top" alt="{{ product.name }}"
+                            style="width: 60px; height: 60px; border-radius: .5rem;">
+                        <div class="d-flex flex-column gap-1" style="width: 100%;">
+                            <div class="d-flex justify-content-between gap-1">
+                                <h6 class="card-title m-0" style="color: #464646; font-size: .8rem;">{{ product.name }}
+                                </h6>
+
+                                <div class="d-flex justify-content-start align-items-center gap-1 m-0">
+                                    {% if product.discount_pct > 0 %}
+                                    <p class="fw-bold m-0"
+                                        style="color: #6d6f71; font-size: .7rem; text-decoration: line-through;">
+                                        ${{ "{:,.2f}".format(product.price) }}
+                                    </p>
+                                    <p class="fw-bold m-0" style="color: #0288d1; font-size: .8rem; ">
+                                        ${{ "{:,.2f}".format(product.discount_price) }}
+                                    </p>
+                                    <!-- <span class="badge bg-danger">-{{ product.discount_pct }}%</span> -->
+                                    {% else %}
+
+                                    <p class="fw-bold m-0" style="color: #0288d1; font-size: .8rem;">
+                                        ${{ "{:,.2f}".format(product.price) }}
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between gap-1">
+                                <p class="card-title m-0" style="color: #667382; font-size: .8rem;">
+                                    {{ product.description }}</p>
+                                <div class="d-flex gap-2 justify-content-start align-items-center">
+                                    <i data-action="add-to-cart" class="fa-solid fa-square-plus fa-xl cursor-pointer"
+                                        style="color: #ee4d2d;" data-product-id="{{product.id}}"
+                                        data-product-discount-price="{{product.discount_price}}"
+                                        data-product-name="{{product.name}}" data-product-price="{{product.price}}"
+                                        data-product-img="{{product.image_url}}" data-restaurant-id="{{restaurant.id}}"
+                                        data-restaurant-name="{{restaurant.name}}"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty" style="background: #fff; border-radius: 1rem;">
+                <div class="empty-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="12" r="9" />
+                        <line x1="9" y1="10" x2="9.01" y2="10" />
+                        <line x1="15" y1="10" x2="15.01" y2="10" />
+                        <path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" />
+                    </svg>
+                </div>
+                <p class="empty-title">No results found</p>
+                <p class="empty-subtitle text-secondary">
+                    Try adjusting your search or filter to find what you're looking for.
+                </p>
+                <div class="empty-action">
+                    <a href="#" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <circle cx="10" cy="10" r="7" />
+                            <line x1="21" y1="21" x2="15" y2="15" />
+                        </svg>
+                        Search again
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+{% include "layouts/footer.html" %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        function renderRating(value, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            const fullStars = Math.floor(value);
+            const halfStar = (value % 1) >= 0.5 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+
+            for (let i = 0; i < fullStars; i++) {
+                const star = document.createElement('span');
+                star.className = 'star';
+                star.innerHTML = '<i class="fa-solid fa-star"></i>';
+                container.appendChild(star);
+            }
+
+            if (halfStar) {
+                const star = document.createElement('span');
+                star.className = 'star half';
+                star.innerHTML = `<i class="fa-solid fa-star-half-stroke"></i>`
+                container.appendChild(star);
+            }
+
+            for (let i = 0; i < emptyStars; i++) {
+                const star = document.createElement('span');
+                star.className = 'star';
+                star.innerHTML = `<i class="fa-regular fa-star"></i>`;
+                container.appendChild(star);
+            }
+        }
+
+        const ratingEl = document.querySelector("#rating");
+        const value = parseFloat(ratingEl.dataset.rating);
+        renderRating(value, 'rating');
+
+
+        const reviews = [{
+            name: "Sarah Johnson",
+            location: "New York, USA",
+            rating: 5,
+            date: "12th September, 2023",
+            review: "The food was absolutely delicious and delivered faster than I expected. I’ll definitely order again.",
+            avatar: "https://i.pravatar.cc/60?img=1"
+        },
+        {
+            name: "David Kim",
+            location: "Seoul, South Korea",
+            rating: 4,
+            date: "10th September, 2023",
+            review: "Good variety of dishes. Delivery was a bit slow this time, but overall nice experience.",
+            avatar: "https://i.pravatar.cc/60?img=2"
+        },
+        {
+            name: "Emily Carter",
+            location: "London, UK",
+            rating: 5,
+            date: "8th September, 2023",
+            review: "Amazing service! Courteous delivery staff and the food was still hot when it arrived.",
+            avatar: "https://i.pravatar.cc/60?img=3"
+        },
+        {
+            name: "Mohammed Ali",
+            location: "Dubai, UAE",
+            rating: 4,
+            date: "5th September, 2023",
+            review: "Tasty food and clean packaging. Would recommend to friends and family.",
+            avatar: "https://i.pravatar.cc/60?img=4"
+        },
+        {
+            name: "Sophia Rossi",
+            location: "Rome, Italy",
+            rating: 5,
+            date: "1st September, 2023",
+            review: "Authentic flavors and quick delivery. Felt like dining at the restaurant itself!",
+            avatar: "https://i.pravatar.cc/60?img=5"
+        },
+        {
+            name: "James Wilson",
+            location: "Toronto, Canada",
+            rating: 3,
+            date: "28th August, 2023",
+            review: "The food was decent but arrived a little cold. Could improve packaging.",
+            avatar: "https://i.pravatar.cc/60?img=6"
+        },
+        {
+            name: "Aiko Tanaka",
+            location: "Tokyo, Japan",
+            rating: 5,
+            date: "20th August, 2023",
+            review: "Super fast delivery and fresh ingredients. I loved the sushi rolls.",
+            avatar: "https://i.pravatar.cc/60?img=7"
+        },
+        {
+            name: "Carlos Mendes",
+            location: "Lisbon, Portugal",
+            rating: 4,
+            date: "18th August, 2023",
+            review: "Great seafood dishes and polite driver. Portion size could be bigger though.",
+            avatar: "https://i.pravatar.cc/60?img=8"
+        }
+        ];
+
+        // helper to chunk array into groups of n
+        function chunkArray(arr, size) {
+            const out = [];
+            for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+            return out;
+        }
+
+        // render carousel slides (3 items per slide)
+        (function renderReviewsCarousel() {
+            const inner = document.getElementById('review-carousel-inner');
+            if (!inner) return;
+
+            // ensure every slide has exactly 3 items: duplicate from start if needed
+            const items = reviews.slice();
+            const remainder = items.length % 3;
+            if (remainder !== 0) {
+                const need = 3 - remainder;
+                for (let i = 0; i < need; i++) items.push(reviews[i % reviews.length]);
+            }
+
+            const groups = chunkArray(items, 3);
+
+            groups.forEach((group, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-item' + (i === 0 ? ' active' : '');
+
+                const row = document.createElement('div');
+                row.className = 'row g-3 justify-content-center';
+
+                group.forEach(r => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-4';
+
+                    col.innerHTML = `
+                        <div class="card p-3 review-card shadow-sm h-100" style="border-radius: .5rem;padding-bottom: 0;">
+                            <div class="d-flex align-items-start gap-2 flex-column">
+                            <div class="d-flex gap-1 justify-content-between align-items-center" style="width: 100%;">
+                                <img src=${r.avatar}" alt="${r.name}" class="avatar me-3">
+                                <div class="d-flex gap-1 flex-column" style="width: 100%;">
+                                    <div class="d-flex align-items-center">
+                                        <strong class="me-2">${r.name}</strong>
+                                        <small class="text-orange ms-auto">${renderStars(r.rating)}</small>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="text-muted small">${r.location}</div>
+
+                                        <div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="mb-0 text-muted small" style="font-style: italic;">${escapeHtml(r.review)}</p>
+                            <div class="d-flex align-items-center text-muted small gap-1 justify-content-end">
+                                <i class="fa-regular fa-clock" style="color: #FFD43B;"></i>
+                                ${r.date}
+                            </div>
+                            </div>
+                        </div>
+                        `;
+                    row.appendChild(col);
+                });
+
+                slide.appendChild(row);
+                inner.appendChild(slide);
+            });
+        })();
+
+        function renderStars(n) {
+            const full = '★'.repeat(n);
+            const empty = '☆'.repeat(5 - n);
+            return `<span class="text-warning">${full}${empty}</span>`;
+        }
+
+        // simple html escape for review text
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>"'`=\/]/g, function (s) {
+                return ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;',
+                    '/': '&#x2F;',
+                    '=': '&#x3D;',
+                    '`': '&#x60;'
+                })[s];
+            });
+        }
+    });
+</script>
+{% endblock %}

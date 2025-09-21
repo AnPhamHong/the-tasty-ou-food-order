@@ -18,3 +18,15 @@ def offers():
 @pages_bp.route("/faqs")
 def faqs():
     return render_template("faqs.html")
+
+@pages_bp.route("/shopping-bag")
+def shopping_bag():
+    return render_template("pages/shopping_bag.html")
+
+@pages_bp.route("/seller/register")
+def register_restaurant():
+    return render_template("auth/register_restaurant.html")
+
+@pages_bp.route("/seller-admin")
+def seller_admin():
+    return render_template("seller_admin.html")

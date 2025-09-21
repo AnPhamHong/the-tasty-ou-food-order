@@ -1,6 +1,13 @@
 
 const tabs = document.querySelectorAll('#featured-restaurants .restaurant-tab');
 const restaurantList = document.getElementById('restaurant-list');
+const pagination = document.getElementById('pagination'); // thêm 1 div dưới list
+
+let currentTab = 'fast_delivery';
+let currentPage = 1;
+let totalPages = 1;
+const perPage = 10;
+let isLoading = false;
 
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
@@ -8,7 +15,9 @@ tabs.forEach(tab => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
 
-    fetchRestaurants(tabName);
+    currentTab = tabName;
+    currentPage = 1;
+    fetchRestaurants(tabName, currentPage, true);
   });
 });
 
@@ -36,16 +45,34 @@ function showSkeleton(count = 4) {
 }
 
 
-async function fetchRestaurants(tab) {
+async function fetchRestaurants(tab, page = 1, reset = false, limit = perPage) {
+  if (!restaurantList) return;
+  if (isLoading) return;
+  isLoading = true;
+
+  if (reset && restaurantList) {
+    restaurantList.innerHTML = "";
+  }
+  showSkeleton(20);
+
   try {
-    showSkeleton(12);
-    const res = await fetch(`/restaurants?tab=${tab}`);
+    const res = await fetch(`/restaurants?tab=${tab}&page=${page}&limit=${limit}`);
     if (!res.ok) throw new Error('Failed to fetch restaurants');
     const data = await res.json();
-    renderRestaurants(data);
+
+    const restaurants = data.restaurants || [];
+    currentPage = data.page || 1;
+    totalPages = data.total_pages || 1;
+
+
+
+    renderRestaurants(restaurants);   // render list nhà hàng
+    renderPagination();              // render phân trang
   } catch (err) {
-    console.error(err);
-    restaurantList.innerHTML = '<p>Error loading restaurants</p>';
+    console.error("Error loading restaurants:", err);
+    restaurantList.innerHTML = `<p class="text-danger">Failed to load restaurants.</p>`;
+  } finally {
+    isLoading = false;
   }
 }
 
@@ -81,29 +108,36 @@ function renderBadgeHtml(badges) {
   }
   return badgeHTML
 }
+const restaurantMenuBase = "{{ url_for('menu.restaurant_menu', restaurant_id=0) }}";
 
-function renderRestaurants(restaurants) {
-  restaurantList.innerHTML = ''; // clear
+
+function renderRestaurants(restaurants, append = false) {
+  if (!append) restaurantList.innerHTML = '';
 
   restaurants.forEach(r => {
     let badges = [];
     try {
-      badges = JSON.parse(r.badges);
-    } catch (e) { }
+      badges = typeof r.badges === "string" ? JSON.parse(r.badges) : r.badges;
+    } catch (e) {
+      badges = [];
+    }
+    const dishes = r.products.length === 0
+      ? "&nbsp;"
+      : r.products.map(p => p.name).join(", ");
 
-    const dishes = r.products.length === 0 ? "&nbsp;" : r.products.map(p => p.name).join(', ');
+    const col = document.createElement("div");
+    col.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3";
 
-    const col = document.createElement('div');
-    col.className = 'col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3';
-    let badgeHTML = !badges.length ? '&nbsp;' : renderBadgeHtml(badges)
+    const badgeHTML = !badges.length ? "&nbsp;" : renderBadgeHtml(badges);
+    const menuUrl = `/restaurant/${r.id}/menu`;
 
     col.innerHTML = `
-      <div class="vertical-product-box roundedbg-white shadow-sm" style="border-radius: .5rem !important; border: 1px solid #e8e8e8;">
+      <div class="vertical-product-box roundedbg-white shadow-sm" style="border-radius: .5rem !important; border: 1px solid #e8e8e8; background: #fff;">
       <!-- Badge -->
 
       <!-- Product Image -->
       <div class="vertical-product-box-img position-relative">
-        <a class="bg-size d-block" href="/zomo/order/menu-listing/ribeye-junction" 
+        <a class="bg-size d-block" href="${menuUrl}" 
           style="background-image: url(${r.image_url}); background-size: cover; background-position: center; height: 200px; border-radius: .5rem;">
           <img src="${r.image_url}" alt="${r.name}" class="product-img-top w-100 bg-img d-none">
         </a>
@@ -115,7 +149,7 @@ function renderRestaurants(restaurants) {
       <!-- Body -->
       <div class="vertical-product-body mt-3">
         <div class="d-flex align-items-center justify-content-between">
-          <a href="/zomo/order/menu-listing/ribeye-junction" class="text-decoration-none">
+          <a href="${menuUrl}" class="text-decoration-none">
             <h6 class="vertical-product-title mb-0">${r.name}</h6>
           </a>
           <div class="rating-star mb-0 d-flex align-items-center justify-content-center gap-1">
@@ -124,10 +158,10 @@ function renderRestaurants(restaurants) {
           </div>
         </div>
         <span class="single-line-text">${dishes}</span>
-        <div class="location-distance flex-wrap d-flex align-items-center justify-content-between pt-2 gap-2">
+        <div class="location-distance flex-column d-flex align-items-start justify-content-between pt-2 gap-2">
           <div class="place mb-0 small fw-semibold d-flex align-items-center justify-content-between">
             <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 9.5C13.3807 9.5 14.5 10.6193 14.5 12C14.5 13.3807 13.3807 14.5 12 14.5C10.6193 14.5 9.5 13.3807 9.5 12C9.5 10.6193 10.6193 9.5 12 9.5Z" fill="#000000"></path> </g></svg>
-            <span style="font-size:0.75rem;">${r.location}</h7>
+            <span style="font-size: 0.75rem;">${r.location}</h7>
           </div>
           <div class="distance d-flex mb-0 gap-3 small text-muted">
             <div class="d-flex align-items-center justify-content-between gap-1">
@@ -149,11 +183,71 @@ function renderRestaurants(restaurants) {
     </div>
 
     `;
+
     restaurantList.appendChild(col);
   });
 }
 
-// load default
-document.addEventListener('DOMContentLoaded', () => {
-  fetchRestaurants('fast_delivery');
-});
+function renderPagination() {
+  let html = "";
+
+  // nút Previous
+  if (currentPage > 1) {
+    html += `
+      <li class="page-item">
+        <a class="page-link" href="#" data-page="${currentPage - 1}">&laquo;</a>
+      </li>`;
+  } else {
+    html += `
+      <li class="page-item disabled">
+        <a class="page-link">&laquo;</a>
+      </li>`;
+  }
+
+  // số trang
+  for (let i = 1; i <= totalPages; i++) {
+    html += `
+      <li class="page-item ${i === currentPage ? "active" : ""}">
+        <a class="page-link" href="#" data-page="${i}">${i}</a>
+      </li>`;
+  }
+
+  // nút Next
+  if (currentPage < totalPages) {
+    html += `
+      <li class="page-item">
+        <a class="page-link" href="#" data-page="${currentPage + 1}">&raquo;</a>
+      </li>`;
+  } else {
+    html += `
+      <li class="page-item disabled">
+        <a class="page-link">&raquo;</a>
+      </li>`;
+  }
+
+  document.querySelector(".pagination").innerHTML = html;
+
+  // gắn event click
+  document.querySelectorAll(".pagination a.page-link").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const page = parseInt(a.dataset.page);
+      if (!isNaN(page)) {
+        fetchRestaurants(currentTab, page, perPage);
+      }
+    });
+  });
+}
+
+// Infinite Scroll observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && currentPage < totalPages && !isLoading) {
+      fetchRestaurants(currentTab, currentPage + 1, false);
+    }
+  });
+}, { threshold: 1 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchRestaurants(currentTab, 1, true);
+})

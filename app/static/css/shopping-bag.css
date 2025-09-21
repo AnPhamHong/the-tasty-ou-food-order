@@ -1,0 +1,33 @@
+.section-shopping-bag {
+    margin-top: 105px;
+
+}
+
+.trash-icon {
+    transition: all 0.2s ease;
+    /* hiệu ứng mượt */
+    cursor: pointer;
+}
+
+.trash-icon:hover {
+    color: #c13333;
+    /* màu đỏ đậm hơn khi hover */
+    transform: scale(1.2);
+    /* phóng to 20% */
+}
+
+.section-shopping-bag .card-body {
+    padding: 2rem !important;
+
+}
+
+.section-shopping-bag .modal-header,
+.section-shopping-bag .modal-footer {
+    border-color: rgba(4, 32, 69, .14);
+}
+
+.section-shopping-bag #checkoutForm input,
+.section-shopping-bag #checkoutForm select {
+    border-color: rgba(4, 32, 69, .14) !important;
+    border-radius: .5rem !important;
+}

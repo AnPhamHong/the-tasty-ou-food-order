@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- HEADER -->
+{% include "layouts/header.html" %}
+
+<section class="py-5 section-shopping-bag">
+    <div class="container">
+
+        <div class="row">
+            <!-- Left column - Cart items -->
+            <div class="col-lg-8 mt-2 d-flex">
+                <div class="card shadow-lg flex-fill" style="border-radius: .5rem; border: none !important;">
+                    <div class="card-body">
+                        <div class="row g-4" id="cart-items-container">
+                            <!-- JS sẽ inject các item ở đây -->
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary" style="width: fit-content;" id="btnContinueShopping">
+                                Continue Shopping
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column - Summary -->
+            <div class="col-lg-4 mt-2 d-flex">
+                <div class="card shadow-lg flex-fill" style="border-radius: .5rem; border: none;">
+                    <div class="card-body" id="cart-summary-container">
+                        <div>
+                            <form id="checkoutForm">
+                                <h3 class="card-title text-center text-uppercase">Shipping & Payment Information</h3>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recipientName">Recipient Name</label>
+                                    <input id="recipientName" type="text" class="form-control" name="recipient_name"
+                                        placeholder="Enter full name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="address">Recipient Address</label>
+                                    <input id="address" type="text" class="form-control" name="recipient_address"
+                                        placeholder="Enter address" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                                    <input id="phoneNumber" type="tel" class="form-control" name="phone"
+                                        placeholder="Enter phone number" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="email">Email</label>
+                                    <div class="input-group">
+                                        <input name="email" placeholder="Enter email" type="email" class="form-control"
+                                            id="email"
+                                            style="border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important; "
+                                            required>
+                                        <button type="button" class="btn btn-outline-secondary" id="sendEmailOtpBtn"
+                                            data-bs-toggle="modal" data-bs-target="#otpModal" disabled>Send OTP</button>
+                                    </div>
+                                    <div id="emailVerified" class="text-success d-none mt-2">
+                                        Email verified ✅
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="paymentMethod">Payment Method</label>
+                                    <select class="form-select" name="payment_method" required>
+                                        <option value="">Select a method</option>
+                                        <option value="cod">Cash on Delivery</option>
+                                        <option value="credit_card">Credit Card</option>
+                                        <option value="paypal">PayPal</option>
+                                    </select>
+                                </div>
+                                <h3 class="card-title text-center text-uppercase">Summary</h3>
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                    <span>Subtotal</span>
+                                    <span class="summary-subtotal">$8,094.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                    <span>Savings</span>
+                                    <span class="summary-saving" data-value="0">0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                    <span>Store Pickup</span>
+                                    <span class="summary-pickup" data-value="3.50">$99</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                    <span>Tax (5%)</span>
+                                    <span class="summary-tax" data-value="5">$199</span>
+                                </div>
+                                <div class="d-flex justify-content-between fw-bold mb-3">
+                                    <span>Total</span>
+                                    <span class="summary-total" data-value="0">$8,392.00</span>
+                                </div>
+                                <div class="d-grid mb-3">
+                                    <button class="btn btn-primary" id="btnPlaceOrder"
+                                        style="background: linear-gradient(to right, #F37335, #FDC830); border: none; color: #fff;">Proceed
+                                        to Checkout</button>
+                                </div>
+                                <p class="small">One or more items in your cart require an account. <a href="#">Sign
+                                        in</a> or
+                                    <a href="#">create an account now</a>.
+                                </p>
+                                <div class="input-group">
+                                    <input
+                                        style="border-top-left-radius: .5rem !important;border-bottom-left-radius: .5rem !important;border-top-right-radius: 0 !important;border-bottom-right-radius: 0 !important;"
+                                        type="text" class="form-control" placeholder="Voucher or gift card">
+                                    <button class="btn btn-outline-secondary">Apply</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal OTP -->
+    <div class="modal fade" id="otpModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter OTP</h5>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP"
+                        style="border-radius: .5rem;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="confirmOtpBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed left-0 top-0 p-4" style="z-index: 1100;">
+        <div id="orderToast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ✅ Your order has been placed successfully!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+{% include "layouts/footer.html" %}
+<script src="/static/js/shopping-bag.js"></script>
+{% endblock %}
