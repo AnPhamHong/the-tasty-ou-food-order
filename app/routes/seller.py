@@ -15,7 +15,6 @@ from flask_mail import Message
 seller_bp = Blueprint("seller_bp", __name__)
 
 
-from werkzeug.security import generate_password_hash
 from datetime import datetime
 from app.db import get_db_connection
 from flask import send_from_directory
@@ -347,6 +346,7 @@ def get_orders_by_restaurant(restaurant_id):
     conn.close()
     return jsonify(orders)
 
+
 @seller_bp.route("/orders/transaction/<transaction_id>", methods=["GET"])
 def get_order_by_transaction(transaction_id):
     conn = get_db_connection()
@@ -378,7 +378,14 @@ def update_order_status(order_id):
     new_status = data.get("status")
     reason = data.get("reason")  # nếu từ chối
 
-    valid_status = ["Pending", "Preparing", "Rejected", "Delivering", "Completed", "Cancelled"]
+    valid_status = [
+        "Pending",
+        "Preparing",
+        "Rejected",
+        "Delivering",
+        "Completed",
+        "Cancelled",
+    ]
     if new_status not in valid_status:
         return jsonify({"error": "Invalid status"}), 400
 
@@ -387,11 +394,15 @@ def update_order_status(order_id):
 
     try:
         # Cập nhật trạng thái
-        cursor.execute("UPDATE orders SET status=%s WHERE id=%s", (new_status, order_id))
+        cursor.execute(
+            "UPDATE orders SET status=%s WHERE id=%s", (new_status, order_id)
+        )
         conn.commit()
 
         # Lấy email & tên khách
-        cursor.execute("SELECT email, recipient_name FROM orders WHERE id=%s", (order_id,))
+        cursor.execute(
+            "SELECT email, recipient_name FROM orders WHERE id=%s", (order_id,)
+        )
         row = cursor.fetchone()
         if row:
             email, name = row
@@ -406,13 +417,16 @@ def update_order_status(order_id):
                 msg.body = body
                 mail.send(msg)
 
-        return jsonify({"message": f"Order {order_id} updated to {new_status}", "reason": reason})
+        return jsonify(
+            {"message": f"Order {order_id} updated to {new_status}", "reason": reason}
+        )
     except Exception as e:
         conn.rollback()
         return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
         conn.close()
+
 
 @seller_bp.route("/promotions", methods=["POST"])
 def create_promotion():
@@ -436,24 +450,27 @@ def create_promotion():
             INSERT INTO promotions (restaurant_id, name, start_date, end_date, discount_pct, active)
             VALUES (%s, %s, %s, %s, %s, 1)
             """,
-            (restaurant_id, name, start_date, end_date, discount_pct)
+            (restaurant_id, name, start_date, end_date, discount_pct),
         )
         promotion_id = cursor.lastrowid
 
         for food_id in product_ids:
             cursor.execute(
                 "INSERT INTO promotion_items (promotion_id, product_id) VALUES (%s, %s)",
-                (promotion_id, food_id)
+                (promotion_id, food_id),
             )
 
         conn.commit()
-        return jsonify({"message": "Promotion created with items", "promotion_id": promotion_id})
+        return jsonify(
+            {"message": "Promotion created with items", "promotion_id": promotion_id}
+        )
     except Exception as e:
         conn.rollback()
         return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
         conn.close()
+
 
 @seller_bp.route("/promotions/<int:promotion_id>/items", methods=["POST"])
 def add_items_to_promotion(promotion_id):
@@ -470,7 +487,7 @@ def add_items_to_promotion(promotion_id):
         for food_id in product_ids:
             cursor.execute(
                 "INSERT INTO promotion_items (promotion_id, product_id) VALUES (%s, %s)",
-                (promotion_id, food_id)
+                (promotion_id, food_id),
             )
         conn.commit()
         return jsonify({"message": "Products added to promotion"})
@@ -481,6 +498,7 @@ def add_items_to_promotion(promotion_id):
         cursor.close()
         conn.close()
 
+
 @seller_bp.route("/promotions/restaurant/<int:restaurant_id>", methods=["GET"])
 def get_promotions_by_restaurant(restaurant_id):
     conn = get_db_connection()
@@ -488,8 +506,7 @@ def get_promotions_by_restaurant(restaurant_id):
 
     # Lấy các promotion của nhà hàng
     cursor.execute(
-        "SELECT * FROM promotions WHERE restaurant_id=%s AND active=1",
-        (restaurant_id,)
+        "SELECT * FROM promotions WHERE restaurant_id=%s AND active=1", (restaurant_id,)
     )
     promos = cursor.fetchall()
 
@@ -502,7 +519,7 @@ def get_promotions_by_restaurant(restaurant_id):
             JOIN products p ON pi.product_id = p.id
             WHERE pi.promotion_id=%s
             """,
-            (promo["id"],)
+            (promo["id"],),
         )
         promo["items"] = cursor.fetchall()
 

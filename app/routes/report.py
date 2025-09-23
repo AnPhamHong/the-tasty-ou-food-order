@@ -140,6 +140,7 @@ def category_sales():
 
     return jsonify({"year": year, "category_sales": results})
 
+
 @reports_bp.route("/api/reports/top-orders", methods=["GET"])
 def top_orders():
     restaurant_id = request.args.get("restaurant_id")
@@ -169,7 +170,4 @@ def top_orders():
     cursor.close()
     conn.close()
 
-    return jsonify({
-        "year": year,
-        "top_orders": results
-    })
+    return jsonify({"year": year, "top_orders": results})

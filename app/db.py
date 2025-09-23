@@ -7,5 +7,6 @@ db_config = {
     "database": "food_order_db",
 }
 
+
 def get_db_connection():
     return mysql.connector.connect(**db_config)

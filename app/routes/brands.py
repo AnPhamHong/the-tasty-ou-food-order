@@ -3,6 +3,7 @@ from app.db import get_db_connection
 
 brands_bp = Blueprint("brands", __name__)
 
+
 # GET /api/brands
 @brands_bp.route("/api/brands", methods=["GET"])
 def get_brands():

@@ -5,8 +5,10 @@ from app import mail  # import global mail đã khởi tạo
 
 otp_bp = Blueprint("otp", __name__)
 
+
 def generate_otp():
     return str(random.randint(100000, 999999))
+
 
 @otp_bp.route("/verify/email/send", methods=["POST"])
 def send_email_otp():
@@ -25,6 +27,7 @@ def send_email_otp():
         return jsonify({"message": "OTP sent to email"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @otp_bp.route("/verify/email/confirm", methods=["POST"])
 def confirm_email_otp():
