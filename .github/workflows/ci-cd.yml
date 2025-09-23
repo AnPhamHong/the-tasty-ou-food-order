@@ -1,0 +1,45 @@
+name: Tasty Food CI/CD
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Cài đặt Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Cài dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Kiểm tra code style (optional)
+      - name: Lint code
+        run: |
+          pip install flake8 black
+          flake8 app tests
+          black --check app tests
+
+      # Kiểm tra templates Jinja (optional)
+      - name: Check templates
+        run: |
+          python -c "from jinja2 import Environment, FileSystemLoader; env = Environment(loader=FileSystemLoader('templates')); env.list_templates()"
+      
+      # Run basic script
+      - name: Run basic script
+        run: |
+          python -c "print('Hello from CI/CD')"
