@@ -77,13 +77,20 @@ def search():
     if not results:
         cur.execute(
             """
-            SELECT f.id AS food_id, f.name, f.image_url, f.price,
-                   r.id AS restaurant_id, r.name AS restaurant_name, r.location, r.image_url AS restaurant_image, r.rating
+            SELECT f.id AS food_id,
+                f.name,
+                f.image_url,
+                f.price,
+                r.id AS restaurant_id,
+                r.name AS restaurant_name,
+                r.location,
+                r.image_url AS restaurant_image,
+                r.rating
             FROM products f
             JOIN restaurants r ON f.restaurant_id = r.id
             WHERE f.name LIKE %s
             LIMIT 20
-        """,
+            """,
             (f"%{keyword}%",),
         )
         rows = cur.fetchall()

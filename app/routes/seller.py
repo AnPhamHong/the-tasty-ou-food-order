@@ -1,5 +1,4 @@
 from flask import (
-    Flask,
     request,
     jsonify,
     Blueprint,
@@ -7,17 +6,15 @@ from flask import (
     session,
     redirect,
     url_for,
+    send_from_directory,
 )
 
-from app import mail  # instance Mail từ __init__.py
+from app import mail
 from flask_mail import Message
-
-seller_bp = Blueprint("seller_bp", __name__)
 
 
 from datetime import datetime
 from app.db import get_db_connection
-from flask import send_from_directory
 import json
 
 seller_bp = Blueprint("seller", __name__)
@@ -31,7 +28,6 @@ def register_restaurant():
 
     restaurant = data.get("restaurant")
     admin = data.get("admin")
-    categories = data.get("categories", [])
     menu = data.get("menu", [])
 
     if not restaurant or not admin or not menu:
@@ -53,10 +49,19 @@ def register_restaurant():
         # Create restaurant
         cursor.execute(
             """
-            INSERT INTO restaurants 
-            (name, image_url, location, created_at, updated_at, rating, distance_km, delivery_time_min, tags, badges)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """,
+            INSERT INTO restaurants (
+                name,
+                image_url,
+                location,
+                created_at,
+                updated_at,
+                rating,
+                distance_km,
+                delivery_time_min,
+                tags,
+                badges
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
             (
                 restaurant["name"],
                 restaurant.get("image_url", ""),
@@ -76,9 +81,16 @@ def register_restaurant():
         for item in menu:
             cursor.execute(
                 """
-                INSERT INTO products (restaurant_id, name, image_url, price, category, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-            """,
+                INSERT INTO products (
+                    restaurant_id,
+                    name,
+                    image_url,
+                    price,
+                    category,
+                    created_at,
+                    updated_at
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """,
                 (
                     restaurant_id,
                     item["name"],
@@ -93,9 +105,16 @@ def register_restaurant():
         # Create admin account
         cursor.execute(
             """
-            INSERT INTO accounts (username, password, email, organisation, role, restaurant_id, address)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """,
+            INSERT INTO accounts (
+                username,
+                password,
+                email,
+                organisation,
+                role,
+                restaurant_id,
+                address
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """,
             (
                 admin["username"],
                 admin["password"],
@@ -192,9 +211,15 @@ def add_menu_item():
 
     cursor.execute(
         """
-        INSERT INTO products (restaurant_id, name, description, image_url, price, category)
-        VALUES (%s, %s, %s, %s, %s, %s)
-    """,
+        INSERT INTO products (
+            restaurant_id,
+            name,
+            description,
+            image_url,
+            price,
+            category
+        ) VALUES (%s, %s, %s, %s, %s, %s)
+        """,
         (
             restaurant["id"],
             data["name"],
@@ -332,8 +357,8 @@ def get_orders_by_restaurant(restaurant_id):
     cursor = conn.cursor(dictionary=True)
     cursor.execute(
         """
-        SELECT o.*, COUNT(oi.id) AS items_count 
-        FROM orders o 
+        SELECT o.*, COUNT(oi.id) AS items_count
+        FROM orders o
         LEFT JOIN order_items oi ON o.id = oi.order_id
         WHERE o.restaurant_id=%s
         GROUP BY o.id
@@ -447,8 +472,14 @@ def create_promotion():
     try:
         cursor.execute(
             """
-            INSERT INTO promotions (restaurant_id, name, start_date, end_date, discount_pct, active)
-            VALUES (%s, %s, %s, %s, %s, 1)
+            INSERT INTO promotions (
+                restaurant_id,
+                name,
+                start_date,
+                end_date,
+                discount_pct,
+                active
+            ) VALUES (%s, %s, %s, %s, %s, 1)
             """,
             (restaurant_id, name, start_date, end_date, discount_pct),
         )
@@ -456,10 +487,14 @@ def create_promotion():
 
         for food_id in product_ids:
             cursor.execute(
-                "INSERT INTO promotion_items (promotion_id, product_id) VALUES (%s, %s)",
+                """
+                INSERT INTO promotion_items (
+                    promotion_id,
+                    product_id
+                ) VALUES (%s, %s)
+                """,
                 (promotion_id, food_id),
             )
-
         conn.commit()
         return jsonify(
             {"message": "Promotion created with items", "promotion_id": promotion_id}
@@ -486,7 +521,12 @@ def add_items_to_promotion(promotion_id):
     try:
         for food_id in product_ids:
             cursor.execute(
-                "INSERT INTO promotion_items (promotion_id, product_id) VALUES (%s, %s)",
+                """
+                INSERT INTO promotion_items (
+                    promotion_id,
+                    product_id
+                ) VALUES (%s, %s)
+                """,
                 (promotion_id, food_id),
             )
         conn.commit()

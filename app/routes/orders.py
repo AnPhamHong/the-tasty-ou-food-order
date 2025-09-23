@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, request
 from app.db import get_db_connection
 from datetime import datetime
-import uuid
 
 orders_bp = Blueprint("orders", __name__)
 
@@ -9,17 +8,21 @@ orders_bp = Blueprint("orders", __name__)
 @orders_bp.route("/orders/<int:user_id>", methods=["GET"])
 def get_orders(user_id):
     conn = get_db_connection()
-    print("DEBUG DB:", conn.database)  # in ra tên DB đang connect
+    print("DEBUG DB:", conn.database)
 
     cur = conn.cursor(dictionary=True)
-
     # Query orders
     cur.execute(
         """
-        SELECT id AS order_id, restaurant_name, transaction_id, order_time, status, total
-        FROM orders
-        WHERE user_id = %s
-        ORDER BY order_time DESC
+    SELECT id AS order_id,
+           restaurant_name,
+           transaction_id,
+           order_time,
+           status,
+           total
+    FROM orders
+    WHERE user_id = %s
+    ORDER BY order_time DESC
     """,
         (user_id,),
     )
@@ -150,10 +153,11 @@ def create_order():
         items = data["items"]
         for item in items:
             cursor.execute(
-                """
-                INSERT INTO order_items (order_id, food_id, food_name, quantity, price, image_url, note)
-                VALUES (%s,%s,%s,%s,%s,%s,%s)
-            """,
+                (
+                    "INSERT INTO order_items "
+                    "(order_id, food_id, food_name, quantity, price, image_url, note) "
+                    "VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                ),
                 (
                     order_id,
                     item["food_id"],
@@ -164,7 +168,6 @@ def create_order():
                     item.get("note", ""),
                 ),
             )
-
         conn.commit()
 
         return (

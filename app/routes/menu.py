@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, abort
 from app.db import get_db_connection
-from datetime import date
 from collections import defaultdict
 
 menu_bp = Blueprint("menu", __name__)

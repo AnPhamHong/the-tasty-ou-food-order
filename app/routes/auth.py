@@ -109,7 +109,11 @@ def register():
 
         # Insert new account (thêm cột address)
         cursor.execute(
-            "INSERT INTO accounts (username, password, email, address) VALUES (%s, %s, %s, %s)",
+            (
+                "INSERT INTO accounts "
+                "(username, password, email, address) "
+                "VALUES (%s, %s, %s, %s)"
+            ),
             (username, password, email, address),
         )
         conn.commit()
@@ -158,8 +162,11 @@ def update():
             conn = get_db_connection()
             cursor = conn.cursor(dictionary=True)
             cursor.execute(
-                """UPDATE accounts SET username=%s, password=%s, email=%s, organisation=%s, 
-                   address=%s, city=%s, state=%s, country=%s, postalcode=%s WHERE id=%s""",
+                (
+                    "UPDATE accounts SET username=%s, password=%s, email=%s, "
+                    "organisation=%s, address=%s, city=%s, state=%s, country=%s, "
+                    "postalcode=%s WHERE id=%s"
+                ),
                 (
                     form.get("username"),
                     form.get("password"),

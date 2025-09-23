@@ -25,7 +25,11 @@ def get_restaurants():
         order_clause = "ORDER BY rating DESC"
     elif tab == "cost":
         where_clause = "JSON_CONTAINS(tags, '\"cost\"')"
-        order_clause = "ORDER BY (SELECT AVG(price) FROM products p WHERE p.restaurant_id = r.id) ASC"
+        order_clause = (
+            "ORDER BY (SELECT AVG(price) "
+            "FROM products p "
+            "WHERE p.restaurant_id = r.id) ASC"
+        )
     else:
         where_clause = "1"
 

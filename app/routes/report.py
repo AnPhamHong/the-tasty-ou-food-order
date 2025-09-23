@@ -1,10 +1,5 @@
 from flask import Blueprint, jsonify, request
 from app.db import get_db_connection
-from datetime import datetime, timedelta
-
-reports_bp = Blueprint("reports", __name__)
-from flask import Blueprint, jsonify, request
-from app.db import get_db_connection
 from datetime import datetime
 
 reports_bp = Blueprint("reports", __name__)
@@ -26,8 +21,8 @@ def monthly_revenue():
     cursor = conn.cursor(dictionary=True)
 
     query = """
-        SELECT MONTH(o.order_time) AS month, 
-        SUM(o.total) AS revenue,   -- ⬅ phải có dấu phẩy
+        SELECT MONTH(o.order_time) AS month,
+        SUM(o.total) AS revenue,
         COUNT(DISTINCT o.id) AS order_count
         FROM orders o
         JOIN order_items oi ON o.id = oi.order_id
