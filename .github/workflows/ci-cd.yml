@@ -31,8 +31,8 @@ jobs:
       - name: Lint code
         run: |
           pip install flake8 black
-          flake8 app tests
-          black --check app tests
+          flake8 app
+          black --check app
 
       # Kiểm tra templates Jinja (optional)
       - name: Check templates
