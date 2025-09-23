@@ -40,6 +40,7 @@ function addToCart(product) {
     saveCart(cart);
     updateCartBadge();
     renderCart();
+    updateTextMsgWarning();
 }
 
 function renderCart() {

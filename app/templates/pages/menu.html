@@ -99,12 +99,14 @@
                 </button>
             </div>
         </div>
-        <div class="container py-4" class="menu-content">
+        <div class="container py-4" id="menu-content">
             <h4 class="fw-bold mb-3">Menu highlights</h4>
-            {% if menu['items'] and menu['items']|length > 0 %}
 
+            {% if menu['items_by_category'] %}
+            {% for category, products in menu['items_by_category'].items() %}
+            <h5 class="fw-bold mt-4 mb-3">{{ category }}</h5>
             <div id="menu-items" class="mt-2">
-                {% for product in menu['items'] %}
+                {% for product in products %}
                 <div class="d-flex gap-2 justify-content-between align-items-center m-0 shadow-lg"
                     style="border-radius: .5rem; background-color: #fff; padding: .8rem 1rem;">
                     <div class="d-flex gap-2 justify-content-between align-items-center" style="width: 100%;">
@@ -137,7 +139,7 @@
                             <div class="d-flex justify-content-between gap-1">
                                 <p class="card-title m-0" style="color: #667382; font-size: .8rem;">
                                     {{ product.description }}</p>
-                                <div class="d-flex gap-2 justify-content-start align-items-center">
+                                <div class="d-flex gap-2 justify-content-start align-items-center btn-add-to-cart">
                                     <i data-action="add-to-cart" class="fa-solid fa-square-plus fa-xl cursor-pointer"
                                         style="color: #ee4d2d;" data-product-id="{{product.id}}"
                                         data-product-discount-price="{{product.discount_price}}"
@@ -151,39 +153,15 @@
                 </div>
                 {% endfor %}
             </div>
+            {% endfor %}
             {% else %}
-            <div class="empty" style="background: #fff; border-radius: 1rem;">
-                <div class="empty-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <circle cx="12" cy="12" r="9" />
-                        <line x1="9" y1="10" x2="9.01" y2="10" />
-                        <line x1="15" y1="10" x2="15.01" y2="10" />
-                        <path d="M9.5 15.25a3.5 3.5 0 0 1 5 0" />
-                    </svg>
-                </div>
-                <p class="empty-title">No results found</p>
-                <p class="empty-subtitle text-secondary">
-                    Try adjusting your search or filter to find what you're looking for.
-                </p>
-                <div class="empty-action">
-                    <a href="#" class="btn btn-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <circle cx="10" cy="10" r="7" />
-                            <line x1="21" y1="21" x2="15" y2="15" />
-                        </svg>
-                        Search again
-                    </a>
-                </div>
+            <div class="empty" style="background: #fff; border-radius: 1rem; padding: 2rem; text-align:center;">
+                <p class="empty-title">No menu items found</p>
+                <p class="empty-subtitle text-secondary">Try adjusting your search or check back later.</p>
             </div>
             {% endif %}
-
         </div>
+
     </div>
 </section>
 

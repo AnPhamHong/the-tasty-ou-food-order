@@ -1114,3 +1114,7 @@ nav.navbar {
   color: #ccc;
   background: #f8f9fa;
 }
+
+.btn-add-to-cart:hover {
+    transform: scale(1.1);
+}
