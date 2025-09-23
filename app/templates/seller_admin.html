@@ -143,6 +143,14 @@
             display: none;
         }
 
+        #overlay {
+            display: none;
+        }
+
+        #overlay.active {
+            display: flex;
+        }
+
         /* Hide all modules by default */
         @media (max-width: 768px) {
             .sidebar {
@@ -168,7 +176,7 @@
         <h4 class="text-center mb-4"><i class="fa-solid fa-utensils me-2"></i>Seller Admin</h4>
         <a href="#" class="active" id="menu-link"><i class="fa-solid fa-bowl-food"></i> Manage Menu</a>
         <a href="#" id="orders-link"><i class="fa-solid fa-receipt"></i> Manage Orders</a>
-        <a href="#" id="orders-promotions"><i class="fa-solid fa-gear"></i> Magage Promotion</a>
+        <a href="#" id="orders-promotions"><i class="fa-solid fa-percent"></i></i> Magage Promotion</a>
         <a href="#" id="reports-link"><i class="fa-solid fa-chart-line"></i> Reports & Analytics</a>
         <a href="#" id="settings-link"><i class="fa-solid fa-gear"></i> Account Settings</a>
         <hr style="border-color: rgba(255,255,255,0.3); margin: 20px 10px;">
@@ -209,8 +217,13 @@
                 </div>
             </div>
             <div id="module-orders" class="module">
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle">
+                <div class="table-responsive position-relative">
+                    <div id="overlay"
+                        style="z-index: 2;position: absolute;width: 100%;height: 100%;background:rgba(0,0,0,0.5);justify-content: center;align-items: center;">
+                        <div class="spinner-border text-blue" role="status"></div>
+                    </div>
+                    <table class="table table-striped table-hover align-middle ">
+
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -229,152 +242,123 @@
                     </table>
                 </div>
             </div>
-            <div id="module-promotions" class="module container">
-                <div class="card p-3 mb-4">
-                    <h5>Existing Promotions</h5>
-                    <ul id="promotionList" class="list-group">
-                        <!-- JS inject các promotion -->
-                    </ul>
-                </div>
-                <div class="card p-3 mb-4">
-                    <h5>Create Promotion</h5>
-                    <input type="text" id="promoName" placeholder="Promotion name" class="form-control mb-2">
-                    <input type="date" id="promoStart" class="form-control mb-2">
-                    <input type="date" id="promoEnd" class="form-control mb-2">
-                    <input type="number" id="promoDiscount" placeholder="Discount %" class="form-control mb-2">
-
-                    <h5>Add Items to Promotion</h5>
-                    <div id="promoItems" class="list-group mb-2">
-                        <!-- JS sẽ inject các món ăn ở đây -->
+            <div id="module-promotions" class="module">
+                <div class="row g-3">
+                    <!-- Existing Promotions -->
+                    <div class="col-md-6">
+                        <div class="card p-3 h-100">
+                            <h5>Existing Promotions</h5>
+                            <div id="promotionList" class="accordion">
+                                <!-- JS inject promotions (accordion items) -->
+                            </div>
+                        </div>
                     </div>
-                    <!-- <button class="btn btn-success w-100" id="addItemsBtn">Add Items</button> -->
 
-                    <button class="btn btn-primary w-100" id="createPromoBtn">Create Promotion</button>
+                    <!-- Create Promotion -->
+                    <div class="col-md-6">
+                        <div class="card p-3 h-100">
+                            <h5>Create Promotion</h5>
+                            <input type="text" id="promoName" placeholder="Promotion name" class="form-control mb-2">
+                            <input type="date" id="promoStart" class="form-control mb-2">
+                            <input type="date" id="promoEnd" class="form-control mb-2">
+                            <input type="number" id="promoDiscount" placeholder="Discount %" class="form-control mb-2">
+
+                            <h5 class="cursor-default mt-2">Add Items to Promotion</h5>
+                            <a href="#" class="btn btn-primary" style="width: fit-content; margin: 1rem auto;"
+                                id="select-all-for-promotion">Select
+                                All</a>
+                            <div id="promoItems" class="list-group mb-2" style="border-top: none; border-bottom: none;">
+                                <!-- JS sẽ inject các món ăn ở đây -->
+                            </div>
+
+                            <button class="btn btn-primary w-100" id="createPromoBtn">
+                                <span class="d-none spinner-border spinner-border-sm me-2" role="status"></span>
+                                <span class="btn-text">Create Promotion</span></button>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-
             <div id="module-reports" class="module page-wrapper">
                 <div class="page-body">
                     <div class="container-fluid">
                         <div class="row g-3">
-                            <!-- Current Order -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm p-3">
-                                    <h5>Current Order</h5>
-                                    <ul class="list-unstyled">
-                                        <li class="d-flex justify-content-between mb-2">
-                                            <span>Mix Platter (x2)</span>
-                                            <span class="fw-bold text-success">$35.45</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between mb-2">
-                                            <span>Oyster Sauce Squid (x1)</span>
-                                            <span class="fw-bold text-success">$26.38</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <span>Oreo Milkshake (x1)</span>
-                                            <span class="fw-bold text-success">$14.29</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="card shadow-sm p-3 mb-4">
+                                <h5>Monthly Revenue & Order Summary</h5>
+                                <p>This report shows the total revenue and number of completed orders for each month of
+                                    the selected year, helping restaurants track performance trends and identify peak
+                                    months.</p>
 
-                            <!-- Transaction -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm p-3">
-                                    <h5>Transaction</h5>
-                                    <canvas id="transactionChart" height="120"></canvas>
-                                </div>
-                            </div>
-
-                            <!-- Summary -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm p-3 text-center">
-                                    <h5>Summary</h5>
-                                    <h2 class="fw-bold">11,015</h2>
-                                    <p class="text-success">Increased 20%</p>
-                                    <canvas id="summaryChart" height="100"></canvas>
-                                </div>
+                                <canvas id="monthlyRevenueChart" height="150"></canvas>
                             </div>
                         </div>
-
-                        <div class="row g-3 mt-1">
-
-                            <!-- Total Revenue -->
-                            <div class="col-md-5">
-                                <div class="card shadow-sm p-3">
-                                    <h5>Total Revenue</h5>
-                                    <h3>$1,150.00</h3>
-                                    <canvas id="revenueChart" height="120"></canvas>
+                        <div class="row d-flex align-items-stretch">
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="card shadow-sm p-3 h-100">
+                                    <h5>Top Selling Dishes</h5>
+                                    <p>This report lists the most popular dishes based on the total quantity sold within
+                                        the selected time period, helping restaurants identify customer favorites and
+                                        best-performing menu items.</p>
+                                    <canvas id="topDishesChart" height="150"></canvas>
                                 </div>
                             </div>
-
-                            <!-- Receipt -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm p-3">
-                                    <h5>Receipt</h5>
-                                    <ul class="list-unstyled">
-                                        <li>Subtotal: $76.12</li>
-                                        <li>Tax 10%: $7.6</li>
-                                        <li>Discount 5%: -$3.8</li>
-                                    </ul>
-                                    <h4>Total: $79.92</h4>
-                                    <div class="mt-3">
-                                        <button class="btn btn-outline-primary btn-sm me-1">Cash</button>
-                                        <button class="btn btn-outline-primary btn-sm me-1">Debit</button>
-                                        <button class="btn btn-outline-primary btn-sm">E-Wallet</button>
-                                    </div>
-                                    <button class="btn btn-primary w-100 mt-3">Place Order</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row g-3 mt-1">
-                            <!-- Stock Management -->
-                            <div class="col-md-8">
-                                <div class="card shadow-sm p-3">
-                                    <h5>Stock Management</h5>
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="card shadow-sm p-3 h-100">
+                                    <h5>Top Selling Dishes</h5>
+                                    <p>This report lists the most popular dishes based on the total quantity sold within
+                                        the selected time period, helping restaurants identify customer favorites and
+                                        best-performing menu items.</p>
                                     <div class="table-responsive">
-                                        <table class="table table-striped align-middle">
+                                        <table class="table table-striped table-hover align-middle">
                                             <thead>
                                                 <tr>
-                                                    <th>Menu</th>
-                                                    <th>Date</th>
-                                                    <th>Category</th>
-                                                    <th>Price</th>
-                                                    <th>Status</th>
+                                                    <th>#</th>
+                                                    <th>Dish</th>
+                                                    <th>Quantity Sold</th>
+                                                    <th>Share</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="topDishesTableBody">
+                                                <!-- JS inject data -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-stretch">
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="card shadow-sm p-3 h-100">
+                                    <h5>Sales by Category</h5>
+                                    <p>This report shows the total quantity sold and revenue generated for each product
+                                        category within the selected time period, helping restaurants identify which
+                                        types
+                                        of dishes contribute most to sales and overall revenue.</p>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 mb-3">
+                                            <canvas id="categorySalesChart" height="250"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 mb-4">
+                                <div class="card shadow-sm p-3 h-100">
+                                    <h5>Top 10 Highest Value Orders</h5>
+                                    <p>This report lists the top 10 orders with the highest total amount, helping
+                                        restaurants track large transactions and VIP customers.</p>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover align-middle">
+                                            <thead>
                                                 <tr>
-                                                    <td>Spaghetti Bolognese</td>
-                                                    <td>16/01/2023</td>
-                                                    <td>Food</td>
-                                                    <td>$24.00</td>
-                                                    <td><span class="badge bg-warning">Pending</span></td>
+                                                    <th>#</th>
+                                                    <th>Customer</th>
+                                                    <th>Total ($)</th>
+                                                    <th>Order Date</th>
+                                                    <th>Share</th>
                                                 </tr>
-                                                <tr>
-                                                    <td>Honeydew Juice</td>
-                                                    <td>15/01/2023</td>
-                                                    <td>Beverage</td>
-                                                    <td>$18.55</td>
-                                                    <td><span class="badge bg-success">Completed</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Beef Burger Steak</td>
-                                                    <td>14/01/2023</td>
-                                                    <td>Snack</td>
-                                                    <td>$32.38</td>
-                                                    <td><span class="badge bg-danger">Canceled</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Chicken Katsu Teriyaki</td>
-                                                    <td>14/01/2023</td>
-                                                    <td>Food</td>
-                                                    <td>$25.63</td>
-                                                    <td><span class="badge bg-success">Completed</span></td>
-                                                </tr>
+                                            </thead>
+                                            <tbody id="topOrdersTableBody">
+                                                <!-- JS inject -->
                                             </tbody>
                                         </table>
                                     </div>
@@ -452,7 +436,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Save Dish</button>
+                        <button type="submit" class="btn btn-primary" id="saveDishBtn">
+                            <span class="d-none spinner-border spinner-border-sm me-2" role="status"></span>
+                            <span class="btn-text">Save Dish</span></button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     </div>
                 </form>
@@ -479,6 +465,17 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JS toggle overlay
+        function showOverlay() {
+            document.getElementById("overlay").classList.add("active");
+        }
+
+        function hideOverlay() {
+            document.getElementById("overlay").classList.remove("active");
+        }
+
+    </script>
 
     <script>
         // Transaction chart
@@ -658,6 +655,10 @@
         // Handle Add/Edit form submit
         menuForm.addEventListener('submit', async e => {
             e.preventDefault();
+            const saveBtn = document.getElementById("saveDishBtn");
+            const spinner = saveBtn.querySelector(".spinner-border");
+            const btnText = saveBtn.querySelector(".btn-text");
+
             const payload = {
                 restaurant_id: localStorage.getItem("restaurantId"),
                 name: document.getElementById('menuName').value,
@@ -668,6 +669,11 @@
             };
 
             try {
+
+                // active loading
+                saveBtn.disabled = true;
+                spinner.classList.remove("d-none");
+                btnText.textContent = "Saving...";
                 let url = '/api/menu';
                 let method = 'POST';
                 if (currentEditId) {
@@ -697,6 +703,11 @@
             } catch (err) {
                 console.error(err);
                 alert('Server error');
+            } finally {
+                // deactivate loading
+                saveBtn.disabled = false;
+                spinner.classList.add("d-none");
+                btnText.textContent = "Save Dish";
             }
         });
 
@@ -719,7 +730,11 @@
         if (accountForm) {
 
             async function loadUserInfo() {
-                if (!userId) return alert("userId missing");
+                if (!userId) {
+                    localStorage.clear();
+                    window.location.href = "/login";
+                    return alert("You are not logged in")
+                }
                 try {
                     const res = await fetch(`/api/user?user_id=${userId}`);
                     const data = await res.json();
@@ -737,7 +752,11 @@
 
             accountForm.addEventListener('submit', async e => {
                 e.preventDefault();
-                if (!userId) return alert("userId missing");
+                if (!userId) {
+                    localStorage.clear();
+                    window.location.href = "/login";
+                    return alert("You are not logged in")
+                }
 
                 const payload = {
                     user_id: userId,
@@ -763,7 +782,6 @@
 
                         localStorage.clear();
                         window.location.href = "/login";
-                        // accountForm.reset();  // giữ dữ liệu trên form
                     } else {
                         alert(data.message || 'Error updating info');
                     }
@@ -846,7 +864,7 @@
                                 ${order.status === "Cancelled" ? "" : statusSelect}
                             </td>
                             <td>
-                                <button class="btn btn-sm btn-info" onclick="viewOrderDetail('${order.transaction_id}')">View Details</button>
+                                <button class="btn btn-sm btn-primary" onclick="viewOrderDetail('${order.transaction_id}')">View Details</button>
                             </td>
                         </tr>
                     `;
@@ -983,6 +1001,7 @@
         }
 
         async function updateOrderStatus(orderId, status) {
+            showOverlay();
             try {
                 const res = await fetch(`/orders/${orderId}/status`, {
                     method: "PUT",
@@ -1004,6 +1023,8 @@
                 }
             } catch (err) {
                 console.error("Error updating order:", err);
+            } finally {
+                hideOverlay()
             }
         }
 
@@ -1014,47 +1035,47 @@
         });
     </script>
     <script>
-const restaurantId = localStorage.getItem("restaurantId") ?? 1;
+        const restaurantId = localStorage.getItem("restaurantId") ?? 1;
 
-// DOM elements
-const promoName = document.getElementById("promoName");
-const promoStart = document.getElementById("promoStart");
-const promoEnd = document.getElementById("promoEnd");
-const promoDiscount = document.getElementById("promoDiscount");
-const promoItemsContainer = document.getElementById("promoItems");
-const promotionList = document.getElementById("promotionList");
-const createBtn = document.getElementById("createPromoBtn");
+        // DOM elements
+        const promoName = document.getElementById("promoName");
+        const promoStart = document.getElementById("promoStart");
+        const promoEnd = document.getElementById("promoEnd");
+        const promoDiscount = document.getElementById("promoDiscount");
+        const promoItemsContainer = document.getElementById("promoItems");
+        const promotionList = document.getElementById("promotionList");
+        const createBtn = document.getElementById("createPromoBtn");
 
-// Cache
-let menuItemsCache = [];
-let promotionsCache = [];
+        // Cache
+        let menuItemsCache = [];
+        let promotionsCache = [];
 
-// ------------------- Fetch functions -------------------
-async function fetchMenuItems() {
-    try {
-        const res = await fetch(`/api/menu?restaurant_id=${restaurantId}`);
-        if (!res.ok) throw new Error("Failed to fetch menu items");
-        return await res.json();
-    } catch (err) {
-        console.error(err);
-        return [];
-    }
-}
+        // ------------------- Fetch functions -------------------
+        async function fetchMenuItems() {
+            try {
+                const res = await fetch(`/api/menu?restaurant_id=${restaurantId}`);
+                if (!res.ok) throw new Error("Failed to fetch menu items");
+                return await res.json();
+            } catch (err) {
+                console.error(err);
+                return [];
+            }
+        }
 
-async function fetchPromotions() {
-    try {
-        const res = await fetch(`/promotions/restaurant/${restaurantId}`);
-        if (!res.ok) throw new Error("Failed to fetch promotions");
-        return await res.json();
-    } catch (err) {
-        console.error(err);
-        return [];
-    }
-}
+        async function fetchPromotions() {
+            try {
+                const res = await fetch(`/promotions/restaurant/${restaurantId}`);
+                if (!res.ok) throw new Error("Failed to fetch promotions");
+                return await res.json();
+            } catch (err) {
+                console.error(err);
+                return [];
+            }
+        }
 
-// ------------------- Render functions -------------------
-function renderMenuItemsForPromotions(items) {
-    promoItemsContainer.innerHTML = items.map(item => `
+        // ------------------- Render functions -------------------
+        function renderMenuItemsForPromotions(items) {
+            promoItemsContainer.innerHTML = items.map(item => `
         <label class="list-group-item d-flex justify-content-between align-items-center">
             <div>
                 <input type="checkbox" class="form-check-input me-2 promo-item-checkbox" value="${item.id}">
@@ -1063,103 +1084,361 @@ function renderMenuItemsForPromotions(items) {
             <span>$${parseFloat(item.price).toFixed(2)}</span>
         </label>
     `).join("");
-}
-
-function renderPromotions(promos) {
-    promotionList.innerHTML = promos.map(p => `
-        <li class="list-group-item mb-2" data-id="${p.id}">
-            <div class="d-flex justify-content-between align-items-start">
-                <div>
-                    <strong>${p.name} (${p.discount_pct}%)</strong>
-                    <br>
-                    <small>${p.start_date} → ${p.end_date}</small>
-                </div>
-                <span class="badge bg-primary rounded-pill">${p.items.length} items</span>
-            </div>
-            <ul class="mt-2 list-group list-group-flush">
-                ${p.items.map(item => `<li class="list-group-item py-1 px-2">
-                    <div class="d-flex justify-content-between gap-2 align-items-center">
-                        <div><img src="${item.image_url} alt="img" style="width: 60px; height: 60px; object-fit: cover; border-radius: .5rem; margin-right: 1rem;" />${item.name}</div>
-                        <span>$${parseFloat(item.price).toFixed(2)}</span>
+        }
+        function renderPromotions(promos) {
+            promotionList.innerHTML = `
+    <div class="accordion" id="promotionAccordion">
+      ${promos.map((p, idx) => `
+        <div class="accordion-item mb-2" data-id="${p.id}">
+          <h2 class="accordion-header" id="heading-${idx}">
+            <button class="accordion-button collapsed d-flex justify-content-between align-items-center" 
+                    type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapse-${idx}" 
+                    aria-expanded="false" aria-controls="collapse-${idx}">
+              <div class="me-2">
+                <strong>${p.name} (${p.discount_pct}%)</strong><br>
+                <small>${p.start_date} → ${p.end_date}</small>
+              </div>
+              <span class="badge bg-primary rounded-pill ms-auto">${p.items.length} items</span>
+            </button>
+          </h2>
+          <div id="collapse-${idx}" class="accordion-collapse collapse" aria-labelledby="heading-${idx}" data-bs-parent="#promotionAccordion">
+            <div class="accordion-body p-2">
+              <ul class="list-group list-group-flush">
+                ${p.items.map(item => `
+                  <li class="list-group-item py-2 px-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex align-items-center">
+                        <img src="${item.image_url}" alt="img" style="width: 60px; height: 60px; object-fit: cover; border-radius: .5rem; margin-right: 1rem;" />
+                        ${item.name}
+                      </div>
+                      <span>$${parseFloat(item.price).toFixed(2)}</span>
                     </div>
-                    </li>`).join("")}
-            </ul>
-        </li>
-    `).join("");
-}
-
-// ------------------- Helper -------------------
-function getSelectedItemIds() {
-    return Array.from(document.querySelectorAll('input.promo-item-checkbox:checked'))
-        .map(cb => cb.value);
-}
-
-// ------------------- Init module -------------------
-async function initPromotionsModule() {
-    // Load menu items only once
-    menuItemsCache = await fetchMenuItems();
-    renderMenuItemsForPromotions(menuItemsCache);
-
-    // Load promotions only once
-    promotionsCache = await fetchPromotions();
-    renderPromotions(promotionsCache);
-}
-
-// ------------------- Create promotion -------------------
-createBtn.addEventListener("click", async () => {
-    const name = promoName.value.trim();
-    const start = promoStart.value;
-    const end = promoEnd.value;
-    const discount = parseFloat(promoDiscount.value);
-    const selectedItems = getSelectedItemIds();
-
-    if (!name || !start || !end || isNaN(discount) || selectedItems.length === 0) {
-        return alert("Please fill all fields and select at least one item.");
-    }
-
-    try {
-        const res = await fetch("/promotions", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                restaurant_id: restaurantId,
-                name,
-                start_date: start,
-                end_date: end,
-                discount_pct: discount,
-                product_ids: selectedItems
-            })
-        });
-
-        if (!res.ok) {
-            const err = await res.json();
-            return alert(err.error || "Error creating promotion");
+                  </li>
+                `).join("")}
+              </ul>
+            </div>
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
         }
 
-        const newPromo = await res.json();
-        // Add to cache and render
-        promotionsCache.push(newPromo);
-        renderPromotions(promotionsCache);
 
-        // Reset form
-        promoName.value = "";
-        promoStart.value = "";
-        promoEnd.value = "";
-        promoDiscount.value = "";
-        document.querySelectorAll('input.promo-item-checkbox').forEach(cb => cb.checked = false);
+        //     function renderPromotions(promos) {
+        //         promotionList.innerHTML = promos.map(p => `
+        //     <li class="list-group-item mb-2" data-id="${p.id}">
+        //         <div class="d-flex justify-content-between align-items-start">
+        //             <div>
+        //                 <strong>${p.name} (${p.discount_pct}%)</strong>
+        //                 <br>
+        //                 <small>${p.start_date} → ${p.end_date}</small>
+        //             </div>
+        //             <span class="badge bg-primary rounded-pill">${p.items.length} items</span>
+        //         </div>
+        //         <ul class="mt-2 list-group list-group-flush">
+        //             ${p.items.map(item => `<li class="list-group-item py-1 px-2">
+        //                 <div class="d-flex justify-content-between gap-2 align-items-center">
+        //                     <div><img src="${item.image_url} alt="img" style="width: 60px; height: 60px; object-fit: cover; border-radius: .5rem; margin-right: 1rem;" />${item.name}</div>
+        //                     <span>$${parseFloat(item.price).toFixed(2)}</span>
+        //                 </div>
+        //                 </li>`).join("")}
+        //         </ul>
+        //     </li>
+        // `).join("");
+        //     }
 
-        alert("Promotion created successfully!");
-    } catch (err) {
-        console.error(err);
-        alert("Server error while creating promotion");
-    }
-});
+        // ------------------- Helper -------------------
+        function getSelectedItemIds() {
+            return Array.from(document.querySelectorAll('input.promo-item-checkbox:checked'))
+                .map(cb => cb.value);
+        }
 
-// ------------------- Init -------------------
-document.addEventListener("DOMContentLoaded", () => {
-    initPromotionsModule();
-});
-</script>
+        // ------------------- Init module -------------------
+        async function initPromotionsModule() {
+            // Load menu items only once
+            menuItemsCache = await fetchMenuItems();
+            renderMenuItemsForPromotions(menuItemsCache);
+
+            // Load promotions only once
+            promotionsCache = await fetchPromotions();
+            renderPromotions(promotionsCache);
+        }
+
+        // ------------------- Create promotion -------------------
+        createBtn.addEventListener("click", async () => {
+            const createBtn = document.getElementById("createPromoBtn");
+            const spinner = createBtn.querySelector(".spinner-border");
+            const btnText = createBtn.querySelector(".btn-text");
+
+            const name = promoName.value.trim();
+            const start = promoStart.value;
+            const end = promoEnd.value;
+            const discount = parseFloat(promoDiscount.value);
+            const selectedItems = getSelectedItemIds();
+
+            if (!name || !start || !end || isNaN(discount) || selectedItems.length === 0) {
+                return alert("Please fill all fields and select at least one item.");
+            }
+
+            try {
+
+                createBtn.disabled = true;
+                spinner.classList.remove("d-none");
+                btnText.textContent = "Creating...";
+                const res = await fetch("/promotions", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        restaurant_id: restaurantId,
+                        name,
+                        start_date: start,
+                        end_date: end,
+                        discount_pct: discount,
+                        product_ids: selectedItems
+                    })
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    return alert(err.error || "Error creating promotion");
+                }
+
+                promotionsCache = await fetchPromotions();
+                renderPromotions(promotionsCache);
+
+                // Reset form
+                promoName.value = "";
+                promoStart.value = "";
+                promoEnd.value = "";
+                promoDiscount.value = "";
+                document.querySelectorAll('input.promo-item-checkbox').forEach(cb => cb.checked = false);
+
+                alert("Promotion created successfully!");
+            } catch (err) {
+                console.error(err);
+                alert("Server error while creating promotion");
+            } finally {
+                // tắt loading
+                createBtn.disabled = false;
+                spinner.classList.add("d-none");
+                btnText.textContent = "Create Promotion";
+            }
+        });
+
+        // Handle select all item for promotions
+        // Gắn sự kiện cho nút "Select All"
+        document.getElementById("select-all-for-promotion").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const checkboxes = document.querySelectorAll(".promo-item-checkbox");
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+            // Nếu tất cả đã được chọn => bỏ chọn hết
+            // Nếu chưa => chọn tất cả
+            checkboxes.forEach(cb => cb.checked = !allChecked);
+
+            // Đổi text nút cho dễ hiểu
+            this.textContent = allChecked ? "Select All" : "Unselect All";
+        });
+
+        // ------------------- Init -------------------
+        document.addEventListener("DOMContentLoaded", () => {
+            initPromotionsModule();
+        });
+    </script>
+    <script>
+        async function loadMonthlyRevenueChart(restaurantId, year) {
+            const res = await fetch(`/api/reports/monthly-revenue?restaurant_id=${restaurantId}&year=${year}`);
+            const data = await res.json();
+
+            const ctx = document.getElementById("monthlyRevenueChart").getContext("2d");
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    datasets: [
+                        {
+                            label: `Revenue ($)`,
+                            data: data.monthly_revenue,
+                            yAxisID: 'yRevenue',
+                            borderColor: "#F37335",
+                            backgroundColor: "rgba(243,115,53,0.2)",
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: `Orders`,
+                            data: data.monthly_orders,
+                            yAxisID: 'yOrders',
+                            borderColor: "#36A2EB",
+                            backgroundColor: "rgba(54,162,235,0.2)",
+                            fill: false,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        yRevenue: {
+                            type: 'linear',
+                            position: 'left',
+                            beginAtZero: true,
+                            title: { display: true, text: 'Revenue ($)' }
+                        },
+                        yOrders: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            title: { display: true, text: 'Orders' },
+                            grid: { drawOnChartArea: false } // không vẽ grid trùng
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadTopDishesChart(restaurantId, year, month = null, topN = 10) {
+            let url = `/api/reports/top-dishes?restaurant_id=${restaurantId}&year=${year}&top_n=${topN}`;
+            if (month) url += `&month=${month}`;
+
+            const res = await fetch(url);
+            const data = await res.json();
+
+            const labels = data.top_dishes.map(d => d.food_name);
+            const values = data.top_dishes.map(d => d.total_sold);
+
+            const ctx = document.getElementById("topDishesChart").getContext("2d");
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: "Quantity Sold",
+                        data: values,
+                        backgroundColor: "#F37335"
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true } }
+                }
+            });
+        }
+        async function loadTopDishesTable(restaurantId, year, topN = 10) {
+            const res = await fetch(`/api/reports/top-dishes?restaurant_id=${restaurantId}&year=${year}&top_n=${topN}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("topDishesTableBody");
+
+            // Tìm max quantity để scale mini bar
+            const maxQty = Math.max(...data.top_dishes.map(d => d.total_sold));
+
+            tbody.innerHTML = data.top_dishes.map((dish, index) => {
+                const sharePercent = (dish.total_sold / maxQty) * 100;
+                return `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${dish.food_name}</td>
+                <td>${dish.total_sold}</td>
+                <td>
+                    <div class="progress" style="height: 12px;" title="${sharePercent.toFixed(1)}%">
+                        <div class="progress-bar bg-gradient" role="progressbar"
+                             style="width: ${sharePercent}%;"
+                             aria-valuenow="${dish.total_sold}" aria-valuemin="0" aria-valuemax="${maxQty}">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        `;
+            }).join("");
+
+            // Khởi tạo tooltip Bootstrap
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'))
+            tooltipTriggerList.map(function (el) {
+                return new bootstrap.Tooltip(el)
+            });
+        }
+
+        async function loadCategorySales(restaurantId, year) {
+            const res = await fetch(`/api/reports/category-sales?restaurant_id=${restaurantId}&year=${year}`);
+            const data = await res.json();
+
+            const categories = data.category_sales;
+            if (categories.length === 0) return;
+
+            // Horizontal Bar Chart
+            const chartLabels = categories.map(c => c.category);
+            const chartData = categories.map(c => c.revenue);
+
+            const ctx = document.getElementById("categorySalesChart").getContext("2d");
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: "Revenue",
+                        data: chartData,
+                        backgroundColor: "#F37335"
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',  // horizontal
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { beginAtZero: true } }
+                }
+            });
+        }
+        async function loadTopOrdersTable(restaurantId, year, topN = 10) {
+            const res = await fetch(`/api/reports/top-orders?restaurant_id=${restaurantId}&year=${year}&top_n=${topN}`);
+            const data = await res.json();
+
+            const tbody = document.getElementById("topOrdersTableBody");
+            const maxTotal = Math.max(...data.top_orders.map(o => o.order_total));
+
+            tbody.innerHTML = data.top_orders.map((order, index) => {
+                const sharePercent = (order.order_total / maxTotal) * 100;
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${order.recipient_name}</td>
+                        <td>$${parseFloat(order.order_total).toFixed(2)}</td>
+                        <td>${new Date(order.order_time).toLocaleDateString()}</td>
+                        <td>
+                            <div class="progress" style="height: 12px;" title="${sharePercent.toFixed(1)}%">
+                                <div class="progress-bar bg-gradient" role="progressbar"
+                                    style="width: ${sharePercent}%;"
+                                    aria-valuenow="${order.order_total}" aria-valuemin="0" aria-valuemax="${maxTotal}">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join("");
+
+            // Bootstrap tooltip
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[title]'));
+            tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+        }
+
+        // Khi load page
+        document.addEventListener("DOMContentLoaded", () => {
+            const restaurantId = localStorage.getItem("restaurantId");
+            const year = new Date().getFullYear();
+            loadMonthlyRevenueChart(restaurantId, year);
+            loadTopDishesChart(restaurantId, year);
+            loadTopDishesTable(restaurantId, year);
+            loadCategorySales(restaurantId, year);
+            loadTopOrdersTable(restaurantId, year);
+        });
+
+    </script>
 
     <script src="/static/js/logout.js"></script>
 </body>

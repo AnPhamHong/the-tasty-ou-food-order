@@ -158,11 +158,12 @@ document.addEventListener("DOMContentLoaded", () => {
       orderDiv.innerHTML = `
         <div class="d-flex justify-content-between align-items-center mb-2">
           <h6 class="mb-0">#${idx + 1}. Transaction ID: ${order.transaction_id}</h6>
-          ${generateStatus(order.status)}
-          ${order.status === "Pending"
-          ? `<span class="badge bg-red text-red-fg cancel-order cursor-pointer" data-order=${order.transaction_id}>Cancel Order</span>`
-          : ""
-        }
+          <div class="d-flex gap-2">
+            ${generateStatus(order.status)}
+            ${order.status === "Pending"
+            ? `<span class="badge bg-red text-red-fg cancel-order cursor-pointer" data-order=${order.transaction_id}>Cancel Order</span>`
+            : ""}
+          </div>
         </div>
         <p class="mb-2 text-muted">Order date: ${new Date(order.order_time).toLocaleString('vi-VN')}</p>
         <div class="mb-2">

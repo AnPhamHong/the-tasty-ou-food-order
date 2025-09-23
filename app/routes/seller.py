@@ -51,7 +51,7 @@ def register_restaurant():
         tags = restaurant.get("tags", ["fast_delivery", "cost"])
         badges = restaurant.get("badges", ["newest"])
 
-        # 1️⃣ Create restaurant
+        # Create restaurant
         cursor.execute(
             """
             INSERT INTO restaurants 
@@ -73,7 +73,7 @@ def register_restaurant():
         )
         restaurant_id = cursor.lastrowid
 
-        # 2️⃣ Insert menu items
+        # Insert menu items
         for item in menu:
             cursor.execute(
                 """
@@ -91,8 +91,7 @@ def register_restaurant():
                 ),
             )
 
-        # 3️⃣ Create admin account
-        hashed_pw = generate_password_hash(admin["password"])
+        # Create admin account
         cursor.execute(
             """
             INSERT INTO accounts (username, password, email, organisation, role, restaurant_id, address)
@@ -100,7 +99,7 @@ def register_restaurant():
         """,
             (
                 admin["username"],
-                hashed_pw,
+                admin["password"],
                 admin["email"],
                 restaurant["name"],
                 "seller_admin",

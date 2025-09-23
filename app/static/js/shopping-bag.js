@@ -32,19 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
         ${cartChecked.map(item => `
             <div class="d-flex justify-content-between align-items-start py-2 border-bottom">
             <div class="d-flex justify-content-start gap-3 align-items-center">
-                <img src="${item.img}" alt="${item.name}" style="width: 100px; height: 100px; border-radius: .5rem;">
+                <img src="${item.img}" alt="${item.name}" style="width: 100px; height: 100px; border-radius: .5rem; object-fit: cover;">
                 <div class="d-flex flex-column gap-1">
                     <div class="text-truncate" style="padding-right: .5rem;">
                     <span>${item.name}</span>
                     <span class="small" style="display: flex; gap: 0.5rem; font-size: 0.85rem; font-style: italic;">
                         ${item.discount_price && item.discount_price !== item.price
-                            ? `<span class="small" style="color: #777; text-decoration: line-through;">
+                ? `<span class="small" style="color: #777; text-decoration: line-through;">
                                     $${parseFloat(item.price).toFixed(2)} x${item.qty}
                             </span>
                             <span class="small" style="color: #e63946; font-weight: 500;">
                                     $${parseFloat(item.discount_price).toFixed(2)} x${item.qty}
                             </span>`
-                            : `<span class="small" style="color: #333;">
+                : `<span class="small" style="color: #333;">
                                     $${parseFloat(item.price).toFixed(2)} x${item.qty}
                             </span>`}
                     </span>
@@ -143,6 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnPlaceOrder = document.getElementById("btnPlaceOrder");
     if (btnPlaceOrder) {
 
+        const spinner = btnPlaceOrder.querySelector(".spinner-border");
+        const btnText = btnPlaceOrder.querySelector(".btn-text");
+
         btnPlaceOrder.addEventListener("click", function (e) {
             e.preventDefault();
             const form = document.getElementById("checkoutForm");
@@ -160,6 +163,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 return alert("You must verify phone and email first!");
             }
 
+
+            btnPlaceOrder.disabled = true;
+            spinner.classList.remove("d-none");
+            btnText.textContent = "Processing...";
 
             const payment_method = document.querySelector('select[name="payment_method"]').value;
 
@@ -256,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         toast.show();
                         setTimeout(() => {
                             window.location.href = "/";
-                        }, 3000);
+                        }, 1000);
                     } else {
                         alert("Error creating order: " + data.message);
                     }
@@ -264,6 +271,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     toastEl.querySelector(".toast-body").textContent = "Error creating order: " + data.message;
                     const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
                     toast.show();
+                } finally {
+                    btnPlaceOrder.disabled = false;
+                    spinner.classList.add("d-none");
+                    btnText.textContent = "Proceed to Checkout";
                 }
             };
             createOrder();
