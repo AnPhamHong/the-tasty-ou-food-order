@@ -509,4 +509,3 @@ def get_promotions_by_restaurant(restaurant_id):
     cursor.close()
     conn.close()
     return jsonify(promos)
-
