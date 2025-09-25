@@ -1,8 +1,7 @@
 
 const tabs = document.querySelectorAll('#featured-restaurants .restaurant-tab');
 const restaurantList = document.getElementById('restaurant-list');
-const pagination = document.getElementById('pagination'); // thêm 1 div dưới list
-
+const pagination = document.getElementById('pagination');
 let currentTab = 'fast_delivery';
 let currentPage = 1;
 let totalPages = 1;
@@ -44,7 +43,6 @@ function showSkeleton(count = 4) {
   restaurantList.innerHTML = skeletonHTML;
 }
 
-
 async function fetchRestaurants(tab, page = 1, reset = false, limit = perPage) {
   if (!restaurantList) return;
   if (isLoading) return;
@@ -66,8 +64,8 @@ async function fetchRestaurants(tab, page = 1, reset = false, limit = perPage) {
 
 
 
-    renderRestaurants(restaurants);   // render list nhà hàng
-    renderPagination();              // render phân trang
+    renderRestaurants(restaurants);
+    renderPagination();
   } catch (err) {
     console.error("Error loading restaurants:", err);
     restaurantList.innerHTML = `<p class="text-danger">Failed to load restaurants.</p>`;
@@ -239,7 +237,6 @@ function renderPagination() {
   });
 }
 
-// Infinite Scroll observer
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && currentPage < totalPages && !isLoading) {

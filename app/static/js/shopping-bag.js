@@ -79,33 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const elTax = elCartSummary.querySelector(".summary-tax");
         const elTotal = elCartSummary.querySelector(".summary-total");
 
-        // Hàm format tiền tệ
-        const formatCurrency = (value) =>
-            `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        const formatCurrency = (value) => `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
-        // Lấy giá trị subtotal từ text (chuyển về số)
         let subtotal = cartChecked.reduce((sum, item) => sum + item.price * item.qty, 0);
         let discountTotal = cartChecked.reduce((sum, item) => sum + item.discount_price * item.qty, 0);
         let totalSaving = subtotal - discountTotal;
         elSaving.dataset.value = totalSaving.toFixed(2);
 
-        // Lấy data-value từ attr
         let saving = parseFloat(elSaving.dataset.value) || 0;
         let pickup = parseFloat(elPickup.dataset.value) || 0;
         let taxPercent = parseFloat(elTax.dataset.value) || 0;
 
-        // Tính toán
         let taxValue = (subtotal - saving + pickup) * (taxPercent / 100);
         let total = subtotal - saving + pickup + taxValue;
 
-        // Update data-value (raw values)
         elSubtotal.dataset.value = subtotal;
         elSaving.dataset.value = saving;
         elPickup.dataset.value = pickup;
         elTax.dataset.value = taxPercent;
         elTotal.dataset.value = total;
 
-        // Update UI (formatted values)
         elSubtotal.textContent = formatCurrency(subtotal);
         elSaving.textContent = formatCurrency(saving);
         elPickup.textContent = formatCurrency(pickup);
@@ -117,12 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendEmailBtn = document.getElementById("sendEmailOtpBtn");
     const emailVerifiedEl = document.getElementById("emailVerified");
 
-    let lastVerifiedEmail = ""; // lưu email đã verify thành công
-    // Kiểm tra khi input thay đổi
+    let lastVerifiedEmail = "";
     emailInput.addEventListener("input", () => {
         const emailVal = emailInput.value.trim();
         sendEmailBtn.disabled = emailVal === "";
-        // Nếu người dùng thay đổi email đã verify trước đó, reset trạng thái verify
         if (emailVal !== lastVerifiedEmail) {
             emailVerifiedEl.classList.add("d-none");
             lastVerifiedEmail = ""; // reset
@@ -150,13 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const form = document.getElementById("checkoutForm");
 
-            // Kiểm tra form hợp lệ
             if (!form.checkValidity()) {
-                form.reportValidity(); // highlight missing fields
+                form.reportValidity();
                 return;
             }
 
-            // Kiểm tra verify
             const emailVerified = !document.getElementById("emailVerified").classList.contains("d-none");
 
             if (!emailVerified) {
@@ -170,13 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const payment_method = document.querySelector('select[name="payment_method"]').value;
 
-            // map lại nếu muốn gửi đúng ENUM
             let pm = payment_method;
             if (pm === 'cod') pm = 'COD';
             if (pm === 'credit_card') pm = 'CreditCard';
             if (pm === 'paypal') pm = 'Paypal';
 
-            // Lấy thông tin người nhận
             const recipientInfo = {
                 user_id: localStorage.getItem("userid"), // demo user id
                 name: document.getElementById("recipientName").value,
@@ -186,11 +173,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 payment_method: pm
             };
 
-            // Lấy cart từ localStorage
             const baseCart = JSON.parse(localStorage.getItem("cart")) || [];
             const cart = baseCart.filter(item => !!item.checked);
 
-            // ✅ map lại note cho từng item từ input
             cart.forEach(item => {
                 const noteInput = document.querySelector(`.note-input[data-id="${item.id}"]`);
                 if (noteInput) {
@@ -205,13 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Your cart is empty!");
                 return;
             }
-
-            // Tính subtotal, savings, pickup, tax, total
-            // const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-            // const savings = 0; // demo tự bịa
-            // const storePickup = 0; // demo tự bịa
-            // const tax = Math.round(subtotal * 0.08); // ví dụ 8% tax
-            // const total = subtotal + savings + storePickup + tax;
 
             const subtotal = parseFloat(document.querySelector(".summary-subtotal").dataset.value || 0);
             const savings = parseFloat(document.querySelector(".summary-saving").dataset.value || 0);
@@ -336,7 +314,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const backdropEl = document.querySelector(".modal-backdrop");
                     if (backdropEl) backdropEl.remove();
-                    // Reset form/modal input
                     document.getElementById("otpInput").value = "";
                 } else {
                     alert("Invalid OTP");

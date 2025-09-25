@@ -24,7 +24,6 @@ async function loadSearchResults(keyword = '') {
   try {
     const response = await fetch(`/api/search?keyword=${encodeURIComponent(keyword)}`);
 
-    // Check nếu không phải JSON
     const contentType = response.headers.get('content-type');
     if (!response.ok || !contentType.includes('application/json')) {
       console.error('API error or not JSON', response.status, contentType);
@@ -108,7 +107,6 @@ async function loadSearchResults(keyword = '') {
   }
 }
 
-// Realtime search khi người dùng nhập
 function handleSearchInput(inputId) {
   const input = document.getElementById(inputId);
   if (!input) return;

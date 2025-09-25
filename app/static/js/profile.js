@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const tabParam = urlParams.get("tab");
   if (tabParam) {
-    // mapping tab param với id tab
     const tabIdMap = {
       "user": "#tab-user",
       "orders": "#tab-orders",
@@ -47,11 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sidebarItems.forEach(item => {
     item.addEventListener("click", () => {
-      // Active sidebar
       sidebarItems.forEach(el => el.classList.remove("active"));
       item.classList.add("active");
 
-      // Show đúng content (có hiệu ứng fade)
       const targetId = item.getAttribute("data-target");
       tabPanes.forEach(pane => {
         if (pane.id === targetId) {
@@ -72,11 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
 
       if (res.ok && data.orders) {
-        // Có đơn hàng → render
         renderOrders(data.orders);
         cencelOrder();
       } else {
-        // Không có đơn hàng → show message backend gửi về
         document.getElementById('orders-container').innerHTML = `<p>${data.message || "No orders found"}</p>`;
       }
     } catch (error) {
@@ -88,21 +83,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
-  // format tiền sang VND (Intl)
   function formatUSD(value) {
     const n = Number(String(value).replace(/[^\d.-]/g, '')) || 0;
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
   }
 
-  // capitalize first letter
   function capitalize(str) {
     if (!str) return '';
     str = String(str);
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  // generate bootstrap badge for status
   function generateStatus(status) {
     const s = String(status || '').toLowerCase();
     const map = {
@@ -119,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return `<span class="badge ${cls}">${capitalize(s)}</span>`;
   }
 
-  // render orders
   function renderOrders(orders) {
     const container = document.getElementById('orders-container');
     container.innerHTML = '';
@@ -192,8 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (breadcrumbTitle) breadcrumbTitle.textContent = title;
     });
   });
-
-  // Sau khi render xong danh sách order
 
   function cencelOrder() {
     document.querySelectorAll(".cancel-order").forEach(el => {

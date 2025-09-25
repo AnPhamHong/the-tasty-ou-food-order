@@ -1,14 +1,11 @@
-// Lấy cart từ localStorage hoặc tạo mới
 function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
-// Lưu cart vào localStorage
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Cập nhật badge cart mini
 function updateCartBadge() {
     const cart = getCart();
     const cartNumber = document.getElementById('cart-number');
@@ -16,14 +13,13 @@ function updateCartBadge() {
     cartNumber.textContent = totalQty > 99 ? '99+' : totalQty;
 }
 
-// Thêm sản phẩm vào cart
 function addToCart(product) {
     let cart = getCart();
 
     const existing = cart.find(item => item.id === product.id && item.restaurant_id === product.restaurant_id);
 
     if (existing) {
-        existing.qty += 1; // tăng quantity
+        existing.qty += 1;
     } else {
         cart.push({
             ...product,
@@ -31,7 +27,6 @@ function addToCart(product) {
         });
     }
 
-    // Chỉ check nhà hàng hiện tại, uncheck các nhà hàng khác
     cart = cart.map(item => ({
         ...item,
         checked: item.restaurant_id === product.restaurant_id
@@ -48,7 +43,6 @@ function renderCart() {
     document.getElementById('overlay-modal-cart').style.display = 'flex';
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartItems.innerHTML = '';
-    // Group theo restaurant
     const grouped = cart.reduce((acc, item) => {
         if (!acc[item.restaurant_id]) acc[item.restaurant_id] = [];
         acc[item.restaurant_id].push(item);
@@ -62,7 +56,6 @@ function renderCart() {
         const restaurantName = products[0].restaurant_name || `Restaurant ${restaurantId}`;
 
         const isChecked = products.some(item => item.checked) ? 'checked' : '';
-        // Header restaurant
         cartItems.innerHTML += `
             <div class="fw-bold bg-light rounded d-flex align-items-center gap-2 justify-content-between" style="background: linear-gradient(to right, #fff7f0, #fff3e6) !important; border-radius: 0 !important; padding: .5rem .8rem">
                 <span style="color: #F37335;font-weight: 600;">${restaurantName}</span>
@@ -71,7 +64,6 @@ function renderCart() {
                 </div>
             </div>
         `;
-        // Products
         let tempStringList = '';
         products.forEach((item, index) => {
             const isLast = index === products.length - 1; // kiểm tra item cuối
@@ -119,7 +111,6 @@ function renderCart() {
 
     updateTotalCart();
     bindRestaurantCheckboxes();
-    // Event delegation cho remove / change-qty
     cartItems.querySelectorAll('.remove-item').forEach(el => {
         el.addEventListener('click', () => removeFromCart(parseInt(el.dataset.productId), parseInt(el.dataset.restaurantId)));
     });
@@ -131,11 +122,9 @@ function renderCart() {
         document.getElementById('overlay-modal-cart').style.display = 'none', 500)
 }
 
-// Xóa sản phẩm khỏi cart
 function removeFromCart(productId, restaurantId) {
     let cart = getCart();
 
-    // Lọc ra các item không phải sản phẩm cần xóa
     cart = cart.filter(item => !(item.id === productId && item.restaurant_id === restaurantId));
 
     saveCart(cart);
@@ -143,7 +132,6 @@ function removeFromCart(productId, restaurantId) {
     renderCart();
 }
 
-// Tính tổng chỉ cho nhà hàng đang được check, trả về dạng $xx.xx
 function calculateCheckedTotal() {
     const cart = getCart();
     const checkedItems = cart.filter(item => item.checked);
@@ -165,8 +153,6 @@ function updateTextMsgWarning(initCart) {
     !isCheck ? elBtnCheckout.setAttribute("disabled", true) : elBtnCheckout.removeAttribute("disabled")
 }
 
-
-// Thay đổi quantity theo restaurant_id
 function changeQty(productId, delta, restaurantId) {
     const cart = getCart();
     console.log(cart)
@@ -188,7 +174,6 @@ function bindRestaurantCheckboxes() {
             const selectedRestaurantId = parseInt(cb.dataset.restaurantId);
             let cart = getCart();
 
-            // Chỉ giữ checked cho nhà hàng đang tick
             cart = cart.map(item => ({
                 ...item,
                 checked: item.restaurant_id === selectedRestaurantId && cb.checked
@@ -196,14 +181,12 @@ function bindRestaurantCheckboxes() {
 
             saveCart(cart);
             updateTextMsgWarning(cart);
-            renderCart(); // rerender cart
-            bindRestaurantCheckboxes(); // gắn lại listener cho checkbox mới
+            renderCart();
+            bindRestaurantCheckboxes();
         });
     });
 }
 
-
-// Khi load trang
 document.addEventListener('DOMContentLoaded', () => {
     console.log('123')
     updateCartBadge();
