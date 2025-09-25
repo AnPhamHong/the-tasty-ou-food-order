@@ -76,5 +76,4 @@ async function fetchPopularRestaurants() {
   }
 }
 
-// gọi khi trang load
 document.addEventListener("DOMContentLoaded", fetchPopularRestaurants);

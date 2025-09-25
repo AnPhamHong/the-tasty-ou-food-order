@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.success) {
           registerForm.reset();
           if (msgDiv) msgDiv.classList.add("d-none");
-          // Redirect after short delay
           alert("Register successfully!");
           setTimeout(() => { window.location.href = "/login"; }, 1000);
         } else {

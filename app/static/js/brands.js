@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = $("#brand-carousel");
 
-  // Init owl
   carousel.owlCarousel({
     loop: true,
     margin: 24,
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 🔥 Load brands từ API Flask
   fetch("/api/brands")
     .then(res => res.json())
     .then(data => {
@@ -32,11 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `);
 
-        // Thêm item vào carousel
         carousel.trigger("add.owl.carousel", [item]);
       });
 
-      // Refresh lại carousel để apply item mới
       carousel.trigger("refresh.owl.carousel");
     })
     .catch(err => console.error("Error loading brands:", err));

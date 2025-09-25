@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const email = this.email.value.trim();
             const password = this.password.value.trim();
-            const isSellerAdmin = this.is_seller_admin.checked; // lấy trạng thái checkbox
+            const isSellerAdmin = this.is_seller_admin.checked;
             const msgDiv = document.getElementById("msg-login");
             const btnSignIn = document.getElementById("dlab-sign-in-btn");
 
@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         localStorage.setItem("username", data.user.username);
                         localStorage.setItem("email", data.user.email);
                         localStorage.setItem("userid", data.user.userid);
-                        localStorage.setItem("is_seller_admin", data.user.is_seller_admin); // lưu role
-                        localStorage.setItem("restaurantId", data.user.restaurant_id); // lưu role
+                        localStorage.setItem("is_seller_admin", data.user.is_seller_admin);
+                        localStorage.setItem("restaurantId", data.user.restaurant_id);
 
                         if (data.user.is_seller_admin && data.user.restaurant_id) {
                             window.location.href = "/seller-admin";

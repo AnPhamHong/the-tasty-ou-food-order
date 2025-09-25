@@ -35,10 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
             _promotionMsg.textContent = msg.Text;
             _promotionMsg.style.color = msg.TextColor;
 
-            // Trigger reflow
             void _promotionMsg.offsetWidth;
 
-            // Start animation
             setTimeout(() => {
                 _promotionMsg.classList.add('show-promotion');
             }, 200);
